@@ -1,0 +1,40 @@
+/* ============================================================
+   ARMD v2 - ANIMATIONS
+   Reveals au scroll (pilotes par reveal.js) + micro-mouvements.
+   Sobre : translation courte, courbe douce, jamais de rebond.
+   prefers-reduced-motion : neutralise par le media query global
+   de design-system.css (durees a 0.01ms).
+   ============================================================ */
+
+/* Etat initial cache UNIQUEMENT si reveal.js a demarre
+   (html[data-reveal-ready]) - sans JS, tout reste visible. */
+html[data-reveal-ready] .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+html[data-reveal-ready] .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Hero : fondu d'entree du media (poster puis video) */
+.hero__video {
+  animation: hero-fade 1200ms ease both;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Marquee partenaires : pause au survol pour lire les noms */
+.partners__marquee:hover .partners__track {
+  animation-play-state: paused;
+}

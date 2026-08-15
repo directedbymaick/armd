@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossier de recommandation · ARMD Group · Mad Makers</title>
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+@page { size: A4 portrait; margin: 25mm 22mm 22mm 22mm;
+  @top-right { content: "ARMD Group · Dossier de recommandation"; font-family: "Roboto Mono", monospace; font-size: 8pt; letter-spacing: 0.1em; color: #8a8678; }
+  @bottom-left { content: "Mad Makers · Confidentiel"; font-family: "Roboto Mono", monospace; font-size: 8pt; letter-spacing: 0.08em; color: #a09c8d; }
+  @bottom-right { content: counter(page) " / " counter(pages); font-family: "Roboto Mono", monospace; font-size: 8pt; color: #a09c8d; }
+}
+@page :first { @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fbfaf7;color:#1a1815;font-family:"Inter",system-ui,sans-serif;font-size:10.5pt;line-height:1.62;-webkit-font-smoothing:antialiased}
+.cover{min-height:240mm;display:flex;flex-direction:column;justify-content:space-between;padding:14mm 0 8mm;page-break-after:always;break-after:page}
+.cover__top{font-family:"Roboto Mono",monospace;font-size:10pt;letter-spacing:.18em;text-transform:uppercase;color:#6b6a62;display:flex;align-items:center;gap:12px}
+.cover__top i{width:11px;height:11px;background:#c8ff3d;display:block}
+.cover__title{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:46pt;line-height:1.06;letter-spacing:-.02em;color:#1a1815;max-width:14ch;margin-bottom:14pt}
+.cover__title em{font-style:italic;color:#5a7a0d}
+.cover__sub{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:400;font-size:17pt;line-height:1.4;color:#4a4640;max-width:36ch}
+.cover__meta{font-family:"Roboto Mono",monospace;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;color:#6b6a62}
+.cover__meta div+div{margin-top:6px}
+.doc-body{max-width:100%;padding:0}
+.doc-body>h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:24pt;line-height:1.12;margin:0 0 14pt;color:#1a1815;letter-spacing:-.01em}
+.doc-body h1{page-break-before:always;break-before:page;font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:22pt;line-height:1.15;margin:0 0 14pt;color:#1a1815}
+.doc-body>h1:first-child{page-break-before:auto;break-before:auto}
+.doc-body h2{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:15pt;line-height:1.22;margin:18pt 0 8pt;color:#1a1815;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:4pt;page-break-after:avoid;break-after:avoid}
+.doc-body h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-style:italic;font-size:12.5pt;line-height:1.3;margin:14pt 0 5pt;color:#2a2620;page-break-after:avoid;break-after:avoid}
+.doc-body h4{font-family:"Inter",sans-serif;font-weight:600;font-size:10.5pt;margin:10pt 0 3pt;color:#1a1815;page-break-after:avoid;break-after:avoid}
+.doc-body p{margin:0 0 8pt;text-align:left;hyphens:auto}
+.doc-body strong{font-weight:600;color:#1a1815}
+.doc-body em{font-style:italic}
+.doc-body a{color:#5a7a0d;text-decoration:underline;text-decoration-thickness:.5pt;text-underline-offset:2pt}
+.doc-body ul,.doc-body ol{margin:0 0 10pt 18pt;padding:0}
+.doc-body li{margin:0 0 4pt}
+.doc-body li>p{margin:0}
+.doc-body blockquote{margin:12pt 0;padding:8pt 14pt;border-left:2pt solid #c8ff3d;background:rgba(200,255,61,.06);font-style:italic;color:#2a2620;page-break-inside:avoid;break-inside:avoid}
+.doc-body blockquote p:last-child{margin-bottom:0}
+.doc-body table{width:100%;border-collapse:collapse;margin:10pt 0;font-size:9.5pt;page-break-inside:avoid;break-inside:avoid}
+.doc-body table th{background:#efeae0;text-align:left;padding:6pt 8pt;font-weight:600;border-bottom:1pt solid #c8c4b6;font-family:"Inter",sans-serif;font-size:9pt}
+.doc-body table td{padding:5pt 8pt;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top}
+.doc-body code{font-family:"Roboto Mono",monospace;font-size:9pt;background:rgba(0,0,0,.04);padding:1pt 4pt;border-radius:2pt;color:#2a2620}
+.doc-body pre{background:#efeae0;padding:10pt 12pt;border-radius:3pt;overflow-x:auto;font-family:"Roboto Mono",monospace;font-size:8pt;line-height:1.5;margin:10pt 0;page-break-inside:avoid;break-inside:avoid}
+.doc-body pre code{background:transparent;padding:0;font-size:8pt}
+.doc-body hr{border:none;border-top:.5pt solid rgba(0,0,0,.18);margin:14pt 0}
+@media print{html,body{background:#fff}.no-print{display:none!important}}
+.print-hint{position:fixed;bottom:12px;right:12px;background:#1a1815;color:#fbfaf7;padding:8px 14px;font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.05em;border-radius:999px;opacity:.93;z-index:100;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+</style>
+</head>
+<body>
+<section class="cover">
+  <div class="cover__top"><i></i>Mad Makers</div>
+  <div>
+    <h1 class="cover__title">Dossier de <em>recommandation</em></h1>
+    <p class="cover__sub">ARMD Group · le site, l'autorité, le système.<br>Synthèse du brief et stratégie digitale.</p>
+  </div>
+  <div class="cover__meta">
+    <div>Émis le lundi 25 mai 2026</div>
+    <div>À l'attention de Goudet Abalé, fondateur d'ARMD Group</div>
+    <div>Mad Makers · Étape 03 sur 12</div>
+  </div>
+</section>
+<main class="doc-body">
+<h1>Dossier de recommandation</h1>
+<h2>ARMD Group · le site, l&#39;autorité, le système</h2>
+<p><strong>Émis par</strong> : Mad Makers
+<strong>À l&#39;attention de</strong> : Goudet Abalé, ARMD Group
+<strong>Date</strong> : lundi 25 mai 2026
+<strong>Suite</strong> : entretien de brief du vendredi 22 mai 2026</p>
+<hr>
+<h2>Préambule</h2>
+<p>Ce dossier fait suite à notre entretien de cadrage. Il n&#39;est pas une proposition commerciale : il pose ce que nous avons compris d&#39;ARMD, ce que le brief a fait remonter du vrai besoin, et la stratégie que nous recommandons avant de chiffrer.</p>
+<p>La proposition chiffrée (étape suivante) en découle directement. Les partis pris listés ici sont à valider ou à amender avant que nous l&#39;écrivions.</p>
+<hr>
+<h2>1. Ce que nous avons compris d&#39;ARMD</h2>
+<h3>1.1 Ton métier en une phrase</h3>
+<p>ARMD réunit deux jambes que peu d&#39;acteurs traitent ensemble : <strong>l&#39;intelligence économique</strong> (le côté technique : captation, traitement, analyse) et <strong>l&#39;influence stratégique</strong> (la traduction et l&#39;utilisation de ces données pour produire un effet réel sur la décision, l&#39;opinion et le positionnement de tes clients). Tes mots : <em>&quot;un manque de souveraineté, c&#39;est le mot d&#39;ordre.&quot;</em></p>
+<h3>1.2 La situation à date</h3>
+<p>Huit mois d&#39;activité. 75 555 € de chiffre d&#39;affaires déjà réalisés à cinq mois. Une grosse équipe en construction, une présence à Paris et Abidjan. Aucune présence digitale structurée : ni site, ni Google, ni canal éditorial visible. Une demande initiale claire : <em>&quot;j&#39;ai besoin de SEO.&quot;</em></p>
+<h3>1.3 Où tu veux emmener ARMD</h3>
+<p>À 12 mois : trois marchés porteurs actifs (Afrique de l&#39;Ouest, Afrique Centrale, Occident via Washington), un objectif de 100 000 € de chiffre d&#39;affaires, et un signal qualitatif simple : <em>&quot;un prospect par trimestre qui me contacte grâce au site et à la stratégie Mad Makers.&quot;</em></p>
+<p>À 24 mois : 1 000 000 € de chiffre d&#39;affaires, cinq à huit collaborateurs, des bureaux à Paris, Abidjan et Douala.</p>
+<p>À horizon long : un hub de référence en intelligence et influence sur le continent africain. Base de données propriétaire, plateformes médiatiques, baromètres sectoriels, think tank OSEA, antennes régionales sur trois continents, association de protection des consommateurs africains. Tu ne construis pas un cabinet, tu construis un système.</p>
+<h3>1.4 Tes contraintes assumées</h3>
+<ul>
+<li>Pas d&#39;Ads publicitaire pour vendre le cabinet : <em>&quot;on ne va pas s&#39;amuser à faire de l&#39;Ads de manière aléatoire.&quot;</em></li>
+<li>Image haut de gamme, recommandation, social proof.</li>
+<li>Pas d&#39;appels d&#39;offres avant d&#39;avoir franchi le seuil de 100 millions FCFA de CA.</li>
+<li>Décision unilatérale : tu es seul décisionnaire.</li>
+<li>Performance non négociable : le site doit charger vite quelle que soit la qualité de la connexion utilisateur.</li>
+</ul>
+<hr>
+<h2>2. Le vrai besoin derrière &quot;j&#39;ai besoin de SEO&quot;</h2>
+<p>Nous ne te recommanderons pas le SEO en premier. Voici pourquoi.</p>
+<p>Pour un cabinet de conseil en influence et intelligence économique, <strong>le SEO classique</strong> (capter une demande existante via des mots-clés génériques) <strong>est marginal</strong>. Personne ne tape &quot;agence d&#39;influence Paris&quot; pour confier un mandat sensible. Les onze cabinets que nous avons benchmarkés pour préparer ce dossier le confirment : aucun ne se positionne sur des mots-clés génériques. Tous travaillent une autre mécanique.</p>
+<p>Cette autre mécanique se déroule en deux temps.</p>
+<p><strong>Temps 1 : la crédibilité immédiate.</strong> Quand un décideur entend parler d&#39;ARMD par recommandation, son premier réflexe est de taper ton nom et celui de l&#39;agence sur Google. Ce qu&#39;il trouve à ce moment-là décide de la suite. Si le site n&#39;existe pas, ou s&#39;il est faible, la recommandation se neutralise toute seule. Si le site est solide, structuré, propre, le rendez-vous se prend. <strong>C&#39;est le besoin numéro un</strong>, et c&#39;est ce que nous traitons en priorité.</p>
+<p><strong>Temps 2 : la construction d&#39;autorité dans le temps.</strong> Une fois le socle en ligne, ce qui fait revenir le client à toi, c&#39;est ce que tu produis : analyses, prises de parole, partages d&#39;expertise. C&#39;est ce que nous appelons le <strong>SEO d&#39;autorité</strong> : ton nom et celui d&#39;ARMD verrouillés sur Google, et ton expertise trouvable quand quelqu&#39;un cherche un sujet sur lequel tu travailles. Tu ne courses pas un mot-clé : tu installes une présence qui te précède.</p>
+<p><strong>Conséquence directe</strong> : le site est le pivot, livré en premier, solide. L&#39;autorité éditoriale et le SEO d&#39;autorité viennent en accompagnement, une fois le socle en ligne. <strong>Pas l&#39;inverse</strong>.</p>
+<hr>
+<h2>3. La recommandation stratégique en six décisions</h2>
+<p>Voici les six partis pris que nous recommandons pour ARMD, et qui structureront la proposition chiffrée.</p>
+<h3>3.1 Architecture à deux sites, base technique partagée</h3>
+<p>Tu nous as annoncé deux marchés distincts (Occident / Afrique) avec des codes esthétiques différents. Aucun de tes concurrents directs n&#39;a fait ce choix : ils fonctionnent en site unique, parfois multilingue. <strong>C&#39;est un différenciateur fort si bien exécuté</strong>.</p>
+<p>Notre recommandation : <strong>deux sites en sous-domaines</strong>, par exemple <code>armd.com</code> pour le marché Occident et <code>africa.armd.com</code> pour le marché Afrique. Bases technique, CMS et flux éditorial partagés sous le capot. Direction artistique, langues, mises en avant éditoriales et copy spécifiques pour chacun.</p>
+<p>Ce choix évite de dupliquer la maintenance, garde une cohérence de marque, et permet à chaque site de respecter les codes de sa cible sans compromis.</p>
+<h3>3.2 Phasage linguistique progressif</h3>
+<p>Le brief a posé une ambition forte : neuf langues sur le site Afrique. Aucun cabinet du marché ne le fait. Concerto PR, le mieux placé sur le continent, monte à trois (français, anglais, arabe).</p>
+<p>Notre recommandation : ne pas livrer les neuf langues d&#39;un coup, <strong>phaser au rythme des antennes effectivement ouvertes</strong>.</p>
+<ul>
+<li><strong>V1</strong> : FR + EN sur les deux sites. Langues de travail du continent et des institutions internationales. Couvre 95 % des décideurs cibles dès le lancement.</li>
+<li><strong>V2</strong> : ajout de l&#39;arabe (Afrique du Nord, bailleurs Golfe) et du portugais (Angola, Mozambique, Brésil).</li>
+<li><strong>V3</strong> : ajout du swahili, du lingala, et des autres langues selon les antennes régionales ouvertes (Casablanca, Le Caire, Lagos, Nairobi, etc.). Pour les langues hors continent (chinois, russe, espagnol), à activer si une antenne ouvre effectivement sur ces zones.</li>
+</ul>
+<p>Ce phasage économise des coûts de traduction et de maintenance massifs sans renoncer à l&#39;ambition.</p>
+<h3>3.3 Hero texte fort + signature visuelle légère, pas de vidéo plein écran</h3>
+<p>Le benchmark des concurrents directs (Forward Global, Concerto, APCO) montre que le hero texte pur domine. La vidéo plein écran n&#39;est pas un standard du métier, elle est même presque absente. Coupler une vidéo lourde à ton contexte de wifi lent serait contre-productif.</p>
+<p>Notre recommandation : un <strong>hero texte fort, signé, frontal</strong>, accompagné d&#39;un visuel signature léger (animation SVG, motif graphique cohérent avec la charte ARMD, ou image éditoriale dépouillée). L&#39;inspiration que tu nous as transmise (<code>hero stratgovadvisors.png</code>) peut être traduite en motif animé léger plutôt qu&#39;en vidéo brute. Tu gagnes en performance, tu restes dans les codes du marché, et tu conserves un caractère visuel propre à ARMD.</p>
+<h3>3.4 Mécanique d&#39;autorité V1 fondée sur Goudet et les partenaires</h3>
+<p>Sans cas client à exposer en V1 (les premiers mandats sont en cours), la preuve d&#39;autorité s&#39;appuie sur trois piliers :</p>
+<ol>
+<li><strong>Ton parcours public</strong> : Sciences Po, Johns Hopkins, FFPB, prises de parole, citations dans la presse. Tu es l&#39;élément de social proof principal du cabinet. La page À propos et la page Équipe doivent en porter le poids.</li>
+<li><strong>Les partenaires identifiables</strong> : Mad Makers, Sport News Africa, Forbes Afrique et les autres. Une section dédiée, structurée, qui dit qui tient avec ARMD.</li>
+<li><strong>Les implantations annoncées</strong> : Paris, Abidjan en V1. Les antennes futures peuvent être annoncées comme &quot;en ouverture&quot; avec une cartographie projetée qui pose l&#39;ambition.</li>
+</ol>
+<p>À mesure que tes mandats signés s&#39;accumulent, la section Références prend le relais et devient le pilier d&#39;autorité dominant.</p>
+<h3>3.5 OSEA en preview dès la V1</h3>
+<p>OSEA, le think tank que tu prévois dans ton plan, est ton arme d&#39;autorité à moyen terme. Le précédent Geopolitique.eu (1 900 personnalités, 300 000 visiteurs mensuels) montre la puissance que peut prendre un think tank associé à un acteur du conseil.</p>
+<p>Notre recommandation : <strong>ne pas attendre OSEA pour l&#39;évoquer</strong>. Une rubrique dédiée dans Insights, ou un bandeau spécifique, peut amorcer la mécanique dès la V1, avant le lancement effectif du think tank. Tu installes la marque, tu prépares le canal.</p>
+<h3>3.6 Narratif différenciant : la souveraineté de l&#39;information, depuis l&#39;Afrique</h3>
+<p>Aucun cabinet francophone ne porte le narratif &quot;souveraineté de l&#39;information&quot;. Forward Global parle de risques numériques, économiques et informationnels, mais sans construire ce mot d&#39;ordre.</p>
+<p>C&#39;est un angle libre pour ARMD. Couplé à la posture africaine (que ni Forward Global ni Concerto ne portent depuis l&#39;Afrique elle-même), c&#39;est le <strong>positionnement narratif principal</strong> que nous recommandons : <em>intelligence économique et influence stratégique au service de la souveraineté informationnelle des décideurs africains et des entités opérant sur le continent</em>.</p>
+<p>C&#39;est ce narratif qui guidera la copy, l&#39;angle des Insights, et la posture éditoriale.</p>
+<hr>
+<h2>4. Le système digital proposé</h2>
+<h3>4.1 Architecture d&#39;ensemble</h3>
+<pre><code>                    ┌─────────────────────────────┐
+                    │      Base technique          │
+                    │   (CMS, hébergement, code)  │
+                    └──────────┬──────────────────┘
+                               │
+                ┌──────────────┴───────────────┐
+                │                              │
+        ┌───────▼─────────┐          ┌─────────▼────────┐
+        │   armd.com      │          │  africa.armd.com │
+        │   site Occident │          │   site Afrique   │
+        │   FR / EN       │          │   FR / EN puis + │
+        │   DA corporate  │          │   DA panafricaine│
+        └─────────────────┘          └──────────────────┘
+                │                              │
+                └──────────────┬───────────────┘
+                               │
+                    ┌──────────▼─────────┐
+                    │  Flux éditorial     │
+                    │  partagé (Insights, │
+                    │  Newsletter, OSEA)  │
+                    └─────────────────────┘
+</code></pre>
+<h3>4.2 Les huit sections du site (validées au brief)</h3>
+<p>Pour chacune des huit sections, une lecture rapide de ce qu&#39;elle porte :</p>
+<ol>
+<li><strong>À propos</strong> : la mission, le narratif souveraineté, la vision long terme, le fondateur (Goudet), l&#39;équipe.</li>
+<li><strong>Nos expertises</strong> : les deux piliers (intelligence économique, influence stratégique) déclinés en services concrets. Chaque expertise a sa page propre.</li>
+<li><strong>Nos implantations</strong> : Paris, Abidjan en V1. Les antennes projetées affichées en &quot;en ouverture&quot;.</li>
+<li><strong>Nos références</strong> : les clients signés. Vide ou allusif en V1, peuplé à mesure des mandats. Pas de cas anonymisé pour faire nombre, ce serait contre-productif sur ton marché.</li>
+<li><strong>Nos partenaires</strong> : Mad Makers, Sport News Africa, Forbes Afrique, plus les futurs partenaires institutionnels. Une page structurée qui dit qui tient avec toi.</li>
+<li><strong>Insights</strong> : le pilier éditorial. Articles d&#39;expertise, notes d&#39;analyse, prises de parole. C&#39;est ce qui alimente l&#39;autorité et le SEO d&#39;autorité dans le temps.</li>
+<li><strong>Newsletter</strong> : capture d&#39;audience, signal d&#39;autorité immédiat, canal direct pour amorcer la mécanique avant même qu&#39;OSEA existe.</li>
+<li><strong>Contact</strong> : sobre, direct, avec coordonnées par implantation. Pas de formulaire-piège, un email et un téléphone par bureau.</li>
+</ol>
+<h3>4.3 Choix techniques recommandés</h3>
+<p>Trois principes guidant les choix techniques :</p>
+<ol>
+<li><strong>Performance d&#39;abord</strong>. Site statique généré (technologie Astro, Eleventy ou équivalent) pour servir des pages rapides même sur wifi lent. Pas de framework lourd côté client.</li>
+<li><strong>CMS éditorial accessible</strong>. Un CMS headless léger (Decap, Sanity, ou similaire) pour que toi et ton équipe puissiez publier des Insights sans dépendre de Mad Makers à chaque article.</li>
+<li><strong>Modèle de coût bas en maintenance</strong>. Hébergement statique économique (Cloudflare Pages, Netlify ou équivalent), traduction gérée via un système clair (un dossier par langue), pas de dépendances coûteuses.</li>
+</ol>
+<hr>
+<h2>5. Le phasage</h2>
+<p>Nous recommandons un phasage en trois temps, calé sur ton ambition réelle plutôt que sur un calendrier théorique.</p>
+<h3>Phase 1 : le socle (V1)</h3>
+<p><strong>Objectif</strong> : exister vite et bien. Les deux sites en ligne, FR + EN, charte respectée, sections complètes, mécanique d&#39;autorité Goudet et partenaires en place, Insights ouvert (un ou deux articles fondateurs), newsletter active.</p>
+<p><strong>Ce que tu obtiens</strong> : la crédibilité immédiate (besoin n°1 traité), un canal éditorial qui démarre, un socle SEO d&#39;autorité prêt à se construire dans le temps.</p>
+<p><strong>Durée indicative</strong> : à chiffrer en phase Étape 04, mais conçue pour livrer dans les délais courts que tu nous demandes.</p>
+<h3>Phase 2 : l&#39;extension (V2)</h3>
+<p><strong>Déclencheurs</strong> : ouverture des premières antennes régionales africaines, ou volonté stratégique d&#39;attaquer un nouveau marché linguistique.</p>
+<p><strong>Contenu</strong> : ajout des langues arabe et portugais sur le site Afrique, ouverture du contenu OSEA en preview, premières études et baromètres publiés. Section Références qui se peuple avec les premiers mandats signés.</p>
+<p><strong>Durée indicative</strong> : phase ouverte, à activer au rythme de ton développement.</p>
+<h3>Phase 3 : le système (V3 et au-delà)</h3>
+<p><strong>Déclencheurs</strong> : lancement effectif d&#39;OSEA, antennes ouvertes en Afrique de l&#39;Est et Centrale, base de données propriétaire mise en chantier, plateformes médiatiques propriétaires.</p>
+<p><strong>Contenu</strong> : ajout des langues régionales (swahili, lingala, et autres selon antennes), interface dédiée OSEA, baromètres sectoriels en accès propriétaire, association de protection des consommateurs intégrée au système.</p>
+<p>À ce stade, ARMD n&#39;est plus un cabinet avec un site, mais un système digital intégré dont le site est le pivot.</p>
+<hr>
+<h2>6. Les partis pris esthétiques</h2>
+<p>À valider en direction artistique, à partir de la charte existante (<code>ARMD - Brand Manual.pdf</code>) et des références que tu nous as données.</p>
+<h3>6.1 La direction artistique d&#39;ensemble</h3>
+<ul>
+<li><strong>Sobre, autoritaire, factuel.</strong> Pas de storytelling chaleureux, pas de tonalité publicitaire. C&#39;est le ton dominant du marché et il est attendu chez tes cibles.</li>
+<li><strong>Incarné par Goudet.</strong> La sobriété sans incarnation devient impersonnelle. Une signature visible, une présence éditoriale forte, des prises de parole en direct évitent l&#39;effet &quot;agence générique&quot;.</li>
+<li><strong>Inspiration validée</strong> : un mix Vectors Group plus Concerto PR sur la structure, l&#39;inspiration éditoriale Forward Global pour le ton, l&#39;inspiration &quot;souveraineté visuelle&quot; du radar animé présent dans ta brochure corporate pour la signature graphique.</li>
+</ul>
+<h3>6.2 Les deux directions artistiques différenciées</h3>
+<ul>
+<li><strong>Site Occident</strong> : DA plus institutionnelle, palette plus restreinte, typographie classique avec accents modernes, présence des codes corporate sobres (cf. Hudson Sandler, Forward Global).</li>
+<li><strong>Site Afrique</strong> : DA légèrement plus chaude, traces graphiques panafricaines mesurées, typographie qui peut accueillir l&#39;arabe et le portugais dès la V1 si V2 anticipée, palette qui s&#39;autorise une accent supplémentaire signature.</li>
+</ul>
+<p>L&#39;ambition : qu&#39;on reconnaisse ARMD instantanément sur les deux sites, mais qu&#39;on sente la respiration spécifique à chaque marché.</p>
+<h3>6.3 Le hero</h3>
+<ul>
+<li><strong>Texte fort en premier plan</strong>. Pas d&#39;image qui occupe l&#39;écran. La signature ARMD et le narratif souveraineté tiennent la première hauteur.</li>
+<li><strong>Signature visuelle dépouillée</strong>. Une animation SVG légère, un motif graphique tiré du brand manual, ou une typographie travaillée. Tout sauf une vidéo lourde.</li>
+<li><strong>Performance première</strong>. La page d&#39;accueil doit charger en moins de 1,5 seconde sur connexion moyenne, idéalement moins de 1 seconde sur fibre.</li>
+</ul>
+<hr>
+<h2>7. Ce qui n&#39;est pas dans la proposition (et pourquoi)</h2>
+<p>Pour clarifier le périmètre :</p>
+<ul>
+<li><strong>Pas d&#39;Ads publicitaire.</strong> Tu l&#39;as exclu et nous le confirmons : pas pertinent sur ton marché.</li>
+<li><strong>Pas de campagne SEO local.</strong> Tu n&#39;es pas un commerce de quartier.</li>
+<li><strong>Pas de fiche Google Business.</strong> Hors sujet pour une clientèle institutionnelle.</li>
+<li><strong>Pas de gros site sur-mesure d&#39;emblée.</strong> Mieux vaut un socle crédible livré vite, et un système qui grandit avec ARMD.</li>
+<li><strong>Pas d&#39;appels d&#39;offres en V1.</strong> Tu nous l&#39;as dit, ARMD est en dessous du seuil 100 millions FCFA. À reprendre quand tu y seras.</li>
+</ul>
+<hr>
+<h2>8. Les points à valider avant la proposition chiffrée</h2>
+<p>Sept points sur lesquels nous avons besoin de ton arbitrage explicite avant d&#39;écrire la proposition.</p>
+<ol>
+<li><strong>Architecture deux sites en sous-domaines</strong> : tu valides <code>armd.com</code> plus <code>africa.armd.com</code> ? Ou tu préfères deux domaines indépendants (<code>armd-africa.com</code> par exemple) ?</li>
+<li><strong>Phasage linguistique V1 FR/EN puis V2 et V3</strong> : tu valides, ou tu veux livrer plus de langues en V1 ?</li>
+<li><strong>Hero texte plus signature SVG légère</strong> plutôt que vidéo plein écran : tu valides l&#39;arbitrage ?</li>
+<li><strong>Mécanique d&#39;autorité V1 fondée sur ton parcours plus partenaires</strong> : tu valides ? Et tu nous transmets les éléments à exposer (CV, photo, biographie, citations média) ?</li>
+<li><strong>Insights ouvert dès la V1</strong> : tu te sens prêt à publier un ou deux articles fondateurs au lancement ? Ou on lance avec la section vide plus newsletter active ?</li>
+<li><strong>OSEA en preview V1</strong> : tu valides l&#39;amorce, ou tu préfères attendre le lancement réel ?</li>
+<li><strong>Vérification armd.digital</strong> : un site existant porte ce nom. Conflit potentiel de marque ou de SEO. Tu peux nous confirmer ta situation (marque déposée, lien commercial, ou pas de lien) ?</li>
+</ol>
+<hr>
+<h2>9. Suite</h2>
+<p>Une fois ces sept points validés, nous écrivons et te livrons la proposition chiffrée (étape 04), avant mardi 26 mai 2026.</p>
+<p>Elle contiendra :</p>
+<ul>
+<li><strong>L&#39;offre fondateur</strong> pour la Phase 1 (les deux sites livrés en V1).</li>
+<li><strong>L&#39;accompagnement mensuel optionnel</strong> pour la stratégie d&#39;autorité et le SEO d&#39;autorité (Phase 2 et au-delà).</li>
+<li>Un calendrier de livraison détaillé.</li>
+<li>Un cahier des charges fonctionnel précis (templates, intégrations, livrables).</li>
+</ul>
+<hr>
+<p><em>Mad Makers · Dossier de recommandation ARMD · Étape 03 / 12</em></p>
+</main>
+<div class="print-hint no-print">Ctrl + P → Enregistrer en PDF</div>
+</body>
+</html>

@@ -1,0 +1,445 @@
+ARMD Brand Guidelines v1 - 2025
+The following Guide has been developed with
+the objective of sharing the ARMD brand, as well
+as ensuring the application of the basic visual
+elements that make up our identity in a correct and
+coherent way.
+
+A proper implementation will help to build
+consistency and brand value.
+
+We provide you with digital files that will help you
+develop any ARMD material.
+
+ARMD Brand Guidelines v1 - 2025                       2
+Index
+
+1. Logotype                      4
+
+2. Color                         14
+
+3. Typography                    16
+
+4. Photography                   19
+
+5. Visual system                 21
+
+6. Mockups                       27
+
+ARMD Brand Guidelines v1 - 2025      3
+1. Logotype
+
+ARMD Brand Guidelines v1 - 2025  4
+1. Logotype                                                 Main version
+                                                            Horizontal
+Concept and versions
+                                                            Reduced version
+This is our logo. It is our signature and the
+endorsement of our brand. It is the graphic
+synthesis of our strategic platform and serves
+as an identifier of everything that represents
+us. Everything we do and say. Our logotype is
+composed of two united graphic elements,
+the name of our brand and the symbol. Its
+configuration is horizontal, generating a solid
+and balanced composition. A characteristic of
+our identifier is the use of curved and circular
+graphics, which refer to the concept of closeness
+so representative of ARMD.
+
+Main version horizontal
+
+This is the main version consisting of the symbol
+and the brand name.
+
+Reduced version
+
+The reduced version of the symbol is designed
+for small-scale applications where legibility and
+clarity are critical. It simplifies internal details while
+preserving the core structure of the ARMD mark,
+ensuring instant recognition in compact formats
+such as favicons, app icons, social media avatars
+and minimal layouts.
+
+ARMD Brand Guidelines v1 - 2025                                              5
+1. Logotype
+
+Main version horizontal
+
+The ARMD logotype combines a powerful
+strategic symbol with a clean, confident wordmark.
+Together, they express a brand that operates with
+clarity, intelligence, and purpose. The circular
+emblem rooted in the ideas of the target, the
+noosphere, and the observing eye anchors the
+identity with meaning and intention. The wordmark
+complements it with a precise, contemporary
+structure that reinforces ARMD's expertise and
+authority in the fields of intelligence and influence.
+
+ARMD Brand Guidelines v1 - 2025                         6
+1. Logotype
+
+Main version. Basic guideline
+
+Reserve area
+In order for the logo to retain its visual potential and
+legibility, its reserve area must always be respected.
+This is delimited by the first "M" of ARMD, creating
+a safety perimeter around an "M" in size.
+This space must never be modified or invaded by
+adjacent elements, be they text, photographs or
+other marks.
+
+Minimum size
+The logo must always be reproduced at a size that
+allows its legibility. It is recommended that it never
+be reproduced below the indicated sizes.
+
+Print (width): 15 mm
+Screen (width): 80 px
+
+ARMD Brand Guidelines v1 - 2025                           7
+1. Logotype                                                              Positive  Negative
+
+Main version. Colors                                CMYK, RGB                                                                                                                        8
+
+Depending on the production characteristics, it
+will be possible to choose between different color
+versions and the most appropriate format. Below
+are the different references of the final artwork
+defined for its correct application. Remember to
+always use the final artwork.
+
+                                                    Monochrome versions
+                                                    black and white
+
+ARMD Brand Guidelines v1 - 2025
+1. Logotype
+
+Reduced version
+
+The reduced version distills the ARMD identity
+to its most essential form. The symbol alone
+communicates focus, insight, and global
+awareness, making it instantly recognizable even
+at small sizes or in minimal contexts. It captures
+the core of the brand's vision: seeing beyond
+the surface, navigating complexity, and aligning
+knowledge with strategic action.
+
+ARMD Brand Guidelines v1 - 2025                     9
+1. Logotype
+
+Reduced version
+
+Reserve area
+In order for the logo to retain its visual potential
+and legibility, its reserve area must always be
+respected. This is delimited by the "M" of ARMD,
+creating a safety perimeter around an "M" in size.
+This space must never be modified or invaded
+by adjacent elements, be they text, photographs
+or other marks.
+
+Minimum size
+
+The logo must always be reproduced at a size that
+allows its legibility. It is recommended that it never
+be reproduced below the indicated sizes.
+
+Print (width): 5 mm
+Screen (width): 25 px
+
+ARMD Brand Guidelines v1 - 2025                         10
+1. Logotype                                                              Positive  Negative
+
+Reduced version. Colors                             CMYK, RGB                                                                                                                        11
+
+Depending on the production characteristics, it
+will be possible to choose between different color
+versions and the most appropriate format. Below
+are the different references of the final artwork
+defined for its correct application. Remember to
+always use the final artwork.
+
+                                                    Monochrome versions
+                                                    black and white
+
+ARMD Brand Guidelines v1 - 2025
+1. Logotype                                        1          2                                           3
+
+Incorrect uses                                     4          5                                           6
+
+Maintaining and applying graphic standards         7          8                                           9
+in the implementation of the mark ensures its
+good identification and recognition. Only what          ARMD       The logo must always be reproduced at     Maintaining and applying graphic
+is explicitly described in this Guide is correct.                  a size that allows its legibility.
+Any variant of color, orientation, proportion or                                                             standards in the implementation of the
+combination that is not described in this guide
+is incorrect and therefore should not be applied.                                                            mark  its good identification
+Always use the final artwork to avoid misapplying
+the logo erroneously.                                                                                        and recognition.
+
+      Incorrect uses                                                                                                                                 12
+
+ 1 Distort the logo vertically or horizontally
+      or horizontal.
+
+ 2 Do not use gradients.
+ 3 Do not change the color of the logo to one
+
+      that is not contemplated in the manual.
+ 4 Redesign the logo online.
+ 5 Add effects of any kind.
+ 6 Apply a different color to the symbol inside
+
+      the wordmark.
+ 7 Recreate the logo with another typography.
+ 8 Transferring the reserve area.
+ 9 Use the logo within texts.
+
+ARMD Brand Guidelines v1 - 2025
+1. Logotype                                          Final Artwork  Brand  Version         Color                      Color mode      Format
+                                                                    ARMD   LOG = Logotype
+Nomenclature and final arts                                                                CMYK = Four-color process  POS = Positive  .AI
+                                                                                           RGB = Screen               NEG = Negative  .EPS
+For a correct application of the logo in any format                                        N = Black                                  .JPG
+and support, it is essential to use the appropriate                                                                                   .PNG
+final artwork. For this purpose, we have developed                                                                                    .SVG
+a nomenclature system for the final artwork that                                                                                      .PDF
+rationalizes the versions and their use to make the
+choice of the final artwork easy and practical.      FA_ARMD_LOG_CMYK_POS.ai
+The nomenclature of the final artwork indicates:
+FA + ARMD + Version + Color +
+Color mode + Format
+
+Digital formats are equivalent to:
+· AI. Illustrator CC
+· EPS. Encapsulated PostScript
+· JPG. Compressed RGB image
+· PNG. Compressed RGB image without
+
+   background
+· SVG. Scalable Vector Graphics
+· PDF. Portable Document Format
+
+ARMD Brand Guidelines v1 - 2025                                                                                                               13
+2. Color
+
+ARMD Brand Guidelines v1 - 2025  14
+2. Color                                               ARMD Off-white                                    ARMD Blue
+
+Concepts and references                                CMYK  10-10-10-0                                  CMYK   84-67-0-0
+                                                       RGB   229-225-224                                 RGB    44-86-250
+The ARMD color palette combines a soft off-white       HTML  #E5E1E0                                     HTML   #2C56FA
+base with a range of deep and vibrant blues and
+grounded earth tones to create a balance between       ARMD Grey
+clarity, authority and warmth. ARMD Blue acts as
+the primary brand accent, delivering high impact       CMYK  18-14-14-0
+in digital and physical applications, while Dark Blue  RGB   211-209-209
+and Deep Blue provide depth and a solid backdrop       HTML  #D3D1D1
+for typography and key messages. The neutral off-
+white, grey and sand tones introduce calm, tactility
+and sophistication, ensuring that content remains
+legible and that photography and iconography
+stand out without visual noise.
+
+                                                       ARMD Clear Sand    ARMD Sand          ARMD Black             ARMD Dark blue       ARMD Deep blue
+
+                                                       CMYK  26-25-30-5   CMYK  43-40-46-25  CMYK  71-61-57-69      CMYK   100-77-31-16  CMYK  100-81-39-29
+                                                       RGB   184-173-163  RGB   121-112-102  RGB   40-40-40         RGB    7-55-99       RGB   0-45-80
+                                                       HTML  #B8ADA3      HTML  #797066      HTML  #282828          HTML   #073763       HTML  #002D50
+
+ARMD Brand Guidelines v1 - 2025                                                                                                                              15
+3. Typography
+
+ARMD Brand Guidelines v1 - 2025  16
+3. Typography
+
+Brand's typography
+
+The ARMD brand uses Apfel Grotezk as its
+primary system typeface, bringing a distinctive
+geometric and contemporary character to all
+communications.
+
+ARMD Brand Guidelines v1 - 2025                  17
+3. Typography                                          Apfel
+                                                       Grotezk
+Apfel Grotezk
+                                                                  Regular
+Apfel Grotezk is a rounded, geometric sans-serif                  Medium
+inspired by neo-grotesque fonts. It features easy                 Semibold
+curves and a friendly yet refined attitude, balancing
+clarity and professionalism. Its letterforms are                                                                                                                                                                                                                                             18
+highly legible and modern, making it ideal for both
+headings and short body text in digital and print
+applications, and its generous spacing ensures
+a clean, airy presence that supports ARMD's
+strategic, approachable identity.
+Link: https://uncut.wtf/sans-serif/apfel-grotezk/
+
+ARMD Brand Guidelines v1 - 2025
+4. Photography
+
+ARMD Brand Guidelines v1 - 2025  19
+4. Photography                                        Individual Focus Portrait  Collaborative Work Scene  Professional Partnership Moment
+
+Introduction
+
+ARMD's photography style focuses on real
+professionals in contemporary business
+environments, using clean compositions, soft light
+and a neutral palette with bold blue accents to
+convey clarity, confidence and intelligence.
+
+The framing alternates between strong individual
+portraits, dynamic collaboration scenes and
+key partnership moments, always emphasizing
+movement, purpose and spacious layouts that feel
+orderly yet human. This creates a refined, modern
+visual language that balances approachability
+with strategic rigor, positioning ARMD as a trusted,
+forwardthinking advisor.
+
+· Human-centered
+· Clean and contemporary composition
+· Natural light and soft tones
+· Business-casual aesthetics
+· Narrative of progress and collaboration
+
+ARMD Brand Guidelines v1 - 2025                                                                                                             20
+5. Visual system
+
+ARMD Brand Guidelines v1 - 2025  21
+6. Visual system
+
+Target grid system
+
+The target grid is a key compositional device that
+divides the layout into four balanced fields, creating a
+clear structure for organising content.
+
+It subtly echoes the ARMD symbol and guides the
+reader's eye between typographic blocks, images
+and empty space. This cross-shaped framework
+ensures consistency across applications while
+allowing flexible, dynamic arrangements that adapt to
+different formats and messages.
+
+ARMD Brand Guidelines v1 - 2025                           22
+6. Visual system
+
+Target grid position
+
+The target grid can move freely across the layout,
+allowing to position it wherever it best supports the
+composition.
+
+It may sit behind an image, frame a headline or
+highlight a key data point. This target turns the grid
+into an active pointer that organises content while
+directing attention to what matters most.
+
+ARMD Brand Guidelines v1 - 2025                         23
+6. Visual system                                                                                                                                                                            Cibler,
+                                                                                                                                                                                            c'est déjà agir
+Target grid in use
+                                                                                                                                                                                                                      armd.com
+These examples show how the target grid can adapt
+to different layout needs.                                                                                                                                                          armd.com
+
+In the first composition, the cross is used as a precise
+pointer inside the photograph, drawing attention to a
+specific action or detail.
+
+In the second, it sits at the centre of the page,
+dividing the space into four equal fields and
+balancing typography and empty space.
+
+In the third, one quadrant is dedicated to
+photography while the remaining areas carry
+headline and brand elements, demonstrating how
+the system can integrate imagery and content in a
+coherent way.
+
+                                                                                                                                                                        Observer.
+                                                                                                                                                                        Anticiper.
+                                                                                                                                                                        Diriger.
+
+                                                          Nous opérons là où
+                                                          les autres hésitent
+
+                                                                                                                                                              armd.com
+
+ARMD Brand Guidelines v1 - 2025                                                                                                                                                                                                 24
+6. Visual system
+
+Supertarget backgrounds
+
+For more atmospheric applications, the Supertarget
+layout uses an oversized version of the ARMD symbol
+as a background graphic.
+
+Applied in ARMD Deep Blue over Dark blue or ARMD
+Grey over Off-white, it adds subtle texture and brand
+presence to slides, covers and title pages without
+competing with the main content. By cropping the
+symbol at different scales and positions, designers
+can create varied compositions that feel dynamic yet
+unmistakably ARMD.
+
+ARMD Brand Guidelines v1 - 2025                        25
+6. Visual system
+
+Supertarget in use
+
+These slides illustrate different applications of
+the Supertarget background in real presentation
+layouts. The enlarged symbol sits behind titles,
+body text and key messages as a subtle texture,
+reinforcing the ARMD identity without overpowering
+readability. By adjusting scale, crop and positioning,
+the Supertarget adds depth and visual interest while
+keeping the overall design clear and functional.
+
+ARMD Brand Guidelines v1 - 2025                         26
+6. Mockups
+
+ARMD Brand Guidelines v1 - 2025  27
+ARMD Brand Guidelines v1 - 2025  28
+ARMD Brand Guidelines v1 - 2025  29
+ARMD Brand Guidelines v1 - 2025  30
+ARMD Brand Guidelines v1 - 2025  31
+ARMD Brand Guidelines v1 - 2025  32
+ARMD Brand Guidelines v1 - 2025  33
+ARMD Brand Guidelines v1 - 2025  34
+Legal terms
+and conditions
+
+All trademarks, logos, trade names, designs, images,
+photographs, and other elements and materials contained
+in the ARMD Corporate Identity Material are the exclusive
+property of ARMD and must be used with the express
+written authorization of ARMD and in accordance with
+the provisions of this Guide. ARMD shall not assume any
+liability of any kind arising from the activity carried out by
+any user of any of the elements or materials contained
+in the ARMD Corporate Identity Material, or that may
+result from the material prepared by the user in which
+any element of intellectual or industrial property of ARMD
+appears, if it does not conform to what is contained in
+this Guide and/or does not have the express written
+authorization of ARMD.
+
+Consult before using the graphics contained in this
+manual. The photographs shown may not be
+royalty free.
+
+Made by Antón Guerrero for ARMD brand with love.
+
+ARMD Brand Guidelines v1 - 2025                                 35
+ARMD Brand Guidelines v1 - 2025  36
+

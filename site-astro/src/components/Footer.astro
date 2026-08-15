@@ -1,0 +1,14 @@
+---
+import { resolveZoneLang } from "@lib/zone";
+const { zone, lang } = resolveZoneLang(Astro.url.pathname);
+const year = new Date().getFullYear();
+const label = lang === "fr" ? "Tous droits réservés" : "All rights reserved";
+const zoneTag = zone === "africa" ? (lang === "fr" ? "Zone Afrique" : "Africa region") : (lang === "fr" ? "Zone Occident" : "Occident region");
+---
+
+<footer class="border-t border-[color:var(--armd-border)] mt-24">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 text-xs opacity-70">
+    <span>© {year} ARMD Group. {label}.</span>
+    <span>{zoneTag}</span>
+  </div>
+</footer>

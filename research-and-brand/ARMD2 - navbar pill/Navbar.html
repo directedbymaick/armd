@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morphing Navbar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --shell:#2b2b2b;             /* flat neutral pill */
+    --hi:rgba(255,255,255,.16);  /* highlighted / active item */
+    --hi-soft:rgba(255,255,255,.08);
+    --text:#f3f3f3;
+    --muted:#a2a2a0;
+    --spring:cubic-bezier(.4,0,.2,1);   /* clean, no overshoot */
+    --ease:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  a{color:var(--text);text-decoration:none}
+  body{
+    font-family:"Archivo",system-ui,sans-serif;
+    min-height:100vh;color:var(--text);
+    background:#0b0a08;-webkit-font-smoothing:antialiased;
+  }
+
+  /* ---- dark scene behind the nav (placeholder hero) ---- */
+  .scene{
+    position:fixed;inset:0;z-index:0;overflow:hidden;
+    background:radial-gradient(120% 80% at 50% -10%, #1c1c1c 0%, #131313 45%, #0d0d0d 100%);
+  }
+  .scene::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(135deg,#161616 0 16px,#111 16px 32px);
+    opacity:.5;
+  }
+  .scene .lbl{
+    position:absolute;left:50%;bottom:42px;transform:translateX(-50%);
+    font:600 11px/1 "Archivo",monospace;letter-spacing:.22em;text-transform:uppercase;color:#444;
+  }
+  .hint{
+    position:fixed;left:50%;bottom:34px;transform:translateX(-50%);z-index:5;
+    color:#6c665a;font-size:13px;letter-spacing:.04em;display:flex;align-items:center;gap:8px;
+  }
+  .hint b{color:var(--text);font-weight:700}
+  .spacer{position:relative;z-index:1;height:240vh;display:flex;justify-content:center;pointer-events:none}
+  .spacer span{position:sticky;top:46vh;height:max-content;color:#3a3a3a;font:600 12px/1 "Archivo",monospace;letter-spacing:.3em;text-transform:uppercase}
+
+  /* ===================== NAVBAR ===================== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:20;
+    display:flex;justify-content:center;
+    padding:18px clamp(16px,3vw,26px);
+    pointer-events:none;            /* empty areas let the page through */
+  }
+  .shell{
+    pointer-events:auto;
+    position:relative;overflow:hidden;
+    background:transparent;          /* transparent at the very top */
+    border-radius:999px;
+    padding:5px;
+    transition:width .55s var(--ease),height .55s var(--ease),border-radius .45s var(--ease),background .4s var(--ease);
+    will-change:width,height;
+  }
+  .nav.condensed .shell{background:var(--shell)}        /* pill bg fades in on scroll */
+  .nav[data-open] .shell{background:var(--shell);border-radius:16px}
+
+  /* ---- top row (always pinned top-center) ---- */
+  /* ---- top row: logo + items group ---- */
+  .row{
+    position:relative;z-index:2;
+    width:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    height:36px;padding:0;
+  }
+  .items{display:flex;align-items:center;gap:3px}
+  .nav[data-open] .row{justify-content:center}   /* grouped & centered when open */
+  .logo{
+    display:flex;align-items:center;flex:0 0 auto;text-decoration:none;
+  }
+  .lg-globe{height:34px;width:34px;flex:0 0 auto;object-fit:contain;display:block}
+  .lg-text{
+    height:18px;width:auto;flex:0 0 auto;display:block;
+    margin-left:11px;max-width:160px;opacity:1;
+    transition:opacity .3s var(--ease),max-width .45s var(--ease),margin-left .45s var(--ease);
+  }
+  /* in the pill (or when open) only the globe shows */
+  .nav.condensed .lg-text,
+  .nav[data-open] .lg-text{opacity:0;max-width:0;margin-left:0}
+  .item{
+    position:relative;display:inline-flex;align-items:center;gap:6px;
+    font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.005em;
+    color:var(--text);background:none;border:0;cursor:pointer;text-decoration:none;
+    padding:7px 13px;border-radius:8px;white-space:nowrap;
+    transition:background .25s var(--ease);
+  }
+  .item:hover{background:var(--hi-soft)}
+  .item .caret{
+    width:12px;height:12px;display:inline-block;
+    transition:transform .5s var(--spring);
+  }
+  /* active / open trigger highlight */
+  .trigger.active{background:var(--hi)}
+  .nav[data-open] .trigger .caret{transform:rotate(180deg)}
+
+  /* ---- panel (revealed) ---- */
+  .panel{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:.92fr 1fr 1fr 1fr;gap:10px;
+    padding:14px 6px 6px;
+    opacity:0;transform:translateY(10px);
+    transition:opacity .45s var(--ease),transform .55s var(--ease);
+    pointer-events:none;
+  }
+  .nav[data-open] .panel{opacity:1;transform:none;pointer-events:auto;transition-delay:.12s}
+
+  .intro{display:flex;flex-direction:column;padding:6px 10px 8px 12px}
+  .intro h3{font-size:21px;font-weight:700;letter-spacing:-.01em}
+  .intro p{color:var(--muted);font-size:13.5px;line-height:1.45;margin-top:10px;max-width:24ch}
+  .view{
+    margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:16px;
+    font-size:13px;font-weight:600;color:var(--text);text-decoration:none;
+    padding:12px 18px;border-radius:9px;border:0;
+    background:var(--hi-soft);transition:background .25s,gap .35s var(--ease);
+  }
+  .view:hover{background:var(--hi);gap:22px}
+  .view .ar{transition:transform .35s var(--ease)}
+  .view:hover .ar{transform:translateX(3px)}
+
+  .card{
+    position:relative;display:block;height:200px;border-radius:8px;overflow:hidden;
+    text-decoration:none;
+    background-image:repeating-linear-gradient(135deg,#3a3a3a 0 14px,#323232 14px 28px);
+    transform:translateY(8px);opacity:0;
+    transition:transform .5s var(--ease),opacity .45s var(--ease);
+  }
+  .nav[data-open] .card{transform:none;opacity:1}
+  .nav[data-open] .card:nth-child(2){transition-delay:.14s}
+  .nav[data-open] .card:nth-child(3){transition-delay:.2s}
+  .nav[data-open] .card:nth-child(4){transition-delay:.26s}
+  .card::before{
+    content:attr(data-tag);position:absolute;inset:0;display:grid;place-items:center;
+    font:600 11px/1 monospace;letter-spacing:.16em;text-transform:uppercase;color:#777;
+  }
+  .card::after{
+    content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55));
+    opacity:0;transition:opacity .4s;
+  }
+  .card:hover::after{opacity:1}
+  .card .name{
+    position:absolute;left:16px;bottom:14px;z-index:2;
+    font-size:16px;font-weight:700;letter-spacing:-.01em;
+    transition:transform .4s var(--ease);
+  }
+  .card:hover .name{transform:translateY(-2px)}
+
+  @media(max-width:760px){
+    .nav{left:12px;right:12px;transform:none}
+    .nav .shell{margin-inline:auto}
+    .row{flex-wrap:wrap;height:auto}
+    .panel{grid-template-columns:1fr 1fr}
+    .intro{grid-column:1/-1}
+  }
+</style>
+</head>
+<body>
+
+<div class="scene"><span class="lbl">◐ brand film — background video</span></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<div class="nav" id="nav">
+  <div class="shell" id="shell">
+    <div class="row" id="row">
+      <a href="#" class="logo" aria-label="ARMD home">
+        <img class="lg-globe" src="assets/armd-globe.png" alt="">
+        <img class="lg-text" src="assets/armd-text.png" alt="ARMD">
+      </a>
+      <nav class="items" id="items">
+        <a href="#" class="item">À propos</a>
+        <button class="item trigger" id="trigger" type="button">Expertises
+          <svg class="caret" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <a href="#" class="item">Implantations</a>
+        <a href="#" class="item">Références</a>
+        <a href="#" class="item">Partenaires</a>
+        <a href="#" class="item">Insights</a>
+      </nav>
+    </div>
+
+    <div class="panel" id="panel">
+      <div class="intro">
+        <h3>Expertises</h3>
+        <p>Trois pôles de renseignement au service de vos décisions stratégiques</p>
+        <a href="#" class="view">Voir <span class="ar">→</span></a>
+      </div>
+      <a href="#" class="card" data-tag="renseignement d'affaires"><span class="name">Renseignement d'affaires</span></a>
+      <a href="#" class="card" data-tag="influence stratégique"><span class="name">Influence stratégique</span></a>
+      <a href="#" class="card" data-tag="social intelligence"><span class="name">Social intelligence</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="hint">Scroll down — the bar <b>merges into the pill</b> · click <b>Expertises ⌄</b> to open</div>
+<div class="spacer"><span>↓ scroll ↓</span></div>
+
+<script>
+(function () {
+  const nav = document.getElementById("nav");
+  const shell = document.getElementById("shell");
+  const row = document.getElementById("row");
+  const items = document.getElementById("items");
+  const logo = nav.querySelector(".logo");
+  const globe = nav.querySelector(".lg-globe");
+  const panel = document.getElementById("panel");
+  const trigger = document.getElementById("trigger");
+
+  const PAD = 5;        // shell padding (must match CSS .shell padding)
+  const ROWGAP = 12;    // gap between logo and items (must match CSS .row gap)
+  const SCROLL_AT = 24; // px scrolled before condensing
+
+  let snugW = 0, barH = 46, fullW = 800;
+
+  // measure intrinsic sizes (independent of the shell's current width)
+  function measure() {
+    const cs = getComputedStyle(nav);
+    const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+    fullW = Math.round(nav.clientWidth - padX);
+    barH = row.offsetHeight + PAD * 2;
+    snugW = PAD * 2 + globe.offsetWidth + ROWGAP + items.offsetWidth;
+  }
+
+  let open = false;
+  let condensed = false;
+
+  // size the shell for the current state
+  function apply() {
+    if (open) {
+      const w = Math.min(1760, fullW);
+      shell.style.width = w + "px";
+      void shell.offsetWidth;                 // reflow so panel wraps to width
+      shell.style.height = (PAD * 2 + row.offsetHeight + panel.offsetHeight) + "px";
+    } else if (condensed) {
+      shell.style.width = snugW + "px";        // merged pill
+      shell.style.height = barH + "px";
+    } else {
+      shell.style.width = fullW + "px";        // full-width header (top of page)
+      shell.style.height = barH + "px";
+    }
+  }
+
+  function setOpen(v) {
+    if (v === open) return;
+    open = v;
+    if (v) { nav.setAttribute("data-open", ""); trigger.classList.add("active"); }
+    else   { nav.removeAttribute("data-open"); trigger.classList.remove("active"); }
+    apply();
+  }
+
+  function onScroll() {
+    const c = window.scrollY > SCROLL_AT;
+    if (c !== condensed) {
+      condensed = c;
+      nav.classList.toggle("condensed", c);
+      if (!open) apply();
+    }
+  }
+
+  // interactions
+  trigger.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); setOpen(!open); });
+  document.addEventListener("click", (e) => { if (open && !nav.contains(e.target)) setOpen(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // init
+  function init() { measure(); onScroll(); apply(); }
+  init();
+  window.addEventListener("load", init);
+  window.addEventListener("resize", () => { measure(); apply(); }, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(init);
+})();
+</script>
+</body>
+</html>

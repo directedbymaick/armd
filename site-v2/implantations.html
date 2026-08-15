@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Implantations - ARMD</title>
+  <meta name="description" content="ARMD présent là où ça compte : Paris, Abidjan, Douala. Antennes régionales en ouverture sur 3 continents." />
+
+  <link rel="stylesheet" href="assets/css/design-system.css?v=12" />
+  <link rel="stylesheet" href="assets/css/components.css?v=13" />
+  <link rel="stylesheet" href="assets/css/pages/home.css?v=12" />
+  <link rel="stylesheet" href="assets/css/pages/internal.css?v=15" />
+  <link rel="stylesheet" href="assets/css/animations.css?v=1" />
+  <link rel="canonical" href="https://www.armdgroup.com/implantations.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ARMD Group" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Implantations - ARMD" />
+  <meta property="og:description" content="ARMD présent là où ça compte : Paris, Abidjan, Douala. Antennes régionales en ouverture sur 3 continents." />
+  <meta property="og:url" content="https://www.armdgroup.com/implantations.html" />
+  <meta property="og:image" content="https://www.armdgroup.com/assets/images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apfel-grotezk-400.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apfel-grotezk-700.woff2" crossorigin />
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" role="banner">
+  <a href="index.html" class="site-header__logo" aria-label="ARMD - Accueil">
+    <img class="globe" src="assets/images/logos/armd-globe.webp" alt="" aria-hidden="true" width="132" height="132" />
+    <img class="wordmark" src="assets/images/logos/armd-text.webp" alt="ARMD" width="208" height="66" />
+  </a>
+  <button class="menu-toggle" type="button" data-menu-toggle aria-label="Ouvrir le menu">
+    <svg class="menu-toggle__icon menu-toggle__icon--bars" viewBox="0 0 24 24" aria-hidden="true">
+      <line x1="3" y1="7" x2="21" y2="7" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="17" x2="21" y2="17" />
+    </svg>
+    <svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 0 24 24" aria-hidden="true">
+      <line x1="5" y1="5" x2="19" y2="19" />
+      <line x1="19" y1="5" x2="5" y2="19" />
+    </svg>
+  </button>
+</header>
+
+<!-- ===================== MENU PANEL ===================== -->
+<div class="menu-overlay" data-menu-overlay aria-hidden="true"></div>
+<aside class="menu-panel" data-menu-panel aria-hidden="true" aria-label="Menu principal">
+  <div class="menu-panel__intro">Navigation</div>
+  <nav class="menu-nav" aria-label="Pages du site">
+    <a href="a-propos.html"><span>À propos</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="expertises.html"><span>Expertises</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="implantations.html" class="is-current"><span>Implantations</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="references.html"><span>Références</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="partenaires.html"><span>Partenaires</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="insights.html"><span>Insights</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+    <a href="contact.html"><span>Contact</span><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></a>
+  </nav>
+  <div class="menu-panel__footer">
+    <div class="meta">Paris · Abidjan · Douala · Washington</div>
+    <div class="meta"><a href="mailto:contact@armdgroup.com">contact@armdgroup.com</a></div>
+  </div>
+</aside>
+
+<main>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <section class="page-header supertarget">
+    <div class="container">
+      <div class="page-header__inner">
+        <span class="page-header__eyebrow">Nos implantations</span>
+        <h1 class="page-header__title">Présents <em>là où ça compte</em>.</h1>
+        <p class="page-header__subtitle">Paris, Abidjan, Douala. Antennes régionales en ouverture sur 3 continents.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CARTE INTERACTIVE ===================== -->
+  <section class="map-section" aria-label="Carte des implantations">
+    <div class="container">
+      <div class="world-map" data-map>
+        <div class="world-map__canvas" data-map-canvas aria-hidden="true"></div>
+
+        <!-- Bureaux actifs : losange ARMD + label permanent -->
+        <div class="map-marker map-marker--office" role="button" tabindex="0" style="--mx:59.6%;--my:18.1%" data-city="paris" data-label="left" aria-label="Paris, France - bureau actif">
+          <span class="map-marker__pulse" aria-hidden="true"></span>
+          <svg class="map-marker__diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0Q14.8 9.2 24 12Q14.8 14.8 12 24Q9.2 14.8 0 12Q9.2 9.2 12 0Z"/></svg>
+          <span class="map-marker__label" aria-hidden="true">Paris</span>
+          <span class="map-marker__card" role="tooltip"><strong>Paris · France</strong><span>Bureau actif</span><a href="mailto:contact@armdgroup.com">Nous écrire</a></span>
+        </div>
+
+        <div class="map-marker map-marker--office" role="button" tabindex="0" style="--mx:56.1%;--my:59.1%" data-city="abidjan" data-label="left" aria-label="Abidjan, Côte d'Ivoire - siège social">
+          <span class="map-marker__pulse" aria-hidden="true"></span>
+          <svg class="map-marker__diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0Q14.8 9.2 24 12Q14.8 14.8 12 24Q9.2 14.8 0 12Q9.2 9.2 12 0Z"/></svg>
+          <span class="map-marker__label" aria-hidden="true">Abidjan</span>
+          <span class="map-marker__card" role="tooltip"><strong>Abidjan · Côte d'Ivoire</strong><span>Siège social - HQ</span><a href="mailto:contact@armdgroup.com">Nous écrire</a></span>
+        </div>
+
+        <div class="map-marker map-marker--office" role="button" tabindex="0" style="--mx:63.8%;--my:60.3%" data-city="douala" aria-label="Douala, Cameroun - bureau actif">
+          <span class="map-marker__pulse" aria-hidden="true"></span>
+          <svg class="map-marker__diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0Q14.8 9.2 24 12Q14.8 14.8 12 24Q9.2 14.8 0 12Q9.2 9.2 12 0Z"/></svg>
+          <span class="map-marker__label" aria-hidden="true">Douala</span>
+          <span class="map-marker__card" role="tooltip"><strong>Douala · Cameroun</strong><span>Bureau actif</span><a href="mailto:contact@armdgroup.com">Nous écrire</a></span>
+        </div>
+
+        <!-- Projection internationale : points -->
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:15.5%;--my:27.4%" data-city="washington" data-side="right" aria-label="Washington, États-Unis - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Washington · États-Unis</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:60.8%;--my:16.2%" data-city="bruxelles" data-side="right" aria-label="Bruxelles, Belgique - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Bruxelles · Belgique</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:61.7%;--my:20.6%" data-city="geneve" data-side="right" aria-label="Genève, Suisse - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Genève · Suisse</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:60.2%;--my:58.0%" data-city="lagos" aria-label="Lagos, Nigéria - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Lagos · Nigéria</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:78.8%;--my:65.4%" data-city="nairobi" data-side="right" aria-label="Nairobi, Kenya - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Nairobi · Kenya</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:75.0%;--my:66.0%" data-city="kigali" data-side="left" aria-label="Kigali, Rwanda - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Kigali · Rwanda</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:54.1%;--my:32.5%" data-city="casablanca" aria-label="Casablanca, Maroc - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Casablanca · Maroc</strong><span>Projection internationale</span></span>
+        </div>
+
+        <div class="map-marker map-marker--proj" role="button" tabindex="0" style="--mx:89.0%;--my:40.4%" data-city="dubai" data-side="left" aria-label="Dubaï, Émirats arabes unis - projection internationale">
+          <span class="map-marker__dot" aria-hidden="true"></span>
+          <span class="map-marker__card" role="tooltip"><strong>Dubaï · Émirats arabes unis</strong><span>Projection internationale</span></span>
+        </div>
+        <!-- Hint tactile : pan a deux doigts -->
+        <div class="map-hint" data-map-hint aria-hidden="true">Utilisez deux doigts pour déplacer la carte</div>
+
+        <!-- Controles zoom -->
+        <div class="map-controls" aria-label="Contrôles de la carte">
+          <button type="button" data-map-zoom-in aria-label="Zoomer">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+          </button>
+          <button type="button" data-map-zoom-out aria-label="Dézoomer">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg>
+          </button>
+          <button type="button" data-map-reset aria-label="Réinitialiser la vue">
+            <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 4v5h5" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="map-legend" aria-hidden="true">
+        <span class="map-legend__item map-legend__item--office">Bureau actif</span>
+        <span class="map-legend__item">Projection internationale</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCATIONS GRID ===================== -->
+  <section class="locations-grid">
+    <div class="container locations-grid__inner">
+
+      <div class="locations-block is-active">
+        <h3>Bureaux actifs (3)</h3>
+        <ul>
+          <li data-city="paris"><span><span class="dot"></span>Paris</span><span class="country">FR</span></li>
+          <li data-city="abidjan"><span><span class="dot"></span>Abidjan</span><span class="country">CI · HQ</span></li>
+          <li data-city="douala"><span><span class="dot"></span>Douala</span><span class="country">CM</span></li>
+        </ul>
+      </div>
+
+      <div class="locations-block">
+        <h3>Projection internationale (8)</h3>
+        <ul>
+          <li data-city="washington"><span>Washington</span><span class="country">US</span></li>
+          <li data-city="bruxelles"><span>Bruxelles</span><span class="country">BE</span></li>
+          <li data-city="geneve"><span>Genève</span><span class="country">CH</span></li>
+          <li data-city="lagos"><span>Lagos</span><span class="country">NG</span></li>
+          <li data-city="nairobi"><span>Nairobi</span><span class="country">KE</span></li>
+          <li data-city="kigali"><span>Kigali</span><span class="country">RW</span></li>
+          <li data-city="casablanca"><span>Casablanca</span><span class="country">MA</span></li>
+          <li data-city="dubai"><span>Dubai</span><span class="country">AE</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== CONTACT CTA ===================== -->
+<section class="contact-cta">
+  <div class="container contact-cta__inner">
+    <h2 class="contact-cta__heading">
+      Un projet, un mandat, <em>une question</em> ?
+    </h2>
+    <div class="contact-cta__action">
+      <a href="contact.html" class="cta-text">
+        Parlons de vos enjeux
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <span class="site-footer__brand">ARMD Group</span>
+      <span class="site-footer__locations">Paris · Abidjan · Douala · Washington</span>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+      <a href="a-propos.html">À propos</a>
+      <a href="expertises.html">Expertises</a>
+      <a href="implantations.html">Implantations</a>
+      <a href="references.html">Références</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-footer__bottom">
+      <span>© 2026 ARMD Group</span>
+      <div class="site-footer__bottom-right">
+        <a href="mailto:contact@armdgroup.com">contact@armdgroup.com</a>
+        <a href="confidentialite.html">Confidentialité - RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/menu.js" defer></script>
+<script src="assets/js/reveal.js" defer></script>
+<script src="assets/js/map.js?v=4" defer></script>
+<script src="assets/js/back-to-top.js" defer></script>
+<script src="assets/js/parallax.js" defer></script>
+</body>
+</html>

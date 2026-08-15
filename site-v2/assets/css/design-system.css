@@ -1,0 +1,357 @@
+/* ============================================================
+   ARMD v2 - DESIGN SYSTEM
+   Direction : sobre, editorial, calme. Pour clientele institutionnelle.
+   Palette restreinte, typographie tres aeree, animations minimales.
+   ============================================================ */
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background: var(--color-dark);
+}
+
+body {
+  font-family: "Apfel Grotezk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ============================================================
+   FONT FACE - Apfel Grotezk via Fontsource (copie de la v1)
+   On charge en local pour eviter dependance CDN.
+   ============================================================ */
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/apfel-grotezk-400.woff2") format("woff2"),
+    url("../fonts/apfel-grotezk-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Apfel Grotezk";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/apfel-grotezk-700.woff2") format("woff2"),
+    url("../fonts/apfel-grotezk-700.woff") format("woff");
+}
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Palette ARMD - hex officiels Brand Guidelines v1 2025 uniquement */
+  --color-bg: #e5e1e0;            /* ARMD Off-white - fond editorial */
+  --color-surface: #ffffff;       /* surfaces / cards (rare) */
+  --color-text: #282828;          /* ARMD Black - corps texte */
+  --color-text-muted: rgba(40, 40, 40, 0.72);  /* ARMD Black attenue - secondaire */
+  --color-text-subtle: #797066;   /* ARMD Sand - labels, meta */
+  --color-accent: #002d50;        /* ARMD Deep blue - liens, CTA */
+  --color-accent-hover: #073763;  /* ARMD Dark blue */
+  --color-divider: rgba(40, 40, 40, 0.12);
+  --color-dark: #002d50;          /* ARMD Deep blue - fond sombre sections */
+  --color-dark-text: #e5e1e0;     /* ARMD Off-white sur dark */
+
+  /* Typographie - echelle modulaire */
+  --font-display-xl: clamp(3rem, 7vw, 6rem);      /* hero H1 */
+  --font-display-lg: clamp(2.25rem, 5vw, 4rem);   /* H1 sections */
+  --font-display-md: clamp(1.75rem, 3.5vw, 2.75rem); /* H2 */
+  --font-display-sm: clamp(1.375rem, 2.4vw, 1.875rem); /* H3 */
+  --font-body-lg: 1.1875rem;       /* lead paragraph */
+  --font-body: 1rem;
+  --font-body-sm: 0.875rem;
+  --font-label: 0.75rem;           /* labels mono */
+
+  /* Spacing - gros respiration */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --space-8: 8rem;
+  --space-9: 12rem;
+
+  /* Layout */
+  --content-width: 720px;       /* texte editorial */
+  --grid-width: 1200px;          /* grilles */
+  --max-width: 1440px;           /* sections wide */
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Transitions discretes - SEULEMENT interactions, pas d'effets wow */
+  --transition-fast: 180ms ease;
+  --transition-medium: 320ms ease;
+  --transition-slow: 480ms ease;
+
+  /* Rayons - sobre et institutionnel */
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.display-xl {
+  font-size: var(--font-display-xl);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.display-lg {
+  font-size: var(--font-display-lg);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.display-md {
+  font-size: var(--font-display-md);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.display-sm {
+  font-size: var(--font-display-sm);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  font-size: var(--font-body-lg);
+  line-height: 1.55;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.body {
+  font-size: var(--font-body);
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.body-muted {
+  color: var(--color-text-muted);
+}
+
+.label {
+  font-size: var(--font-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container-narrow {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container-grid {
+  max-width: var(--grid-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--space-8);
+}
+
+.section-sm {
+  padding-block: var(--space-6);
+}
+
+.section-dark {
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+}
+
+.section-dark .label {
+  color: rgba(229, 225, 224, 0.5);
+}
+
+.section-dark .body-muted {
+  color: rgba(229, 225, 224, 0.65);
+}
+
+/* ============================================================
+   COMPOSANTS RE-UTILISABLES
+   ============================================================ */
+
+/* Lien texte avec underline qui pousse vers la droite au hover.
+   Animation MINIMALE - juste un signal d'interaction. */
+.link {
+  position: relative;
+  color: var(--color-accent);
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform var(--transition-medium);
+}
+
+.link:hover::after {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: link-underline 600ms ease forwards 200ms;
+}
+
+@keyframes link-underline {
+  to {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+/* CTA texte minimaliste : "[Découvrir →]" - pas de bouton ornemente */
+.cta-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  color: var(--color-accent);
+  font-weight: 500;
+  padding-block: 0.25em;
+  border-bottom: 1px solid currentColor;
+  transition: gap var(--transition-medium), color var(--transition-fast);
+}
+
+.cta-text:hover {
+  gap: 1em;
+  color: var(--color-accent-hover);
+}
+
+.cta-text .arrow {
+  display: inline-block;
+  transition: transform var(--transition-medium);
+}
+
+.cta-text:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Section dark : couleurs CTA inversees */
+.section-dark .cta-text {
+  color: var(--color-dark-text);
+}
+
+/* Eyebrow : petit label au-dessus d'un titre */
+.eyebrow {
+  display: block;
+  font-size: var(--font-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-2);
+}
+
+.section-dark .eyebrow {
+  color: rgba(229, 225, 224, 0.5);
+}
+
+/* Divider 1px discret */
+.divider {
+  height: 1px;
+  background: var(--color-divider);
+  margin-block: var(--space-5);
+}
+
+.section-dark .divider {
+  background: rgba(229, 225, 224, 0.15);
+}
+
+/* Texte accessible aux lecteurs d'ecran / crawlers, invisible a l'ecran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   ACCESSIBILITE - reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

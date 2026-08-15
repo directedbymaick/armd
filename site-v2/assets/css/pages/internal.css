@@ -1,0 +1,1332 @@
+/* ============================================================
+   INTERNAL PAGES - styles partages pour toutes les pages
+   internes (a-propos, expertises, implantations, etc.)
+   ============================================================ */
+
+/* ============================================================
+   PAGE HEADER - eyebrow + big title + subtitle
+   Pleine hauteur ecran avec padding-top pour le header fixe.
+   ============================================================ */
+.page-header {
+  position: relative;
+  padding: calc(var(--space-9) + var(--space-3)) 0 var(--space-7);
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+  overflow: hidden;
+}
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 64ch;
+}
+
+.page-header__eyebrow {
+  font-size: var(--font-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(229, 225, 224, 0.55);
+  margin-bottom: var(--space-3);
+}
+
+.page-header__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--color-dark-text);
+  margin: 0 0 var(--space-4);
+}
+
+.page-header__title em {
+  font-style: normal;
+  color: rgba(229, 225, 224, 0.55);
+}
+
+.page-header__subtitle {
+  font-size: var(--font-body-lg);
+  line-height: 1.55;
+  color: rgba(229, 225, 224, 0.78);
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* Variante : header light (rare, pour pages plus calmes type Insights) */
+.page-header--light {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.page-header--light .page-header__eyebrow {
+  color: var(--color-text-subtle);
+}
+
+.page-header--light .page-header__title {
+  color: var(--color-text);
+}
+
+.page-header--light .page-header__title em {
+  color: var(--color-text-subtle);
+}
+
+.page-header--light .page-header__subtitle {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   FOUNDER FULL - section detaillee Goudet sur page A propos
+   ============================================================ */
+.founder-full {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+.founder-full__inner {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.founder-full__image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-divider);
+  position: sticky;
+  top: var(--space-7);
+}
+
+.founder-full__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-full__content h2 {
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.founder-full__role {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-4);
+}
+
+.founder-full__bio {
+  font-size: var(--font-body-lg);
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+  max-width: 60ch;
+}
+
+.founder-full__bio strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.founder-full__bio p + p {
+  margin-top: var(--space-3);
+}
+
+.founder-credentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.founder-credential__label {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-1);
+}
+
+.founder-credential__value {
+  font-size: var(--font-body);
+  line-height: 1.4;
+  color: var(--color-text);
+  font-weight: 500;
+  white-space: pre-line;
+}
+
+.founder-mandates h3 {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+
+.founder-mandates__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.founder-mandates__list span {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-divider);
+  border-radius: 999px;
+  font-size: var(--font-body-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .founder-full__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .founder-full__image {
+    position: relative;
+    top: auto;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+  .founder-credentials {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   TEAM GRID - section equipe (page A propos)
+   ============================================================ */
+.team {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-divider);
+}
+
+.team__header {
+  max-width: 56ch;
+  margin-bottom: var(--space-6);
+}
+
+.team__header h2 {
+  font-size: var(--font-display-lg);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-top: var(--space-1);
+}
+
+.team__intro {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   LEGAL - page confidentialite / RGPD
+   ============================================================ */
+.legal {
+  padding: var(--space-7) 0 var(--space-8);
+}
+
+.legal__block {
+  margin-bottom: var(--space-6);
+}
+
+.legal__block h2 {
+  font-size: var(--font-display-sm);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.legal__block p {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.legal__block p + p {
+  margin-top: var(--space-2);
+}
+
+.legal__updated {
+  font-size: var(--font-body-sm);
+  color: var(--color-text-subtle);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.team-member__image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-divider);
+}
+
+.team-member__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member__name {
+  font-size: var(--font-body);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.015em;
+}
+
+.team-member__role {
+  font-size: var(--font-body-sm);
+  color: var(--color-text-muted);
+}
+
+.team-member__location {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-top: 0.2rem;
+}
+
+/* ============================================================
+   IMPLANTATIONS - villes en liste epuree
+   ============================================================ */
+.locations-grid {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+.locations-grid__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.locations-block h3 {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+}
+
+.locations-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.locations-block li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-divider);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.locations-block li:last-child {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.locations-block li .country {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  font-weight: 500;
+}
+
+.locations-block.is-active li {
+  font-weight: 700;
+}
+
+.locations-block.is-active li .dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  margin-right: 0.65rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 860px) {
+  .locations-grid__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* ============================================================
+   INSIGHTS - cards articles (page Insights)
+   ============================================================ */
+.insights-grid {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+.insights-grid__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.insight-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.insight-card:hover {
+  border-color: var(--color-accent);
+}
+
+.insight-card__image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-divider);
+}
+
+.insight-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%);
+  transition: filter var(--transition-slow);
+}
+
+.insight-card:hover .insight-card__image img {
+  filter: grayscale(0%);
+}
+
+.insight-card__body {
+  padding: var(--space-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.insight-card__tag {
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+  padding: 0.25em 0.6em;
+  background: rgba(0, 45, 80, 0.08);
+  border-radius: 999px;
+  margin-bottom: var(--space-1);
+}
+
+.insight-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.insight-card__desc {
+  color: var(--color-text-muted);
+  font-size: var(--font-body-sm);
+  line-height: 1.55;
+}
+
+.insight-card__meta {
+  margin-top: auto;
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-subtle);
+  font-weight: 500;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+
+/* ============================================================
+   NEWSLETTER - bandeau capture email
+   ============================================================ */
+.newsletter {
+  padding: var(--space-7) 0;
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+}
+
+.newsletter__inner {
+  max-width: 760px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.newsletter__heading h2 {
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.newsletter__heading p {
+  color: rgba(229, 225, 224, 0.7);
+  line-height: 1.55;
+  max-width: 36ch;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.newsletter__form-row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.newsletter__form input {
+  flex: 1;
+  padding: var(--space-3);
+  background: rgba(229, 225, 224, 0.08);
+  border: 1px solid rgba(229, 225, 224, 0.2);
+  color: var(--color-dark-text);
+  font: inherit;
+  font-size: var(--font-body);
+  transition: border-color var(--transition-fast);
+}
+
+.newsletter__form input::placeholder {
+  color: rgba(229, 225, 224, 0.45);
+}
+
+.newsletter__form input:focus {
+  outline: none;
+  border-color: var(--color-dark-text);
+}
+
+.newsletter__form button {
+  padding: 0.95em 2.1em;
+  background: var(--color-dark-text);
+  color: var(--color-dark);
+  font: inherit;
+  font-size: var(--font-body);
+  font-weight: 600;
+  border: 1px solid var(--color-dark-text);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.newsletter__form button:hover {
+  background: transparent;
+  color: var(--color-dark-text);
+}
+
+.newsletter__legal {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(229, 225, 224, 0.45);
+}
+
+@media (max-width: 860px) {
+  .newsletter__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ============================================================
+   CONTACT - page formulaire + infos
+   ============================================================ */
+.contact-section {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+.contact-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+/* Formulaire editorial : champs soulignes, pas de boites.
+   Le trait bas s'epaissit et passe accent au focus. */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5) var(--space-4);
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contact-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.contact-form__field label {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.contact-form__field:focus-within label {
+  color: var(--color-accent);
+}
+
+.contact-form__field input,
+.contact-form__field textarea,
+.contact-form__field select {
+  padding: 0.65em 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(40, 40, 40, 0.3);
+  border-radius: 0;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--font-body-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus,
+.contact-form__field select:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+  box-shadow: 0 1px 0 0 var(--color-accent);
+}
+
+.contact-form__field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 1.75em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23002d50' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25em center;
+  background-size: 1em;
+}
+
+.contact-form__field textarea {
+  min-height: 140px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.55;
+}
+
+.contact-form__submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-info__block h3 {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-1);
+  font-weight: 500;
+}
+
+.contact-info__block p,
+.contact-info__block a {
+  font-size: var(--font-body-lg);
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.contact-info__block a {
+  border-bottom: 1px solid var(--color-divider);
+  transition: border-color var(--transition-fast);
+}
+
+.contact-info__block a:hover {
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 860px) {
+  .contact-section__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* ============================================================
+   404 NOT FOUND
+   ============================================================ */
+.not-found {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-7) var(--gutter);
+  background: var(--color-bg);
+}
+
+.not-found__inner {
+  max-width: 50ch;
+}
+
+.not-found__code {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-3);
+}
+
+.not-found__title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.not-found__title em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.not-found__desc {
+  font-size: var(--font-body-lg);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: var(--space-5);
+}
+
+/* ============================================================
+   LOADING STATE - placeholder pendant fetch Sanity
+   ============================================================ */
+.loading {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-body);
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   CARTE INTERACTIVE IMPLANTATIONS - fond SVG equirectangulaire
+   + marqueurs HTML positionnes en % (projection lineaire exacte).
+   Bureaux actifs : losange ARMD + label. Projection : points.
+   ============================================================ */
+.map-section {
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+  padding: var(--space-5) 0 var(--space-7);
+}
+
+.world-map {
+  position: relative;
+  max-width: 1100px;
+  margin-inline: auto;
+  aspect-ratio: 1000 / 589;
+}
+
+.world-map > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Fondu doux sur les bords : la coupe des continents disparait */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+
+/* ---------- marqueur commun ---------- */
+.map-marker {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ---------- bureau actif : losange ARMD ---------- */
+.map-marker__diamond {
+  width: 15px;
+  height: 15px;
+  fill: #2c56fa;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-medium);
+}
+
+.map-marker--office:hover .map-marker__diamond,
+.map-marker--office.is-hot .map-marker__diamond,
+.map-marker--office.is-open .map-marker__diamond {
+  transform: scale(1.3);
+}
+
+/* Halo qui respire - signal discret, pas d'effet wow */
+.map-marker__pulse {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(44, 86, 250, 0.85);
+  animation: map-pulse 3.2s ease-out infinite;
+}
+
+@keyframes map-pulse {
+  0% { transform: scale(0.7); opacity: 0.8; }
+  70% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-marker__pulse { animation: none; opacity: 0; }
+}
+
+/* Label permanent des bureaux actifs */
+.map-marker__label {
+  position: absolute;
+  left: calc(100% + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(229, 225, 224, 0.85);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.map-marker[data-label="left"] .map-marker__label {
+  left: auto;
+  right: calc(100% + 2px);
+}
+
+/* ---------- ville en projection : point ---------- */
+.map-marker__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(229, 225, 224, 0.45);
+  transition: transform var(--transition-medium), background-color var(--transition-fast);
+}
+
+.map-marker--proj:hover .map-marker__dot,
+.map-marker--proj.is-hot .map-marker__dot,
+.map-marker--proj.is-open .map-marker__dot {
+  transform: scale(1.7);
+  background: var(--color-dark-text);
+}
+
+/* ---------- carte info (tooltip) ---------- */
+.map-marker__card {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.6rem 0.9rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 24px rgba(0, 20, 38, 0.35);
+  white-space: nowrap;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 5;
+}
+
+.map-marker__card strong {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.map-marker__card span {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-subtle);
+}
+
+.map-marker:hover .map-marker__card,
+.map-marker:focus-visible .map-marker__card,
+.map-marker.is-open .map-marker__card {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* Variantes de cote pour les villes en bord de carte */
+.map-marker[data-side="right"] .map-marker__card {
+  bottom: auto;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%) translateX(-4px);
+}
+
+.map-marker[data-side="right"]:hover .map-marker__card,
+.map-marker[data-side="right"]:focus-visible .map-marker__card,
+.map-marker[data-side="right"].is-open .map-marker__card {
+  transform: translate(0, -50%);
+}
+
+.map-marker[data-side="left"] .map-marker__card {
+  bottom: auto;
+  left: auto;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%) translateX(4px);
+}
+
+.map-marker[data-side="left"]:hover .map-marker__card,
+.map-marker[data-side="left"]:focus-visible .map-marker__card,
+.map-marker[data-side="left"].is-open .map-marker__card {
+  transform: translate(0, -50%);
+}
+
+/* ---------- legende ---------- */
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(229, 225, 224, 0.55);
+}
+
+.map-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.map-legend__item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(229, 225, 224, 0.45);
+}
+
+.map-legend__item--office::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background: #2c56fa;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* ---------- sync avec les listes ---------- */
+.locations-block li.is-hot > span:first-child {
+  color: var(--color-accent);
+}
+
+.locations-block li[data-city] {
+  cursor: default;
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 720px) {
+  .map-marker__label {
+    font-size: 0.5625rem;
+    letter-spacing: 0.12em;
+  }
+  .map-marker__card strong { font-size: 0.75rem; }
+  .map-legend { flex-direction: column; align-items: center; gap: var(--space-1); }
+}
+
+/* ============================================================
+   ACCORDEON EXPERTISES - details/summary natif, zero JS.
+   Le summary reprend la grille des expertise-rows + un toggle "+"
+   qui tourne en croix a l'ouverture.
+   ============================================================ */
+.expertise-acc {
+  border-top: 1px solid var(--color-divider);
+}
+
+.expertise-acc:last-child {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.expertise-acc__summary {
+  display: grid;
+  grid-template-columns: 36px 1fr 2fr 80px 28px;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-4) 0;
+  cursor: pointer;
+  list-style: none;
+  transition: padding-left var(--transition-medium);
+}
+
+.expertise-acc__summary::-webkit-details-marker {
+  display: none;
+}
+
+.expertise-acc__summary:hover {
+  padding-left: var(--space-2);
+}
+
+.expertise-acc__toggle {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  transition: transform var(--transition-medium);
+}
+
+.expertise-acc__toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.expertise-acc[open] .expertise-acc__toggle {
+  transform: rotate(45deg);
+}
+
+.expertise-acc__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  padding: 0 0 var(--space-5) calc(36px + var(--space-3));
+  max-width: 1000px;
+  animation: acc-open 320ms ease;
+}
+
+@keyframes acc-open {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expertise-acc__body { animation: none; }
+}
+
+.expertise-acc__body p {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.expertise-acc__body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.expertise-acc__body li {
+  position: relative;
+  padding-left: 1.2em;
+  font-size: var(--font-body-sm);
+  color: var(--color-text);
+}
+
+.expertise-acc__body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+@media (max-width: 860px) {
+  .expertise-acc__summary {
+    grid-template-columns: 36px 1fr 28px;
+  }
+  .expertise-acc__summary .expertise-row__desc,
+  .expertise-acc__summary .expertise-row__pilier {
+    display: none;
+  }
+  .expertise-acc__body {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+}
+
+/* ============================================================
+   CARTE v2 - cadre premium + pan/zoom.
+   Le SVG est injecte inline (traits non-scalants = zoom net).
+   Les marqueurs contre-scalent (taille constante quel que soit
+   le niveau de zoom), comme sur une vraie app cartographique.
+   ============================================================ */
+.world-map {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(229, 225, 224, 0.1);
+  background:
+    radial-gradient(120% 90% at 50% 30%, rgba(229, 225, 224, 0.06) 0%, rgba(0, 0, 0, 0) 55%),
+    linear-gradient(180deg, #063a64 0%, #00223d 100%);
+  box-shadow: inset 0 0 80px rgba(0, 10, 20, 0.35);
+  /* 1 doigt = scroll de page (pan-y), 2 doigts = pan/zoom carte (JS) */
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.world-map.is-panning {
+  cursor: grabbing;
+}
+
+.world-map.is-panning .map-marker {
+  pointer-events: none;
+}
+
+/* Vignette douce par-dessus (ne bloque pas la souris) */
+.world-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 60px rgba(0, 15, 30, 0.45);
+  z-index: 4;
+}
+
+.world-map__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.world-map__canvas svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Les marqueurs sont repositionnes en espace ecran par map.js :
+   taille constante quel que soit le zoom, pas de transform scale */
+
+/* ---------- controles zoom ---------- */
+.map-controls {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 6;
+}
+
+.map-controls button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 25, 45, 0.75);
+  border: 1px solid rgba(229, 225, 224, 0.15);
+  border-radius: 6px;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.map-controls button:hover {
+  background: rgba(0, 45, 80, 0.9);
+  border-color: rgba(229, 225, 224, 0.35);
+}
+
+.map-controls svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 720px) {
+  .world-map { border-radius: 6px; }
+  .map-controls button { width: 32px; height: 32px; }
+}
+
+/* ============================================================
+   CARTE v3 - chargement, hint tactile, arcs, cards intelligentes
+   ============================================================ */
+
+/* Fade-in du fond quand le SVG arrive (fetch ~100KB) */
+.world-map__canvas {
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.world-map.is-loaded .world-map__canvas {
+  opacity: 1;
+}
+
+/* Hint tactile : pilule centree en bas, apparait quand un doigt
+   seul tente de deplacer la carte */
+.map-hint {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-3);
+  transform: translateX(-50%) translateY(6px);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 25, 45, 0.85);
+  border: 1px solid rgba(229, 225, 224, 0.2);
+  color: var(--color-dark-text);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-medium), transform var(--transition-medium), visibility var(--transition-medium);
+  z-index: 7;
+}
+
+.map-hint.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Arcs de connexion entre bureaux actifs (injectes par map.js) */
+.map-arc {
+  fill: none;
+  stroke: #2c56fa;
+  stroke-opacity: 0.55;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 7;
+  stroke-linecap: round;
+  animation: map-arc-flow 24s linear infinite;
+}
+
+@keyframes map-arc-flow {
+  to { stroke-dashoffset: -240; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-arc { animation: none; }
+}
+
+/* Variante card "bottom" (marqueur proche du bord haut) */
+.map-marker[data-side="bottom"] .map-marker__card {
+  bottom: auto;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, -4px);
+}
+
+.map-marker[data-side="bottom"]:hover .map-marker__card,
+.map-marker[data-side="bottom"]:focus-visible .map-marker__card,
+.map-marker[data-side="bottom"].is-open .map-marker__card {
+  transform: translate(-50%, 0);
+}
+
+/* Lien "Nous écrire" dans les cards bureaux */
+.map-marker__card a {
+  margin-top: 4px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  border-bottom: 1px solid currentColor;
+  align-self: flex-start;
+  padding-bottom: 1px;
+}
+
+/* La card doit accepter le clic quand elle est ouverte/survolee */
+.map-marker:hover .map-marker__card,
+.map-marker:focus-visible .map-marker__card,
+.map-marker.is-open .map-marker__card {
+  pointer-events: auto;
+}
+
+/* Focus clavier des marqueurs (role=button) */
+.map-marker:focus-visible {
+  outline: 2px solid rgba(229, 225, 224, 0.7);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+/* Les items de liste deviennent cliquables (flyTo) */
+.locations-block li[data-city] {
+  cursor: pointer;
+}

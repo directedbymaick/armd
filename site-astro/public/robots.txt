@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://armd.com/sitemap-index.xml

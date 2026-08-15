@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/*
+ * ARMD design tokens.
+ * Deux univers visuels distincts (Occident sobre, Africa panafricain mesuré).
+ * Les tokens reels seront pose en phase DA (avant le 2 juin).
+ * Ici : placeholders neutres pour que le scaffolding tourne.
+ */
+
+@layer base {
+  :root,
+  [data-zone="occident"] {
+    --armd-bg: #ffffff;
+    --armd-fg: #0a0a0a;
+    --armd-accent: #1a1a1a;
+    --armd-muted: #6b7280;
+    --armd-border: #e5e7eb;
+    --armd-font-display: "Inter", system-ui, sans-serif;
+    --armd-font-body: "Inter", system-ui, sans-serif;
+  }
+
+  [data-zone="africa"] {
+    --armd-bg: #ffffff;
+    --armd-fg: #0a0a0a;
+    --armd-accent: #b45309;
+    --armd-muted: #6b7280;
+    --armd-border: #e5e7eb;
+    --armd-font-display: "Inter", system-ui, sans-serif;
+    --armd-font-body: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    background: var(--armd-bg);
+    color: var(--armd-fg);
+    font-family: var(--armd-font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+  }
+}

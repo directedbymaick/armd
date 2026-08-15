@@ -1,0 +1,1091 @@
+/* ============================================================
+   HOME page - hero video plein ecran + sections sobres
+   ============================================================ */
+
+/* ============================================================
+   HERO : video full-screen + texte minimal overlay
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  color: var(--color-dark-text);
+  background: var(--color-dark);
+}
+
+.hero__video {
+  position: absolute;
+  /* Buffer 10% top/bottom : video plus haute que le container pour
+     que le parallax (translateY) n'expose pas le bg sombre du hero. */
+  top: -10%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Filtre tres leger pour cohesion brand : desature un poil + assombri.
+     Donne une teinte cinema premium sans tuer les couleurs. */
+  filter: brightness(0.82) saturate(0.92) contrast(1.05);
+}
+
+/* Gradient de haut en bas : sombre en haut (lisibilite logo/menu),
+   plus leger au centre (video respire), sombre en bas (lisibilite
+   scroll cue + transition vers la section suivante). */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 45, 80, 0.55) 0%,
+    rgba(0, 45, 80, 0.25) 20%,
+    rgba(0, 45, 80, 0.18) 50%,
+    rgba(0, 45, 80, 0.35) 80%,
+    rgba(0, 45, 80, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* L'overlay-top precedent n'est plus necessaire (integre au gradient) */
+.hero__overlay-top {
+  display: none;
+}
+
+/* ============================================================
+   HERO TAGLINES - boucle infinie : 3 verbes apparaissent en
+   sequence (fade in/out) puis 3s de respiration video pure.
+   Total cycle : 12s.
+   ============================================================ */
+.hero__taglines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__tagline {
+  position: absolute;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--color-dark-text);
+  text-shadow: 0 2px 30px rgba(0, 45, 80, 0.4);
+  opacity: 0;
+  /* Animation : 0-0.5s fade in, 0.5-2.5s hold, 2.5-3s fade out.
+     Sur cycle de 12s : visible = 0-25% (3s), invisible = 25-100% (9s) */
+  animation: hero-tagline-cycle 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: opacity, transform;
+}
+
+/* Stagger : 0.8s d'attente initiale (quasi immediat, le temps que la
+   page se pose) puis chaque verbe demarre 3s apres le precedent.
+   Apres le 1er cycle, le loop continue normalement sur 12s. */
+.hero__tagline:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.hero__tagline:nth-child(2) {
+  animation-delay: 3.8s;
+}
+.hero__tagline:nth-child(3) {
+  animation-delay: 6.8s;
+}
+
+@keyframes hero-tagline-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  4% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  21% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Respecte les reglages utilisateur reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__tagline {
+    animation: none;
+    opacity: 1;
+    position: static;
+    display: block;
+    margin: 0.5em 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+/* ============================================================
+   SCROLL CUE - indicateur discret bottom-center
+   ============================================================ */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(229, 225, 224, 0.8);
+  text-decoration: none;
+  opacity: 0;
+  animation: fade-up 1100ms ease 1600ms forwards;
+  transition: opacity var(--transition-fast);
+}
+
+.hero__scroll:hover {
+  opacity: 1;
+  color: var(--color-dark-text);
+}
+
+.hero__scroll-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-family: inherit;
+}
+
+/* Ligne verticale animee : un trait fin qui descend en boucle.
+   Effet : ligne en fond opacite 0.2 + dot bleu qui glisse de haut en bas */
+.hero__scroll-line {
+  position: relative;
+  width: 1px;
+  height: 38px;
+  background: rgba(229, 225, 224, 0.25);
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--color-dark-text) 100%
+  );
+  animation: scroll-down 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(280%);
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-7) var(--gutter) var(--space-6);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.hero__eyebrow {
+  font-size: var(--font-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(229, 225, 224, 0.7);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  animation: fade-up 900ms ease 200ms forwards;
+}
+
+.hero__title {
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-dark-text);
+  max-width: 16ch;
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  animation: fade-up 1100ms ease 400ms forwards;
+}
+
+.hero__title span {
+  display: block;
+}
+
+.hero__intro {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: rgba(229, 225, 224, 0.85);
+  max-width: 42rem;
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  animation: fade-up 1100ms ease 700ms forwards;
+}
+
+.hero__cta-wrap {
+  opacity: 0;
+  animation: fade-up 1100ms ease 1000ms forwards;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  color: var(--color-dark-text);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.25em 0 0.5em 0;
+  border-bottom: 1px solid var(--color-dark-text);
+  transition: gap var(--transition-medium);
+}
+
+.hero__cta:hover {
+  gap: 1.1em;
+}
+
+.hero__cta .arrow {
+  display: inline-block;
+  transition: transform var(--transition-medium);
+}
+
+.hero__cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Footer bandeau bas hero - meta locations */
+.hero__meta {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--gutter);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  z-index: 2;
+  font-size: var(--font-label);
+  color: rgba(229, 225, 224, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  opacity: 0;
+  animation: fade-up 1100ms ease 1300ms forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   MANIFESTO - phrase d'intro grand format apres le hero
+   ============================================================ */
+/* Target grid sur la video hero - ARMD Off-white OPAQUE (pas de rgba,
+   sinon la ligne se voit a travers le losange - note dans components.css) */
+.hero__target {
+  color: #e5e1e0;
+  --tx: 72%;
+  --ty: 30%;
+  z-index: 2;
+}
+
+@media (max-width: 720px) {
+  .hero__target {
+    display: none;
+  }
+}
+
+/* Target grid du manifesto - ARMD Blue, quadrant haut-gauche */
+.manifesto__target {
+  --tx: 16%;
+  --ty: 32%;
+}
+
+.manifesto {
+  position: relative;
+  padding: var(--space-9) 0;
+  background: var(--color-bg);
+}
+
+.manifesto__quote {
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  max-width: 36ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.manifesto__quote em {
+  font-style: normal;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ============================================================
+   APPROCHE - 3 piliers (Donnee Recit Humain)
+   Layout : titre gauche + 3 piliers droite en grille verticale
+   ============================================================ */
+.approach {
+  padding: var(--space-8) 0;
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+}
+
+.approach__inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.approach__heading h2 {
+  font-size: var(--font-display-md);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-3);
+}
+
+.approach__heading p {
+  color: rgba(229, 225, 224, 0.7);
+  line-height: 1.6;
+  max-width: 28ch;
+}
+
+/* Image editoriale sous le bloc titre (colonne gauche) */
+.approach__figure {
+  margin: var(--space-5) 0 0;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.approach__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Fondu vers le bleu ARMD en bas pour lier l'image a la section */
+  filter: saturate(0.95) contrast(1.02);
+}
+
+@media (max-width: 860px) {
+  .approach__figure {
+    margin-top: var(--space-4);
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.pillar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pillar {
+  padding: var(--space-5) 0;
+  border-top: 1px solid rgba(229, 225, 224, 0.12);
+  display: grid;
+  grid-template-columns: 48px 56px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.pillar__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(229, 225, 224, 0.18);
+  border-radius: 4px;
+  color: var(--color-dark-text);
+  flex-shrink: 0;
+}
+
+.pillar__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pillar:last-child {
+  border-bottom: 1px solid rgba(229, 225, 224, 0.12);
+}
+
+.pillar__num {
+  font-size: var(--font-label);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(229, 225, 224, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar__body h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.pillar__body p {
+  color: rgba(229, 225, 224, 0.7);
+  line-height: 1.6;
+  max-width: 50ch;
+}
+
+/* Detail secondaire : revele au survol du pilier.
+   grid-template-rows 0fr -> 1fr = animation de hauteur fluide. */
+.pillar__detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition:
+    grid-template-rows var(--transition-medium),
+    opacity var(--transition-medium),
+    margin-top var(--transition-medium);
+}
+
+.pillar__detail > p {
+  overflow: hidden;
+  min-height: 0;
+  color: rgba(229, 225, 224, 0.5);
+  font-size: var(--font-body-sm);
+  line-height: 1.6;
+  max-width: 52ch;
+  /* Liseré bleu ARMD a gauche pour marquer le texte secondaire */
+  padding-left: var(--space-2);
+  border-left: 1px solid rgba(44, 86, 250, 0.5);
+}
+
+.pillar:hover .pillar__detail,
+.pillar:focus-within .pillar__detail {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--space-2);
+}
+
+/* Petit signal que la description est interactive */
+.pillar:hover .pillar__body > p {
+  color: rgba(229, 225, 224, 0.9);
+}
+
+@media (max-width: 860px) {
+  .approach__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  /* Pas de hover au doigt : on affiche le detail en permanence */
+  .pillar__detail {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: var(--space-2);
+  }
+}
+
+/* ============================================================
+   EXPERTISES - liste editoriale numerotee
+   ============================================================ */
+.expertises {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+.expertises__header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-5);
+  align-items: end;
+  margin-bottom: var(--space-6);
+}
+
+.expertises__header h2 {
+  font-size: var(--font-display-lg);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.expertises__header p {
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 36ch;
+}
+
+.expertises__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 2fr 80px;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-divider);
+  transition: padding-left var(--transition-medium);
+}
+
+.expertise-row__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.expertise-row__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.expertise-row:last-child {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.expertise-row:hover {
+  padding-left: var(--space-2);
+}
+
+.expertise-row__title {
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.expertise-row__desc {
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  font-size: var(--font-body-sm);
+}
+
+.expertise-row__pilier {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+  text-align: right;
+}
+
+@media (max-width: 860px) {
+  .expertises__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .expertise-row {
+    grid-template-columns: 36px 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-2);
+  }
+  .expertise-row__icon {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .expertise-row__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .expertise-row__desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .expertise-row__pilier {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    align-self: start;
+    font-size: 0.625rem;
+  }
+}
+
+/* ============================================================
+   CASES / Mandats - layout grille simple
+   ============================================================ */
+.cases {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-divider);
+}
+
+.cases__header {
+  margin-bottom: var(--space-6);
+}
+
+.cases__header h2 {
+  font-size: var(--font-display-lg);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.case-card:hover {
+  border-color: var(--color-accent);
+}
+
+/* Image hero de la card : ratio 4:3, grayscale au repos, couleur au hover */
+.case-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-divider);
+}
+
+.case-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter var(--transition-slow), transform var(--transition-slow);
+}
+
+.case-card:hover .case-card__image img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+.case-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-4);
+}
+
+.case-card__eyebrow {
+  font-size: var(--font-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-3);
+  font-weight: 500;
+}
+
+.case-card__name {
+  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.case-card__desc {
+  color: var(--color-text-muted);
+  font-size: var(--font-body-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.case-card__metric {
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-3);
+}
+
+.case-card__metric-value {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.case-card__metric-label {
+  margin-top: var(--space-1);
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-subtle);
+}
+
+@media (max-width: 860px) {
+  .cases__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FOUNDER - preview Goudet : photo + nom + parcours court
+   ============================================================ */
+.founder {
+  padding: var(--space-8) 0;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-divider);
+}
+
+.founder__inner {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.founder__image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-divider);
+}
+
+.founder__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: filter var(--transition-slow);
+}
+
+.founder__image:hover img {
+  filter: grayscale(0%);
+}
+
+.founder__content h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.founder__role {
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-3);
+}
+
+.founder__bio {
+  font-size: var(--font-body-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  max-width: 50ch;
+}
+
+.founder__bio strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .founder__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .founder__image {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+}
+
+/* ============================================================
+   PARTNERS - marquee discret logos medias
+   ============================================================ */
+.partners {
+  padding: var(--space-6) 0;
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+  overflow: hidden;
+}
+
+.partners__label {
+  text-align: center;
+  font-size: var(--font-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(229, 225, 224, 0.55);
+  margin-bottom: var(--space-5);
+}
+
+.partners__marquee {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.partners__track {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--space-6);
+  padding-right: var(--space-6);
+  animation: partners-scroll 50s linear infinite;
+  white-space: nowrap;
+}
+
+.partners__logo {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(229, 225, 224, 0.55);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.partners__logo:hover {
+  color: var(--color-dark-text);
+}
+
+.partners__logo.serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.partners__logo.italic {
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.partners__logo.upper {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause au hover */
+.partners__marquee:hover .partners__track {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   CONTACT CTA - bandeau fin sobre
+   ============================================================ */
+.contact-cta {
+  padding: var(--space-7) 0;
+  background: var(--color-dark);
+  color: var(--color-dark-text);
+}
+
+/* Override couleur CTA dans la section dark (sinon bleu fonce sur bleu fonce) */
+.contact-cta .cta-text {
+  color: var(--color-dark-text);
+  border-bottom-color: rgba(229, 225, 224, 0.6);
+}
+
+.contact-cta .cta-text:hover {
+  color: var(--color-dark-text);
+  border-bottom-color: var(--color-dark-text);
+}
+
+.contact-cta__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-5);
+  align-items: end;
+}
+
+.contact-cta__heading {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 22ch;
+}
+
+.contact-cta__heading em {
+  font-style: normal;
+  color: rgba(229, 225, 224, 0.55);
+}
+
+.contact-cta__action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+@media (max-width: 720px) {
+  .contact-cta__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .contact-cta__action {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   SHOWREEL - montage video "ARMD en action".
+   preload=none : la video ne se telecharge qu'au clic (wifi lent).
+   Bouton play central, se retire pendant la lecture.
+   ============================================================ */
+.showreel {
+  padding: var(--space-7) 0;
+}
+
+.showreel__header {
+  margin-bottom: var(--space-4);
+}
+
+.showreel__header h2 {
+  font-size: var(--font-display-md);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-top: var(--space-1);
+}
+
+.showreel__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--color-dark);
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(0, 20, 38, 0.18);
+}
+
+.showreel__frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Voile leger au repos pour asseoir le bouton play */
+.showreel__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 20, 38, 0.25);
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.showreel__frame.is-playing::after {
+  opacity: 0;
+}
+
+.showreel__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(229, 225, 224, 0.14);
+  border: 1px solid rgba(229, 225, 224, 0.5);
+  color: var(--color-dark-text);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 2;
+  transition: transform var(--transition-medium), background-color var(--transition-fast),
+    opacity var(--transition-medium), visibility var(--transition-medium);
+}
+
+.showreel__play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(229, 225, 224, 0.22);
+}
+
+.showreel__play svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  margin-left: 4px;
+}
+
+.showreel__frame.is-playing .showreel__play {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 720px) {
+  .showreel { padding: var(--space-6) 0; }
+  .showreel__frame { border-radius: 6px; }
+  .showreel__play { width: 64px; height: 64px; }
+  .showreel__play svg { width: 24px; height: 24px; }
+}

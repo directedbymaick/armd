@@ -1,0 +1,14 @@
+# Dependances
+node_modules/
+studio/node_modules/
+studio/dist/
+
+# Outils locaux
+.gstack/
+.claude/
+
+# OS / editeur
+.DS_Store
+Thumbs.db
+*.log
+*.swp

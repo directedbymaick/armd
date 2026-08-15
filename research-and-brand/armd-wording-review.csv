@@ -1,0 +1,214 @@
+﻿ID,Page,Section,Type,Texte actuel,Correction Goudet,Notes
+01-HOME-HERO-EYEBROW,Accueil,Hero,Eyebrow,ARMD Global · Q2 2026,,Petite mention au-dessus du titre principal du hero
+01-HOME-HERO-H1,Accueil,Hero,Titre H1,"Observer.
+Anticiper.
+Diriger.",,Titre principal du hero (3 verbes sur 3 lignes)
+01-HOME-HERO-INTRO,Accueil,Hero,Paragraphe,"Cabinet panafricain d'intelligence économique et d'influence stratégique. Pour les économies africaines, les marchés émergents et les institutions multilatérales. Nous opérons là où les autres hésitent.",,"Paragraphe d'introduction sous le H1. La dernière phrase ""Nous opérons là où les autres hésitent."" est mise en avant (couleur plus claire)"
+01-HOME-HERO-CTA-1,Accueil,Hero,Bouton CTA,Parlons stratégie,,"CTA principal du hero, lien vers /contact"
+01-HOME-HERO-CTA-2,Accueil,Hero,Bouton CTA,Rencontrer Goudet Abalé,,"CTA secondaire du hero, lien vers /a-propos"
+01-HOME-HERO-CARD-LABEL,Accueil,Hero,Label,Notre approche,,Étiquette mono uppercase au-dessus de la mention approche dans la carte glassmorphism à droite du hero
+01-HOME-HERO-CARD-VALUE,Accueil,Hero,Mention,Donnée. Récit. Humain.,,Trois mots de la méthode dans la carte à droite du hero
+01-HOME-HERO-META,Accueil,Hero,Méta,Paris · Abidjan · Washington,,Bandeau bas du hero (séparé par des points médians)
+02-HOME-APPROACH-EYEBROW,Accueil,Approche,Eyebrow,Notre approche,,Eyebrow de la section Approche
+02-HOME-APPROACH-H2,Accueil,Approche,Titre H2,Trois leviers de puissance,,"H2 de la section. ""de puissance"" est en bleu et bold"
+02-HOME-APPROACH-INTRO,Accueil,Approche,Paragraphe,Articulés en tout instant. Aucune mission ARMD n'en mobilise un seul.,,Description courte à droite du H2
+02-HOME-APPROACH-CARD1-NUM,Accueil,Approche,Numérotation,01 / 03,,Compteur en haut de la 1ère carte levier
+02-HOME-APPROACH-CARD1-TITLE,Accueil,Approche,Titre H3,Donnée,,"Titre de la 1ère carte levier (suivi d'un point bleu)"
+02-HOME-APPROACH-CARD1-TAGLINE,Accueil,Approche,Tagline,Acquisition · Structuration · Modélisation,,Sous-titre mono uppercase de la 1ère carte
+02-HOME-APPROACH-CARD1-DESC,Accueil,Approche,Paragraphe,"OSINT, HUMINT, bases propriétaires. La preuve avant le récit. Aucune décision ARMD ne s'appuie sur l'intuition seule.",,Description de la 1ère carte
+02-HOME-APPROACH-CARD1-KEYWORDS,Accueil,Approche,Tags,"OSINT, HUMINT, Due diligence",,"3 tags arrondis en bas de la 1ère carte (chacun dans son chip séparé)"
+02-HOME-APPROACH-CARD2-NUM,Accueil,Approche,Numérotation,02 / 03,,Compteur en haut de la 2ème carte
+02-HOME-APPROACH-CARD2-TITLE,Accueil,Approche,Titre H3,Récit,,Titre de la 2ème carte levier
+02-HOME-APPROACH-CARD2-TAGLINE,Accueil,Approche,Tagline,Cadrage stratégique · Narratifs · Médias,,Sous-titre mono uppercase de la 2ème carte
+02-HOME-APPROACH-CARD2-DESC,Accueil,Approche,Paragraphe,"Faire émerger le sens. Orienter la perception. Cibler les bons canaux, au bon moment, avec la bonne intensité.",,Description de la 2ème carte
+02-HOME-APPROACH-CARD2-KEYWORDS,Accueil,Approche,Tags,"Influence, Médias tier 1, Thought leadership",,3 tags de la 2ème carte
+02-HOME-APPROACH-CARD3-NUM,Accueil,Approche,Numérotation,03 / 03,,Compteur en haut de la 3ème carte
+02-HOME-APPROACH-CARD3-TITLE,Accueil,Approche,Titre H3,Humain,,Titre de la 3ème carte levier
+02-HOME-APPROACH-CARD3-TAGLINE,Accueil,Approche,Tagline,Réseaux · Intermédiation · Accès,,Sous-titre mono uppercase de la 3ème carte
+02-HOME-APPROACH-CARD3-DESC,Accueil,Approche,Paragraphe,Les bonnes portes au bon moment. La diplomatie comme méthode. Quand la qualité du contact décide de la suite.,,Description de la 3ème carte
+02-HOME-APPROACH-CARD3-KEYWORDS,Accueil,Approche,Tags,"Diplomatie, Accès dirigeants, Bailleurs",,3 tags de la 3ème carte
+03-HOME-EXPERTISES-EYEBROW,Accueil,Expertises,Eyebrow,Nos expertises,,Eyebrow de la section Expertises
+03-HOME-EXPERTISES-H2,Accueil,Expertises,Titre H2,Six expertises mobilisables,,"H2. ""mobilisables"" est en bleu et bold"
+03-HOME-EXPERTISES-INTRO,Accueil,Expertises,Paragraphe,Du renseignement opérationnel à la maîtrise du récit. Seules ou combinées selon le mandat.,,Description courte à droite du H2
+03-HOME-EXPERTISES-CARD1-NUM,Accueil,Expertises,Numérotation,01 / 06,,Compteur de la 1ère carte expertise
+03-HOME-EXPERTISES-CARD1-CAT,Accueil,Expertises,Catégorie,Analyse économique,,Catégorie mono uppercase de la 1ère carte
+03-HOME-EXPERTISES-CARD1-TITLE,Accueil,Expertises,Titre H3,Renseignement d'affaires,,Titre de la 1ère carte expertise
+03-HOME-EXPERTISES-CARD1-DESC,Accueil,Expertises,Paragraphe,"Veille, investigations, études, due diligence.",,Description courte de la 1ère carte
+03-HOME-EXPERTISES-CARD2-NUM,Accueil,Expertises,Numérotation,02 / 06,,Compteur de la 2ème carte
+03-HOME-EXPERTISES-CARD2-CAT,Accueil,Expertises,Catégorie,Diplomatie privée,,Catégorie de la 2ème carte
+03-HOME-EXPERTISES-CARD2-TITLE,Accueil,Expertises,Titre H3,Lobbying et accès dirigeants,,Titre de la 2ème carte
+03-HOME-EXPERTISES-CARD2-DESC,Accueil,Expertises,Paragraphe,"Accès, intermédiation, réseaux dirigeants.",,Description de la 2ème carte
+03-HOME-EXPERTISES-CARD3-NUM,Accueil,Expertises,Numérotation,03 / 06,,Compteur de la 3ème carte
+03-HOME-EXPERTISES-CARD3-CAT,Accueil,Expertises,Catégorie,Influence,,Catégorie de la 3ème carte
+03-HOME-EXPERTISES-CARD3-TITLE,Accueil,Expertises,Titre H3,Communication d'influence,,Titre de la 3ème carte
+03-HOME-EXPERTISES-CARD3-DESC,Accueil,Expertises,Paragraphe,"Stratégie 360°, relations presse, contenus, événements.",,Description de la 3ème carte
+03-HOME-EXPERTISES-CARD4-NUM,Accueil,Expertises,Numérotation,04 / 06,,Compteur de la 4ème carte
+03-HOME-EXPERTISES-CARD4-CAT,Accueil,Expertises,Catégorie,Protection d'image,,Catégorie de la 4ème carte
+03-HOME-EXPERTISES-CARD4-TITLE,Accueil,Expertises,Titre H3,E-réputation et gestion de crise,,Titre de la 4ème carte
+03-HOME-EXPERTISES-CARD4-DESC,Accueil,Expertises,Paragraphe,"Audit, gestion de crise, présence digitale.",,Description de la 4ème carte
+03-HOME-EXPERTISES-CARD5-NUM,Accueil,Expertises,Numérotation,05 / 06,,Compteur de la 5ème carte
+03-HOME-EXPERTISES-CARD5-CAT,Accueil,Expertises,Catégorie,Réseaux sociaux,,Catégorie de la 5ème carte
+03-HOME-EXPERTISES-CARD5-TITLE,Accueil,Expertises,Titre H3,Social intelligence,,Titre de la 5ème carte
+03-HOME-EXPERTISES-CARD5-DESC,Accueil,Expertises,Paragraphe,"Signaux faibles, opinion mining, ciblage précis.",,Description de la 5ème carte
+03-HOME-EXPERTISES-CARD6-NUM,Accueil,Expertises,Numérotation,06 / 06,,Compteur de la 6ème carte
+03-HOME-EXPERTISES-CARD6-CAT,Accueil,Expertises,Catégorie,Propriétaire,,Catégorie de la 6ème carte
+03-HOME-EXPERTISES-CARD6-TITLE,Accueil,Expertises,Titre H3,Bases de données propriétaires,,Titre de la 6ème carte
+03-HOME-EXPERTISES-CARD6-DESC,Accueil,Expertises,Paragraphe,"Collecte, visualisation, modèles prédictifs.",,Description de la 6ème carte
+04-HOME-CASES-EYEBROW,Accueil,Références,Eyebrow,Nos références,,Eyebrow de la section Cases
+04-HOME-CASES-H2,Accueil,Références,Titre H2,"Trois missions, trois résultats",,"H2. ""trois résultats"" est en bleu et bold"
+04-HOME-CASES-INTRO,Accueil,Références,Paragraphe,Mesurés. Documentés. Strictement confidentiel.,,Description courte à droite du H2
+04-HOME-CASES-CARD1-EYEBROW,Accueil,Références,Eyebrow,Cas n°01 · Fintech panafricaine · Oct. 2025,,Catégorie mono de la 1ère case card
+04-HOME-CASES-CARD1-NAME,Accueil,Références,Titre H3,REasy,,"Nom du cas client (suivi d'un point bleu)"
+04-HOME-CASES-CARD1-DESC,Accueil,Références,Paragraphe,"Médiatiser la clôture d'une pre-seed de 1,8 M$ pour une fintech camerounaise. 8+ publications confirmées dont exclusivité TV CNBC Africa, TechCabal, Daba Finance.",,Description du cas REasy
+04-HOME-CASES-CARD1-METRIC,Accueil,Références,Métrique,115M+,,Grand chiffre en bleu en bas de la carte
+04-HOME-CASES-CARD1-METRIC-LABEL,Accueil,Références,Label métrique,Visiteurs/mois (audience cumulée médias premium),,Label mono uppercase sous la métrique
+04-HOME-CASES-CARD2-EYEBROW,Accueil,Références,Eyebrow,Cas n°02 · Personal branding ONU · Oct. 2025,,Catégorie de la 2ème case card
+04-HOME-CASES-CARD2-NAME,Accueil,Références,Titre H3,Manuel Ntumba,,Nom du cas client
+04-HOME-CASES-CARD2-DESC,Accueil,Références,Paragraphe,"Construire un personal branding institutionnel pour un expert ONU Compliance. 4+ publications dès le premier mois (Compliance Week, Sika Finance, CIO Mag, Africa Intelligence).",,Description du cas Manuel Ntumba
+04-HOME-CASES-CARD2-METRIC,Accueil,Références,Métrique,1M+,,Grand chiffre en bleu
+04-HOME-CASES-CARD2-METRIC-LABEL,Accueil,Références,Label métrique,Visiteurs/mois (publications obtenues),,Label mono sous la métrique
+04-HOME-CASES-CARD3-EYEBROW,Accueil,Références,Eyebrow,"Cas n°03 · Power, Mines, Hydrocarbures · Déc. 2025",,Catégorie de la 3ème case card
+04-HOME-CASES-CARD3-NAME,Accueil,Références,Titre H3,Huawei,,Nom du cas client
+04-HOME-CASES-CARD3-DESC,Accueil,Références,Paragraphe,"Décrypter les marchés africains de l'électricité, des hydrocarbures et des mines. 4 rapports Strategic Risk Management couvrant Power Grid, Public Finances, Oil & Gas, Mines.",,Description du cas Huawei
+04-HOME-CASES-CARD3-METRIC,Accueil,Références,Métrique,200p.,,Grand chiffre en bleu (200 pages)
+04-HOME-CASES-CARD3-METRIC-LABEL,Accueil,Références,Label métrique,D'analyse exclusive en moins de 60 jours,,Label mono sous la métrique
+05-HOME-INSIGHTS-EYEBROW,Accueil,Insights,Eyebrow,Insights,,Eyebrow de la section Insights
+05-HOME-INSIGHTS-H2,Accueil,Insights,Titre H2,Pilier éditorial,,"H2. ""éditorial"" est en bleu et bold"
+05-HOME-INSIGHTS-INTRO,Accueil,Insights,Paragraphe,"Notes d'analyse, prises de parole, observatoires sectoriels. La preuve d'autorité dans le temps.",,Description courte à droite du H2
+05-HOME-INSIGHTS-FEATURED-TAG,Accueil,Insights,Tag,OSEA · En préparation,,Tag bleu de la card featured (gauche)
+05-HOME-INSIGHTS-FEATURED-TITLE,Accueil,Insights,Titre H3,Observatoire Stratégique Économique Afrique : le think tank ARMD en préparation,,Titre de la card featured
+05-HOME-INSIGHTS-FEATURED-DESC,Accueil,Insights,Paragraphe,"Plateforme éditoriale et base de données propriétaire sur les acteurs économiques, politiques et sociétaux du continent. Première publication automne 2026.",,Description de la card featured
+05-HOME-INSIGHTS-FEATURED-META,Accueil,Insights,Méta,"Note de cadrage · À paraître",,Méta mono uppercase en bas de la card featured (séparés par puces)
+05-HOME-INSIGHTS-CARD2-TAG,Accueil,Insights,Tag,Analyse,,Tag de la 2ème card (top right)
+05-HOME-INSIGHTS-CARD2-TITLE,Accueil,Insights,Titre H3,Souveraineté informationnelle : le défi des champions africains,,Titre de la 2ème card
+05-HOME-INSIGHTS-CARD2-DESC,Accueil,Insights,Paragraphe,Pourquoi la maîtrise des récits devient une condition de légitimité.,,Description de la 2ème card
+05-HOME-INSIGHTS-CARD2-META,Accueil,Insights,Méta,Article fondateur · Mai 2026,,Méta en bas de la 2ème card
+05-HOME-INSIGHTS-CARD3-TAG,Accueil,Insights,Tag,Note,,Tag de la 3ème card (bottom right)
+05-HOME-INSIGHTS-CARD3-TITLE,Accueil,Insights,Titre H3,Médiatiser une levée pre-seed panafricaine en 72h,,Titre de la 3ème card
+05-HOME-INSIGHTS-CARD3-DESC,Accueil,Insights,Paragraphe,Retour d'expérience opérationnel sur le mandat REasy.,,Description de la 3ème card
+05-HOME-INSIGHTS-CARD3-META,Accueil,Insights,Méta,Note méthodo · Avril 2026,,Méta en bas de la 3ème card
+06-HOME-NEWSLETTER-H2,Accueil,Newsletter,Titre H2,"Recevez les notes ARMD
+directement.",,Titre H2 de la section Newsletter (deux lignes)
+06-HOME-NEWSLETTER-DESC,Accueil,Newsletter,Paragraphe,"Une analyse stratégique par mois. Pas de spam, pas de marketing. Désinscription d'un clic.",,Description sous le H2
+06-HOME-NEWSLETTER-INPUT-PLACEHOLDER,Accueil,Newsletter,Placeholder,votre@email.pro,,Placeholder dans le champ email
+06-HOME-NEWSLETTER-BUTTON,Accueil,Newsletter,Bouton CTA,S'abonner,,"Texte du bouton (devient ""Merci ✓"" après soumission)"
+06-HOME-NEWSLETTER-BUTTON-DONE,Accueil,Newsletter,État bouton,Merci ✓,,Texte du bouton après soumission réussie
+06-HOME-NEWSLETTER-LEGAL,Accueil,Newsletter,Mention légale,Confidentialité ARMD · GDPR-conforme,,Mention mono uppercase sous le formulaire
+07-HOME-CTA-EYEBROW,Toutes pages,ContactCTA,Eyebrow,Parlons stratégie,,"Apparaît sur toutes les pages (Accueil, À propos, Expertises, Implantations, Références, Partenaires, Insights). Eyebrow du bandeau CTA bleu/foncé"
+07-HOME-CTA-H2,Toutes pages,ContactCTA,Titre H2,Décidez du prochain mouvement stratégique d'ARMD.,,H2 du bandeau CTA (apparaît sur toutes les pages)
+07-HOME-CTA-BUTTON,Toutes pages,ContactCTA,Bouton CTA,Prendre contact,,CTA principal du bandeau (apparaît sur toutes les pages)
+08-ABOUT-HEADER-EYEBROW,À propos,PageHeader,Eyebrow,À propos,,Eyebrow du header de la page À propos
+08-ABOUT-HEADER-H1,À propos,PageHeader,Titre H1,"Un cabinet, une conviction.",,"H1 de la page. ""une conviction"" est en bleu"
+08-ABOUT-HEADER-SUBTITLE,À propos,PageHeader,Sous-titre,Bâtir le premier géant panafricain de l'intelligence économique et de l'influence stratégique. Capable de rivaliser avec les firmes internationales les plus réputées.,,Sous-titre du header
+09-ABOUT-FOUNDER-EYEBROW,À propos,Founder,Eyebrow,Fondateur · Cellule opérationnelle 01,,Eyebrow de la section Fondateur
+09-ABOUT-FOUNDER-H2,À propos,Founder,Titre H2,Goudet Abalé,,"H2 (suivi d'un point bleu)"
+09-ABOUT-FOUNDER-ROLE,À propos,Founder,Sous-titre,Fondateur · CEO ARMD Group,,Sous-titre mono uppercase sous le nom
+09-ABOUT-FOUNDER-BIO,À propos,Founder,Paragraphe,"Ancien Directeur chez 35°Nord (Forward Global), leader français de l'intelligence économique et de l'influence stratégique. Goudet a accompagné les opérations de communication d'influence et d'intelligence économique sur les plus grands dossiers africains et internationaux de la dernière décennie. Il fonde ARMD en 2025 avec une conviction : bâtir le premier géant panafricain du conseil en intelligence et influence, capable de rivaliser avec les firmes internationales les plus réputées.",,"Bio principale. ""35°Nord (Forward Global)"" et ""bâtir le premier géant panafricain"" sont mis en valeur (couleur plus claire et font-medium)"
+09-ABOUT-FOUNDER-CRED1-LABEL,À propos,Founder,Label,Formation,,Label mono d'un bloc credentials (colonne gauche)
+09-ABOUT-FOUNDER-CRED1-VALUE,À propos,Founder,Valeur,"Sciences Po Lille
+Johns Hopkins SAIS Bologne",,Valeur du bloc Formation (deux lignes)
+09-ABOUT-FOUNDER-CRED2-LABEL,À propos,Founder,Label,Trajectoire,,Label mono du 2ème bloc credentials
+09-ABOUT-FOUNDER-CRED2-VALUE,À propos,Founder,Valeur,"Kinshasa · Brazzaville
+Bologne · Séoul · Paris",,Valeur du bloc Trajectoire (deux lignes)
+09-ABOUT-FOUNDER-CRED3-LABEL,À propos,Founder,Label,Ancienne maison,,Label mono du 3ème bloc credentials
+09-ABOUT-FOUNDER-CRED3-VALUE,À propos,Founder,Valeur,"35°Nord
+(Forward Global)",,Valeur du bloc Ancienne maison (deux lignes)
+09-ABOUT-FOUNDER-CRED4-LABEL,À propos,Founder,Label,Affiliations,,Label mono du 4ème bloc credentials
+09-ABOUT-FOUNDER-CRED4-VALUE,À propos,Founder,Valeur,"FFPB
+Réseau panafricain",,Valeur du bloc Affiliations (deux lignes)
+09-ABOUT-FOUNDER-MANDATES-LABEL,À propos,Founder,Label,Mandats accompagnés,,Label mono au-dessus des chips
+09-ABOUT-FOUNDER-MANDATES,À propos,Founder,Tags,"NSIA, EDF, Endeavour Mining, Huawei, Présidence du Congo, UNICEF, Expertise France",,7 chips arrondis listant les mandats accompagnés (chacun dans son chip séparé)
+09-ABOUT-FOUNDER-LINK,À propos,Founder,Lien,Lire le parcours complet,,"Lien souligné en bas de la section (href=""#"" placeholder)"
+10-ABOUT-TEAM-EYEBROW,À propos,Team,Eyebrow,Cellule opérationnelle,,Eyebrow de la section Team
+10-ABOUT-TEAM-H2,À propos,Team,Titre H2,L'équipe qui exécute,,"H2. ""qui exécute"" est en bleu et bold"
+10-ABOUT-TEAM-INTRO,À propos,Team,Paragraphe,"Profils croisés Sciences Po, Banque mondiale, Havas, Forward Global. Activables sur les 5 fuseaux clés.",,Description courte à droite du H2
+10-ABOUT-TEAM-MEMBER1-NAME,À propos,Team,Nom,Eisa Gouredou,,Nom du 1er membre
+10-ABOUT-TEAM-MEMBER1-ROLE,À propos,Team,Fonction,Consultante RP,,Fonction du 1er membre
+10-ABOUT-TEAM-MEMBER1-LOC,À propos,Team,Ville,Washington,,Ville du 1er membre
+10-ABOUT-TEAM-MEMBER2-NAME,À propos,Team,Nom,Lewis Pagoriwan,,Nom du 2ème membre
+10-ABOUT-TEAM-MEMBER2-ROLE,À propos,Team,Fonction,Consultant senior,,Fonction du 2ème membre
+10-ABOUT-TEAM-MEMBER2-LOC,À propos,Team,Ville,Paris,,Ville du 2ème membre
+10-ABOUT-TEAM-MEMBER3-NAME,À propos,Team,Nom,Micheline Sienga,,Nom du 3ème membre
+10-ABOUT-TEAM-MEMBER3-ROLE,À propos,Team,Fonction,Consultante RP,,Fonction du 3ème membre
+10-ABOUT-TEAM-MEMBER3-LOC,À propos,Team,Ville,Abidjan,,Ville du 3ème membre
+10-ABOUT-TEAM-MEMBER4-NAME,À propos,Team,Nom,Abraham Coulibaly,,Nom du 4ème membre
+10-ABOUT-TEAM-MEMBER4-ROLE,À propos,Team,Fonction,Consultant digital,,Fonction du 4ème membre
+10-ABOUT-TEAM-MEMBER4-LOC,À propos,Team,Ville,Abidjan,,Ville du 4ème membre
+10-ABOUT-TEAM-MEMBER5-NAME,À propos,Team,Nom,Noel Dixon,,Nom du 5ème membre
+10-ABOUT-TEAM-MEMBER5-ROLE,À propos,Team,Fonction,Graphiste,,Fonction du 5ème membre
+10-ABOUT-TEAM-MEMBER5-LOC,À propos,Team,Ville,Abidjan,,Ville du 5ème membre
+10-ABOUT-TEAM-MORE-BADGE,À propos,Team,Badge,+10,,Badge noir arrondi devant le lien découverte Advisory Board
+10-ABOUT-TEAM-MORE-LINK,À propos,Team,Lien,Découvrir l'Advisory Board et les experts seniors,,"Lien en bas de la section (href=""#"" placeholder)"
+11-EXPERTISES-HEADER-EYEBROW,Expertises,PageHeader,Eyebrow,Nos expertises,,Eyebrow du header de la page Expertises
+11-EXPERTISES-HEADER-H1,Expertises,PageHeader,Titre H1,Six expertises mobilisables.,,"H1. ""mobilisables"" est en bleu"
+11-EXPERTISES-HEADER-SUBTITLE,Expertises,PageHeader,Sous-titre,"Du renseignement opérationnel à la maîtrise du récit. Articulées autour de trois leviers : Donnée, Récit, Humain. Seules ou combinées selon le mandat.",,Sous-titre du header
+12-LOCATIONS-HEADER-EYEBROW,Implantations,PageHeader,Eyebrow,Nos implantations,,Eyebrow du header de la page Implantations
+12-LOCATIONS-HEADER-H1,Implantations,PageHeader,Titre H1,Présents là où ça compte.,,"H1. ""là où ça compte"" est en bleu"
+12-LOCATIONS-HEADER-SUBTITLE,Implantations,PageHeader,Sous-titre,Paris et Abidjan en V1. Antennes régionales en ouverture sur trois continents. Pour servir les marchés africains, européens, multilatéraux.,,Sous-titre du header
+13-LOCATIONS-SECTION-EYEBROW,Implantations,Locations,Eyebrow,Nos implantations,,Eyebrow de la section (répété sous le PageHeader sur fond bleu foncé)
+13-LOCATIONS-SECTION-H2,Implantations,Locations,Titre H2,Présents là où ça compte,,"H2 de la section. ""là où ça compte"" en bleu/bold"
+13-LOCATIONS-SECTION-INTRO,Implantations,Locations,Paragraphe,Paris et Abidjan en V1. Antennes régionales en ouverture sur 3 continents.,,Description courte à droite du H2
+13-LOCATIONS-ACTIVE-LABEL,Implantations,Locations,Label,Bureaux actifs,,Label mono au-dessus de la liste des bureaux actifs
+13-LOCATIONS-ACTIVE-1-CITY,Implantations,Locations,Ville,Paris,,Bureau actif 1
+13-LOCATIONS-ACTIVE-1-COUNTRY,Implantations,Locations,Pays,FR,,Code pays du bureau actif 1
+13-LOCATIONS-ACTIVE-2-CITY,Implantations,Locations,Ville,Abidjan,,Bureau actif 2 (HQ)
+13-LOCATIONS-ACTIVE-2-COUNTRY,Implantations,Locations,Pays,CI · HQ,,Code pays + mention HQ du bureau actif 2
+13-LOCATIONS-UPCOMING-LABEL,Implantations,Locations,Label,Antennes en ouverture,,Label mono au-dessus de la liste des antennes en ouverture
+13-LOCATIONS-UPCOMING-1,Implantations,Locations,Ville+Pays,Washington · US,,Antenne en ouverture 1 (ville et code pays affichés sur la même ligne)
+13-LOCATIONS-UPCOMING-2,Implantations,Locations,Ville+Pays,Bruxelles · BE,,Antenne en ouverture 2
+13-LOCATIONS-UPCOMING-3,Implantations,Locations,Ville+Pays,Genève · CH,,Antenne en ouverture 3
+13-LOCATIONS-UPCOMING-4,Implantations,Locations,Ville+Pays,Lagos · NG,,Antenne en ouverture 4
+13-LOCATIONS-UPCOMING-5,Implantations,Locations,Ville+Pays,Nairobi · KE,,Antenne en ouverture 5
+13-LOCATIONS-UPCOMING-6,Implantations,Locations,Ville+Pays,Kigali · RW,,Antenne en ouverture 6
+13-LOCATIONS-UPCOMING-7,Implantations,Locations,Ville+Pays,Casablanca · MA,,Antenne en ouverture 7
+13-LOCATIONS-UPCOMING-8,Implantations,Locations,Ville+Pays,Dubai · AE,,Antenne en ouverture 8
+13-LOCATIONS-MAP-MARKERS,Implantations,Locations,Marqueurs carte,"Paris, Abidjan, Washington, Bruxelles, Genève, Lagos, Nairobi, Kigali, Casablanca, Dubai, Bologne, Tokyo, Johannesburg, Le Caire",,Labels visibles au survol des marqueurs sur le globe mondial (2 actifs + 12 futurs)
+14-REFERENCES-HEADER-EYEBROW,Références,PageHeader,Eyebrow,Nos références,,Eyebrow du header de la page Références
+14-REFERENCES-HEADER-H1,Références,PageHeader,Titre H1,"Trois missions, trois résultats.",,"H1. ""trois résultats"" est en bleu"
+14-REFERENCES-HEADER-SUBTITLE,Références,PageHeader,Sous-titre,Mesurés. Documentés. Strictement confidentiels. Une sélection des mandats récents accompagnés par ARMD sur les marchés africains et internationaux.,,Sous-titre du header
+15-PARTNERS-HEADER-EYEBROW,Partenaires,PageHeader,Eyebrow,Nos partenaires,,Eyebrow du header de la page Partenaires
+15-PARTNERS-HEADER-H1,Partenaires,PageHeader,Titre H1,Un écosystème activable.,,"H1. ""activable"" est en bleu"
+15-PARTNERS-HEADER-SUBTITLE,Partenaires,PageHeader,Sous-titre,"Médias activables panafricains et internationaux, cabinets partenaires, studios, lieux événementiels. Un réseau qualifié au service de chaque mandat.",,Sous-titre du header
+16-PARTNERS-SECTION-EYEBROW,Partenaires,Partners,Eyebrow,Notre écosystème · médias activables & cabinets partenaires,,Eyebrow centré au-dessus du marquee des logos partenaires (fond bleu foncé)
+16-PARTNERS-LOGOS,Partenaires,Partners,Liste logos,"Jeune Afrique, Financial Afrik, Forbes Afrique, CNBC Africa, Bloomberg, BBC Africa, La Tribune Afrique, Agence Ecofin, TechCabal, Reuters, Sport News Africa, Mad Makers, African Business, Semafor Africa, Forward Global, ESP Abidjan",,"Marquee horizontal défilant en boucle (16 logos affichés en wordmark stylisé : serif, italic, mono ou uppercase selon le logo)"
+17-INSIGHTS-HEADER-EYEBROW,Insights,PageHeader,Eyebrow,Insights,,Eyebrow du header de la page Insights
+17-INSIGHTS-HEADER-H1,Insights,PageHeader,Titre H1,Pilier éditorial.,,"H1. ""éditorial"" est en bleu"
+17-INSIGHTS-HEADER-SUBTITLE,Insights,PageHeader,Sous-titre,"Notes d'analyse, prises de parole, observatoires sectoriels. La preuve d'autorité dans le temps. OSEA - Observatoire Stratégique Économique Afrique - en préparation.",,Sous-titre du header
+18-CONTACT-HEADER-EYEBROW,Contact,PageHeader,Eyebrow,Parlons stratégie,,Eyebrow du header de la page Contact
+18-CONTACT-HEADER-H1,Contact,PageHeader,Titre H1,Observer. Anticiper. Diriger.,,"H1. ""Diriger"" est en bleu"
+18-CONTACT-HEADER-SUBTITLE,Contact,PageHeader,Sous-titre,"Décidez du prochain mouvement stratégique d'ARMD pour votre marché, votre image, vos intérêts. Réponse sous 48h ouvrées. Échange initial confidentiel sans engagement.",,Sous-titre du header
+19-CONTACT-SECTION-EYEBROW,Contact,Contact,Eyebrow,Parlons stratégie,,Eyebrow de la section Contact (répété dans le grand bloc bleu foncé)
+19-CONTACT-SECTION-H2,Contact,Contact,Titre H2,"Observer.
+Anticiper.
+Diriger.",,"H2 de la section (3 lignes). Observer. et Anticiper. en font-normal, Diriger en font-semibold avec point bleu"
+19-CONTACT-SECTION-DESC,Contact,Contact,Paragraphe,"Décidez du prochain mouvement stratégique d'ARMD pour votre marché, votre image, vos intérêts.",,Paragraphe sous le H2
+19-CONTACT-OFFICE-LABEL,Contact,Contact,Label,Bureau principal,,Label mono du 1er bloc info
+19-CONTACT-OFFICE-VALUE,Contact,Contact,Adresse,"Angré 8ème tranche
+Abidjan, Côte d'Ivoire",,Adresse du bureau principal (deux lignes)
+19-CONTACT-PHONE-LABEL,Contact,Contact,Label,Téléphone,,Label mono du 2ème bloc info
+19-CONTACT-PHONE-VALUE,Contact,Contact,Téléphone,+225 (0)5 02 89 19 68,,Numéro de téléphone cliquable
+19-CONTACT-EMAIL-LABEL,Contact,Contact,Label,Email,,Label mono du 3ème bloc info
+19-CONTACT-EMAIL-VALUE,Contact,Contact,Email,ga@armdgroup.com,,Adresse email cliquable
+19-CONTACT-BUTTON,Contact,Contact,Bouton CTA,Prendre contact,,CTA en bas du bloc Contact (mailto)
+20-404-EYEBROW,404,NotFoundPage,Eyebrow,Erreur 404,,Eyebrow de la page 404
+20-404-H1,404,NotFoundPage,Titre H1,Cette page n'existe pas.,,"H1 de la page 404 (point en bleu)"
+20-404-DESC,404,NotFoundPage,Paragraphe,La ressource demandée est introuvable ou a été déplacée.,,Description courte sous le H1
+20-404-BUTTON,404,NotFoundPage,Bouton CTA,Retour à l'accueil,,CTA de retour vers /
+21-NAV-LINK-1,Navbar,Navbar,Item menu,À propos,,1er item de la navigation principale
+21-NAV-LINK-2,Navbar,Navbar,Item menu,Expertises,,2ème item de la navigation (déclenche le mega menu)
+21-NAV-LINK-3,Navbar,Navbar,Item menu,Implantations,,3ème item de la navigation
+21-NAV-LINK-4,Navbar,Navbar,Item menu,Références,,4ème item de la navigation
+21-NAV-LINK-5,Navbar,Navbar,Item menu,Partenaires,,5ème item de la navigation
+21-NAV-LINK-6,Navbar,Navbar,Item menu,Insights,,6ème item de la navigation
+21-NAV-SUBMENU-INTRO-H3,Navbar,Navbar mega menu,Titre H3,Expertises,,Titre de la colonne featured du mega menu
+21-NAV-SUBMENU-INTRO-DESC,Navbar,Navbar mega menu,Paragraphe,Trois pôles de renseignement au service de vos décisions stratégiques,,Description de la colonne featured du mega menu
+21-NAV-SUBMENU-INTRO-LINK,Navbar,Navbar mega menu,Lien,Voir,,Lien vers /expertises depuis la colonne featured du mega menu
+21-NAV-SUBMENU-CARD1,Navbar,Navbar mega menu,Card,Renseignement d'affaires,,1ère card du mega menu (lien vers /expertises#renseignement)
+21-NAV-SUBMENU-CARD2,Navbar,Navbar mega menu,Card,Influence stratégique,,2ème card du mega menu (lien vers /expertises#influence)
+21-NAV-SUBMENU-CARD3,Navbar,Navbar mega menu,Card,Social intelligence,,3ème card du mega menu (lien vers /expertises#social)
+21-NAV-REGION-FR,Navbar,Navbar,Toggle langue,FR,,Bouton langue français dans le toggle FR/EN
+21-NAV-REGION-EN,Navbar,Navbar,Toggle langue,EN,,Bouton langue anglais dans le toggle FR/EN
+21-NAV-CTA,Navbar,Navbar,Bouton CTA,Parlons stratégie,,CTA fixe en haut à droite (aside) - lien vers /contact
+22-FOOTER-COPYRIGHT,Footer,Footer,Mention,© 2026 ARMD Group,,"Mention copyright dynamique (l'année est calculée par JS via new Date().getFullYear())"
+22-FOOTER-ZONE,Footer,Footer,Mention,Zone Global · FR,,Indication de la région active au centre du footer
+22-FOOTER-REGION-LINK,Footer,Footer,Lien,Choisir une autre région →,,"Lien à droite du footer (href=""#"" placeholder)"

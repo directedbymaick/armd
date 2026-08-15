@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARMD - Intelligence économique &amp; influence stratégique</title>
+<meta name="description" content="Cabinet panafricain d'intelligence économique et d'influence stratégique. Paris · Abidjan · Washington. Observer, anticiper, diriger." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+<!-- Apfel Grotezk officielle (Brand Manual ARMD v1) via Fontsource CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/400.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/500.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/600.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/700.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   ARMD V2 - Mad Makers
+   Charte officielle Brand Guidelines v1 - 2025
+   Approche distinctive (anti AI slop) :
+   - Palette tranchée (Deep blue / Off-white / Sand / Blue accent)
+   - Motion bold avec orchestration scroll
+   - Backgrounds layered (Vanta dots + supertarget + gradients)
+   - SVG lighting interactif sur cards Expertises
+   - Marquee CSS pur sur logos partenaires
+   - Typo OFFICIELLE : Apfel Grotezk (Brand Manual ARMD v1) via Fontsource CDN
+     Weights disponibles : Regular 400, Medium 500, Semibold 600, Bold 700
+     Contraste obtenu via letter-spacing + size + opacity, pas weights extrêmes
+   ============================================================ */
+
+:root {
+  /* Palette officielle ARMD */
+  --off-white: #E5E1E0;
+  --blue: #2C56FA;
+  --blue-glow: rgba(44, 86, 250, 0.4);
+  --grey: #D3D1D1;
+  --sand-clear: #B8ADA3;
+  --sand: #797066;
+  --black: #282828;
+  --dark-blue: #073763;
+  --deep-blue: #002D50;
+  --deeper: #001426;
+
+  /* Type - Apfel Grotezk officielle ARMD */
+  --font-display: "Apfel Grotezk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Espacement */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 5rem;
+  --space-12: 8rem;
+  --space-16: 12rem;
+  --space-20: 16rem;
+
+  --max-w: 1440px;
+  --max-content: 1120px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; background: var(--off-white); }
+
+body {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--black);
+  background: var(--off-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+  letter-spacing: -0.011em;
+}
+
+::selection { background: var(--blue); color: var(--off-white); }
+
+/* ============================================================
+   TYPOGRAPHY SCALE (extreme weights)
+   ============================================================ */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.eyebrow.with-line { display: inline-flex; align-items: center; gap: 0.75rem; }
+.eyebrow.with-line::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   SPLASH OVERLAY - Vanta dots background + ARMD→ARMED Apple-style
+   ============================================================ */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--deeper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  perspective: 2000px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.splash-vanta {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.splash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, transparent 0%, var(--deeper) 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.splash-eyebrow {
+  position: absolute;
+  top: var(--space-8);
+  color: var(--off-white);
+  opacity: 0;
+  z-index: 2;
+}
+
+.splash-wordmark {
+  display: flex;
+  align-items: baseline;
+  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--off-white);
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter, letter-spacing;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.splash-wordmark .letter {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  transform-origin: 50% 50% -10px;
+}
+
+.splash-wordmark .letter-e {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  opacity: 0;
+}
+
+.splash-wordmark .letter-e-inner {
+  display: inline-block;
+}
+
+.splash-meta {
+  position: absolute;
+  bottom: var(--space-8);
+  color: var(--off-white);
+  opacity: 0;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.splash-meta span { opacity: 0.5; }
+.splash-meta .dot { width: 4px; height: 4px; background: var(--blue); border-radius: 50%; }
+
+.splash-choices {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  opacity: 0;
+  pointer-events: none;
+  width: min(840px, 92vw);
+  z-index: 3;
+  will-change: opacity, transform;
+}
+
+.choice {
+  position: relative;
+  border: 1px solid rgba(229, 225, 224, 0.15);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: var(--off-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(7, 55, 99, 0.3);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s ease,
+              background 0.5s ease;
+  min-height: 240px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.choice::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+              rgba(44, 86, 250, 0.18) 0%,
+              transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.choice:hover {
+  transform: translateY(-3px);
+  border-color: rgba(44, 86, 250, 0.4);
+  background: rgba(7, 55, 99, 0.5);
+}
+
+.choice:hover::before { opacity: 1; }
+
+.choice-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.choice-name {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-top: var(--space-2);
+}
+
+.choice-cities {
+  font-size: 0.875rem;
+  opacity: 0.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-top: var(--space-1);
+}
+
+.choice-arrow {
+  font-size: 1.5rem;
+  align-self: flex-end;
+  opacity: 0.55;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+  font-weight: 400;
+}
+
+.choice:hover .choice-arrow {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.splash-lang {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  gap: var(--space-2);
+  opacity: 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  z-index: 3;
+}
+
+.splash-lang button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  opacity: 0.45;
+  padding: 0.5rem 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.splash-lang button.active,
+.splash-lang button:hover { opacity: 1; }
+
+.splash-lang span { opacity: 0.2; align-self: center; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(229, 225, 224, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(40, 40, 40, 0.05);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.nav-menu {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.nav-menu a {
+  color: var(--black);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-menu a:hover { opacity: 1; }
+.nav-menu a:hover::after { transform: scaleX(1); }
+
+.nav-switchers {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.nav-switcher {
+  border: 1px solid rgba(40, 40, 40, 0.12);
+  background: transparent;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--black);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 1.7rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 4l3 3 3-3' stroke='%23282828' fill='none' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-switcher:hover { border-color: var(--blue); }
+
+@media (max-width: 900px) {
+  .nav-menu { display: none; }
+}
+
+/* ============================================================
+   HERO - asymetrique 60/40, typo XXL extreme weights
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: var(--space-12) var(--space-4) var(--space-12);
+  overflow: hidden;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+}
+
+#hero-vanta {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 50%, rgba(229, 225, 224, 0.92) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, var(--off-white) 90%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero-eyebrow {
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+  margin-bottom: var(--space-4);
+}
+
+.hero-title-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title-line.bold { font-weight: 700; }
+.hero-title-line:nth-child(1) { animation-delay: 0.5s; }
+.hero-title-line:nth-child(2) { animation-delay: 0.65s; }
+.hero-title-line:nth-child(3) { animation-delay: 0.8s; }
+.hero-title-line .dot { color: var(--blue); }
+
+@keyframes heroFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-sub {
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  max-width: 56ch;
+  opacity: 0;
+  line-height: 1.55;
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+  color: rgba(40, 40, 40, 0.7);
+  transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+}
+
+.hero-cta-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Codepen-inspired button hover : fluid blue sweep */
+.hero-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--black);
+  color: var(--off-white);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.hero-cta:hover { transform: translateY(-2px); }
+.hero-cta:hover::before { transform: translateY(0); }
+
+.hero-cta .arrow {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cta:hover .arrow { transform: translateX(4px); }
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 1rem 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.hero-cta-secondary:hover { opacity: 1; }
+.hero-cta-secondary .arrow { font-weight: 400; }
+
+/* Hero right column - target grid animated */
+.hero-graphic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: heroFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.hero-target {
+  width: 100%;
+  height: 100%;
+  animation: targetRotate 60s linear infinite;
+}
+
+@keyframes targetRotate {
+  to { transform: rotate(360deg); }
+}
+
+.hero-target-pulse {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-target-pulse::before {
+  content: "";
+  width: 18%;
+  height: 18%;
+  border-radius: 50%;
+  background: var(--blue);
+  filter: blur(8px);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 0.85; transform: scale(1.15); }
+}
+
+.hero-meta {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.hero-meta-item {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0;
+  color: rgba(40, 40, 40, 0.45);
+  animation: heroFadeIn 1.2s ease 1.5s forwards;
+}
+
+@media (max-width: 900px) {
+  .hero { padding: var(--space-8) var(--space-3); min-height: 80vh; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-graphic { display: none; }
+  .hero-meta { display: none; }
+}
+
+/* ============================================================
+   MANIFESTO - plein dark-blue, typo monumentale
+   ============================================================ */
+.manifesto {
+  background: var(--dark-blue);
+  color: var(--off-white);
+  padding: var(--space-16) var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto::before {
+  content: "";
+  position: absolute;
+  right: -30%;
+  top: -30%;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  border: 1px solid rgba(229, 225, 224, 0.07);
+  box-shadow:
+    inset 0 0 0 120px transparent,
+    inset 0 0 0 120px rgba(229, 225, 224, 0.04),
+    inset 0 0 0 240px transparent,
+    inset 0 0 0 240px rgba(229, 225, 224, 0.04);
+  pointer-events: none;
+}
+
+.manifesto::after {
+  content: "";
+  position: absolute;
+  right: calc(-30% + 410px);
+  top: calc(-30% + 410px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--blue);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.manifesto-inner {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.manifesto-eyebrow {
+  margin-bottom: var(--space-6);
+}
+
+.manifesto-quote {
+  font-size: clamp(2.25rem, 6vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  max-width: 22ch;
+  margin-bottom: var(--space-8);
+}
+
+.manifesto-quote .accent {
+  font-weight: 700;
+  color: var(--off-white);
+  position: relative;
+  display: inline-block;
+}
+
+.manifesto-quote .accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4%;
+  height: 14%;
+  background: var(--blue);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+.manifesto-triplet {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.manifesto-triplet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.manifesto-triplet-item .num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.manifesto-triplet-item .word {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.manifesto-triplet-item .word::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   3 LEVIERS - sections alternees
+   ============================================================ */
+.levers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: rgba(40, 40, 40, 0.08);
+}
+
+.lever {
+  position: relative;
+  padding: var(--space-12) var(--space-4);
+  overflow: hidden;
+  transition: background 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+}
+
+.lever:nth-child(1) { background: var(--off-white); color: var(--black); }
+.lever:nth-child(2) { background: var(--deep-blue); color: var(--off-white); }
+.lever:nth-child(3) {
+  background: var(--sand-clear);
+  color: var(--black);
+}
+
+.lever-bignum {
+  font-size: clamp(8rem, 16vw, 14rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.85;
+  opacity: 0.18;
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-4);
+  pointer-events: none;
+}
+
+.lever-content {
+  position: relative;
+  z-index: 1;
+}
+
+.lever-eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.lever-title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-1);
+  line-height: 1;
+}
+
+.lever-title .dot { color: var(--blue); }
+
+.lever-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: var(--space-4);
+}
+
+.lever-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.78;
+  font-weight: 400;
+  max-width: 32ch;
+}
+
+.lever-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: var(--space-4);
+}
+
+.lever-keywords span {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid currentColor;
+  border-radius: 99px;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .levers { grid-template-columns: 1fr; }
+  .lever { min-height: 480px; padding: var(--space-8) var(--space-3); }
+}
+
+/* ============================================================
+   EXPERTISES - SVG lighting interactif (specular + pointer)
+   ============================================================ */
+.expertises {
+  padding: var(--space-16) var(--space-4);
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header {
+  max-width: var(--max-w);
+  margin: 0 auto var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-6);
+  align-items: end;
+}
+
+.section-eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  max-width: 16ch;
+}
+
+.section-title .bold { font-weight: 700; }
+.section-title .accent { color: var(--blue); }
+
+.section-note {
+  font-size: 0.95rem;
+  opacity: 0.6;
+  max-width: 32ch;
+  text-align: right;
+  line-height: 1.55;
+}
+
+.expertises-grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.expertise {
+  position: relative;
+  padding: var(--space-4);
+  background: rgba(229, 225, 224, 0.6);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s ease;
+}
+
+.expertise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+              rgba(44, 86, 250, 0.12) 0%,
+              transparent 30%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.expertise:hover {
+  transform: translateY(-4px);
+  border-color: rgba(44, 86, 250, 0.4);
+}
+
+.expertise:hover::before { opacity: 1; }
+
+.expertise-top { display: flex; justify-content: space-between; align-items: flex-start; }
+
+.expertise-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+  font-weight: 500;
+}
+
+.expertise-arrow {
+  font-size: 1.25rem;
+  opacity: 0.3;
+  font-weight: 400;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expertise:hover .expertise-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.expertise-content { margin-top: auto; }
+
+.expertise-cat {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.expertise-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.expertise-desc {
+  font-size: 0.875rem;
+  opacity: 0.65;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .expertises-grid { grid-template-columns: 1fr; }
+  .section-header { grid-template-columns: 1fr; }
+  .section-note { text-align: left; }
+}
+
+/* ============================================================
+   CASES - bg deep-blue, stats XXL, cards stretched
+   ============================================================ */
+.cases {
+  background: var(--deeper);
+  color: var(--off-white);
+  padding: var(--space-16) var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cases::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue) 0%, transparent 60%);
+  filter: blur(120px);
+  opacity: 0.15;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cases-header { color: var(--off-white); }
+.cases-header .section-title .accent { color: var(--blue); }
+.cases-header .section-note { color: rgba(229, 225, 224, 0.55); }
+
+.cases-grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.case-card {
+  padding: var(--space-4);
+  background: rgba(229, 225, 224, 0.03);
+  border: 1px solid rgba(229, 225, 224, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  transition: background 0.5s ease, border-color 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-card:hover {
+  background: rgba(229, 225, 224, 0.07);
+  border-color: rgba(44, 86, 250, 0.5);
+  transform: translateY(-3px);
+}
+
+.case-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.case-name {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.case-name .dot { color: var(--blue); }
+
+.case-metric {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.case-metric-big {
+  font-family: var(--font-mono);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.case-metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  line-height: 1.5;
+}
+
+.case-desc {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .cases-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   PARTNERS MARQUEE - pure CSS, no JS
+   Technique : bake offset into keyframes + animation-delay
+   ============================================================ */
+.partners {
+  background: var(--off-white);
+  padding: var(--space-8) 0 var(--space-12);
+  border-top: 1px solid rgba(40, 40, 40, 0.06);
+  overflow: hidden;
+}
+
+.partners-eyebrow {
+  text-align: center;
+  margin-bottom: var(--space-6);
+  display: flex;
+  justify-content: center;
+}
+
+.marquee {
+  display: flex;
+  gap: var(--space-8);
+  width: max-content;
+  animation: marquee 35s linear infinite;
+  align-items: center;
+}
+
+.marquee:hover { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.partner-logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.partner-logo.serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.partner-logo.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.partner-logo.mono {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.partner-logo:hover { opacity: 1; }
+
+/* ============================================================
+   CLOSING - bg off-white avec gros block dark
+   ============================================================ */
+.closing {
+  background: var(--off-white);
+  padding: var(--space-12) var(--space-4) var(--space-8);
+}
+
+.closing-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: var(--deeper);
+  color: var(--off-white);
+  padding: var(--space-12) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-inner::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  border: 1px solid rgba(229, 225, 224, 0.05);
+  box-shadow:
+    inset 0 0 0 150px transparent,
+    inset 0 0 0 150px rgba(229, 225, 224, 0.04),
+    inset 0 0 0 300px transparent,
+    inset 0 0 0 300px rgba(229, 225, 224, 0.04);
+  pointer-events: none;
+}
+
+.closing-inner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--blue);
+  filter: blur(80px);
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.closing-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.closing-eyebrow {
+  margin-bottom: var(--space-6);
+}
+
+.closing-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin-bottom: var(--space-4);
+}
+
+.closing-title .light { font-weight: 400; }
+.closing-title .dot { color: var(--blue); }
+
+.closing-sub {
+  font-size: 1.25rem;
+  opacity: 0.75;
+  margin-bottom: var(--space-8);
+  max-width: 50ch;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.closing-contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  border-top: 1px solid rgba(229, 225, 224, 0.15);
+  padding-top: var(--space-6);
+  max-width: 800px;
+}
+
+.contact-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: var(--space-1);
+}
+
+.contact-block-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--off-white);
+  text-decoration: none;
+  display: block;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.contact-block-value:hover { color: var(--blue); }
+
+.closing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--space-6);
+  padding: 1rem 1.75rem;
+  background: var(--off-white);
+  color: var(--deeper);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+.closing-cta:hover {
+  transform: translateY(-2px);
+  background: var(--blue);
+  color: var(--off-white);
+}
+
+.closing-cta .arrow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 400;
+}
+
+.closing-cta:hover .arrow { transform: translateX(4px); }
+
+@media (max-width: 700px) {
+  .closing-contact { grid-template-columns: 1fr; gap: var(--space-3); }
+  .closing-inner { padding: var(--space-8) var(--space-4); }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--deeper);
+  color: var(--off-white);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid rgba(229, 225, 224, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.5;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer a:hover { color: var(--blue); opacity: 1; }
+
+/* ============================================================
+   SCROLL REVEAL - intersection observer adds .visible
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===========================================================
+     SPLASH OVERLAY
+     =========================================================== -->
+<section class="splash" id="splash" aria-label="ARMD entrée">
+  <div class="splash-vanta" id="splash-vanta"></div>
+
+  <div class="splash-eyebrow eyebrow with-line" id="splash-eyebrow">
+    Cabinet d'intelligence économique &amp; influence stratégique
+  </div>
+
+  <div class="splash-wordmark" id="splash-wordmark">
+    <span class="letter">A</span>
+    <span class="letter">R</span>
+    <span class="letter">M</span>
+    <span class="letter letter-e" id="letter-e"><span class="letter-e-inner">E</span></span>
+    <span class="letter" id="letter-d">D</span>
+  </div>
+
+  <div class="splash-choices" id="splash-choices">
+    <a href="#enter-global" class="choice" data-zone="global">
+      <div>
+        <div class="choice-label">Entrer dans</div>
+        <div class="choice-name">ARMD Global</div>
+        <div class="choice-cities">Paris · Washington · Bruxelles · Genève</div>
+      </div>
+      <div class="choice-arrow">→</div>
+    </a>
+    <a href="#enter-africa" class="choice" data-zone="africa">
+      <div>
+        <div class="choice-label">Entrer dans</div>
+        <div class="choice-name">ARMD Africa</div>
+        <div class="choice-cities">Abidjan · Lagos · Nairobi · Dakar</div>
+      </div>
+      <div class="choice-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="splash-meta" id="splash-meta">
+    <span>Paris</span>
+    <span class="dot"></span>
+    <span>Abidjan</span>
+    <span class="dot"></span>
+    <span>Washington</span>
+  </div>
+
+  <div class="splash-lang" id="splash-lang">
+    <button class="active" data-lang="fr">FR</button>
+    <span>·</span>
+    <button data-lang="en">EN</button>
+  </div>
+</section>
+
+<!-- ===========================================================
+     NAV
+     =========================================================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ARMD</a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#expertises">Expertises</a></li>
+        <li><a href="#cases">Références</a></li>
+        <li><a href="#partners">Partenaires</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-switchers">
+      <select class="nav-switcher" aria-label="Zone">
+        <option>Global</option>
+        <option>Africa</option>
+      </select>
+      <select class="nav-switcher" aria-label="Langue">
+        <option>FR</option>
+        <option>EN</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===========================================================
+     HERO - asymetrique, weights extremes
+     =========================================================== -->
+<section class="hero" id="enter-global">
+  <div id="hero-vanta"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow eyebrow with-line">ARMD Global · Q2 2026</div>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Observer.</span>
+        <span class="hero-title-line">Anticiper.</span>
+        <span class="hero-title-line bold">Diriger<span class="dot">.</span></span>
+      </h1>
+      <p class="hero-sub">
+        Cabinet d'intelligence économique et d'influence stratégique pour les économies africaines, les marchés émergents et les institutions multilatérales. Nous opérons là où les autres hésitent.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#contact" class="hero-cta">
+          Parlons de votre prochain mouvement
+          <span class="arrow">→</span>
+        </a>
+        <a href="#expertises" class="hero-cta-secondary">
+          Découvrir les expertises
+          <span class="arrow">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-graphic">
+      <svg class="hero-target" viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="195" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.35" />
+        <circle cx="200" cy="200" r="160" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.4" />
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.45" />
+        <circle cx="200" cy="200" r="80" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.5" />
+        <circle cx="200" cy="200" r="40" fill="none" stroke="#2C56FA" stroke-width="1.2" />
+        <line x1="0" y1="200" x2="400" y2="200" stroke="#002D50" stroke-width="0.5" opacity="0.35" />
+        <line x1="200" y1="0" x2="200" y2="400" stroke="#002D50" stroke-width="0.5" opacity="0.35" />
+        <circle cx="200" cy="200" r="6" fill="#2C56FA" />
+      </svg>
+      <div class="hero-target-pulse"></div>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <span class="hero-meta-item">Cabinet panafricain · fondé Abidjan</span>
+    <span class="hero-meta-item">8 mois · 75 555 € CA</span>
+  </div>
+</section>
+
+<!-- ===========================================================
+     MANIFESTO
+     =========================================================== -->
+<section class="manifesto" id="about">
+  <div class="manifesto-inner">
+    <div class="manifesto-eyebrow eyebrow with-line reveal">Manifeste</div>
+
+    <p class="manifesto-quote reveal reveal-delay-1">
+      La prospérité commence par la <span class="accent">maîtrise</span> de l'information<br />
+      et des <span class="accent">récits</span>.
+    </p>
+
+    <div class="manifesto-triplet reveal reveal-delay-2">
+      <div class="manifesto-triplet-item">
+        <span class="num">01</span>
+        <span class="word">Donnée</span>
+      </div>
+      <div class="manifesto-triplet-item">
+        <span class="num">02</span>
+        <span class="word">Récit</span>
+      </div>
+      <div class="manifesto-triplet-item">
+        <span class="num">03</span>
+        <span class="word">Humain</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     3 LEVIERS - sections alternees pleine hauteur
+     =========================================================== -->
+<section class="levers">
+  <article class="lever reveal">
+    <div class="lever-bignum">01</div>
+    <div class="lever-content">
+      <div class="lever-eyebrow eyebrow">Notre matière première</div>
+      <h3 class="lever-title">Donnée<span class="dot">.</span></h3>
+      <div class="lever-tagline">Acquisition · Structuration · Modélisation</div>
+      <p class="lever-desc">
+        OSINT, HUMINT, bases propriétaires. La preuve avant le récit. Aucune décision ARMD ne s'appuie sur l'intuition seule.
+      </p>
+      <div class="lever-keywords">
+        <span>OSINT</span>
+        <span>HUMINT</span>
+        <span>Due diligence</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="lever reveal reveal-delay-1">
+    <div class="lever-bignum">02</div>
+    <div class="lever-content">
+      <div class="lever-eyebrow eyebrow">Notre champ d'action</div>
+      <h3 class="lever-title">Récit<span class="dot">.</span></h3>
+      <div class="lever-tagline">Cadrage stratégique · Narratifs · Médias</div>
+      <p class="lever-desc">
+        Faire émerger le sens. Orienter la perception. Cibler les bons canaux, au bon moment, avec la bonne intensité.
+      </p>
+      <div class="lever-keywords">
+        <span>Influence</span>
+        <span>Médias tier 1</span>
+        <span>Thought leadership</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="lever reveal reveal-delay-2">
+    <div class="lever-bignum">03</div>
+    <div class="lever-content">
+      <div class="lever-eyebrow eyebrow">Notre vecteur de transmission</div>
+      <h3 class="lever-title">Humain<span class="dot">.</span></h3>
+      <div class="lever-tagline">Réseaux · Intermédiation · Accès</div>
+      <p class="lever-desc">
+        Les bonnes portes au bon moment. La diplomatie comme méthode. Quand la qualité du contact décide de la suite.
+      </p>
+      <div class="lever-keywords">
+        <span>Diplomatie</span>
+        <span>Accès dirigeants</span>
+        <span>Bailleurs</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ===========================================================
+     EXPERTISES - SVG lighting interactif au pointer
+     =========================================================== -->
+<section class="expertises" id="expertises">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Nos expertises</div>
+      <h2 class="section-title">
+        Six expertises <span class="bold accent">mobilisables</span>
+      </h2>
+    </div>
+    <p class="section-note">Du renseignement opérationnel à la maîtrise du récit. Mobilisables seules ou en combinaison, selon le mandat.</p>
+  </div>
+
+  <div class="expertises-grid">
+    <article class="expertise reveal" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">01 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Analyse économique</span>
+        <h3 class="expertise-title">Renseignement d'affaires</h3>
+        <p class="expertise-desc">Veille, investigations, études, due diligence.</p>
+      </div>
+    </article>
+
+    <article class="expertise reveal reveal-delay-1" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">02 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Diplomatie privée</span>
+        <h3 class="expertise-title">Lobbying et accès dirigeants</h3>
+        <p class="expertise-desc">Accès, intermédiation, réseaux dirigeants.</p>
+      </div>
+    </article>
+
+    <article class="expertise reveal reveal-delay-2" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">03 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Influence</span>
+        <h3 class="expertise-title">Communication d'influence</h3>
+        <p class="expertise-desc">Stratégie 360°, relations presse, contenus, événements.</p>
+      </div>
+    </article>
+
+    <article class="expertise reveal" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">04 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Protection d'image</span>
+        <h3 class="expertise-title">E-réputation et gestion de crise</h3>
+        <p class="expertise-desc">Audit, gestion de crise, présence digitale.</p>
+      </div>
+    </article>
+
+    <article class="expertise reveal reveal-delay-1" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">05 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Réseaux sociaux</span>
+        <h3 class="expertise-title">Social intelligence</h3>
+        <p class="expertise-desc">Signaux faibles, opinion mining, ciblage précis.</p>
+      </div>
+    </article>
+
+    <article class="expertise reveal reveal-delay-2" data-tilt>
+      <div class="expertise-top">
+        <span class="expertise-num">06 / 06</span>
+        <span class="expertise-arrow">↗</span>
+      </div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Propriétaire</span>
+        <h3 class="expertise-title">Bases de données propriétaires</h3>
+        <p class="expertise-desc">Collecte, visualisation, modèles prédictifs.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===========================================================
+     CAS HEROS
+     =========================================================== -->
+<section class="cases" id="cases">
+  <div class="section-header cases-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">La preuve par les cas</div>
+      <h2 class="section-title">
+        Trois missions,<br />
+        <span class="bold accent">trois résultats</span>
+      </h2>
+    </div>
+    <p class="section-note">Mesurés. Documentés. Strictement confidentiel.</p>
+  </div>
+
+  <div class="cases-grid">
+    <article class="case-card reveal">
+      <div class="case-eyebrow">Cas n°01 · Fintech panafricaine · Oct. 2025</div>
+      <h3 class="case-name">REasy<span class="dot">.</span></h3>
+      <p class="case-desc">
+        Médiatiser la clôture d'une pre-seed de 1,8 M$ pour une fintech camerounaise. 8+ publications confirmées dont exclusivité TV CNBC Africa, TechCabal, Daba Finance.
+      </p>
+      <div class="case-metric">
+        <div class="case-metric-big">115M+</div>
+        <div class="case-metric-label">Visiteurs/mois (audience cumulée médias premium)</div>
+      </div>
+    </article>
+
+    <article class="case-card reveal reveal-delay-1">
+      <div class="case-eyebrow">Cas n°02 · Personal branding ONU · Oct. 2025</div>
+      <h3 class="case-name">Manuel Ntumba<span class="dot">.</span></h3>
+      <p class="case-desc">
+        Construire un personal branding institutionnel pour un expert ONU Compliance. 4+ publications dès le premier mois (Compliance Week, Sika Finance, CIO Mag, Africa Intelligence).
+      </p>
+      <div class="case-metric">
+        <div class="case-metric-big">1M+</div>
+        <div class="case-metric-label">Visiteurs/mois (publications obtenues)</div>
+      </div>
+    </article>
+
+    <article class="case-card reveal reveal-delay-2">
+      <div class="case-eyebrow">Cas n°03 · Power, Mines, Hydrocarbures · Déc. 2025</div>
+      <h3 class="case-name">Huawei<span class="dot">.</span></h3>
+      <p class="case-desc">
+        Décrypter les marchés africains de l'électricité, des hydrocarbures et des mines. 4 rapports Strategic Risk Management couvrant Power Grid, Public Finances, Oil &amp; Gas, Mines.
+      </p>
+      <div class="case-metric">
+        <div class="case-metric-big">200p.</div>
+        <div class="case-metric-label">D'analyse exclusive en moins de 60 jours</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===========================================================
+     PARTNERS MARQUEE - pure CSS
+     =========================================================== -->
+<section class="partners" id="partners">
+  <div class="partners-eyebrow">
+    <div class="eyebrow with-line">Notre écosystème · médias activables</div>
+  </div>
+
+  <div class="marquee">
+    <span class="partner-logo serif">Jeune Afrique</span>
+    <span class="partner-logo uppercase">Financial Afrik</span>
+    <span class="partner-logo">Forbes Afrique</span>
+    <span class="partner-logo mono">CNBC Africa</span>
+    <span class="partner-logo">Bloomberg</span>
+    <span class="partner-logo serif">BBC Africa</span>
+    <span class="partner-logo uppercase">La Tribune Afrique</span>
+    <span class="partner-logo">Agence Ecofin</span>
+    <span class="partner-logo mono">TechCabal</span>
+    <span class="partner-logo">Reuters</span>
+    <span class="partner-logo serif">Sport News Africa</span>
+    <span class="partner-logo uppercase">Mad Makers</span>
+    <span class="partner-logo">African Business</span>
+    <span class="partner-logo mono">Semafor Africa</span>
+    <!-- duplicated set for seamless loop -->
+    <span class="partner-logo serif">Jeune Afrique</span>
+    <span class="partner-logo uppercase">Financial Afrik</span>
+    <span class="partner-logo">Forbes Afrique</span>
+    <span class="partner-logo mono">CNBC Africa</span>
+    <span class="partner-logo">Bloomberg</span>
+    <span class="partner-logo serif">BBC Africa</span>
+    <span class="partner-logo uppercase">La Tribune Afrique</span>
+    <span class="partner-logo">Agence Ecofin</span>
+    <span class="partner-logo mono">TechCabal</span>
+    <span class="partner-logo">Reuters</span>
+    <span class="partner-logo serif">Sport News Africa</span>
+    <span class="partner-logo uppercase">Mad Makers</span>
+    <span class="partner-logo">African Business</span>
+    <span class="partner-logo mono">Semafor Africa</span>
+  </div>
+</section>
+
+<!-- ===========================================================
+     CLOSING / CONTACT
+     =========================================================== -->
+<section class="closing" id="contact">
+  <div class="closing-inner reveal">
+    <div class="closing-content">
+      <div class="closing-eyebrow eyebrow with-line" style="color: var(--off-white);">
+        Parlons stratégie
+      </div>
+      <h2 class="closing-title">
+        <span class="light">Observer.</span><br />
+        <span class="light">Anticiper.</span><br />
+        Diriger<span class="dot">.</span>
+      </h2>
+      <p class="closing-sub">
+        Décidez du prochain mouvement stratégique d'ARMD pour votre marché, votre image, votre marque.
+      </p>
+
+      <div class="closing-contact">
+        <div>
+          <div class="contact-block-label">Bureau principal</div>
+          <div class="contact-block-value">Angré 8ème tranche<br />Abidjan, Côte d'Ivoire</div>
+        </div>
+        <div>
+          <div class="contact-block-label">Téléphone</div>
+          <a href="tel:+22505028919 68" class="contact-block-value">+225 (0)5 02 89 19 68</a>
+        </div>
+        <div>
+          <div class="contact-block-label">Email</div>
+          <a href="mailto:ga@armdgroup.com" class="contact-block-value">ga@armdgroup.com</a>
+        </div>
+      </div>
+
+      <a href="mailto:ga@armdgroup.com" class="closing-cta">
+        Prendre contact
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===========================================================
+     FOOTER
+     =========================================================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 ARMD Group</span>
+    <span>Zone Global · FR</span>
+    <a href="#splash" id="back-to-splash">Choisir une autre région →</a>
+  </div>
+</footer>
+
+<!-- ===========================================================
+     SCRIPTS
+     =========================================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tengbao/vanta/dist/vanta.dots.min.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  /* =========================================================
+     VANTA BACKGROUNDS (splash + hero)
+     Light, performant, compatible wifi lent
+     ========================================================= */
+  let splashVanta = null;
+  let heroVanta = null;
+
+  function initVanta() {
+    if (typeof VANTA === "undefined" || !VANTA.DOTS) return;
+
+    splashVanta = VANTA.DOTS({
+      el: "#splash-vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x2C56FA,
+      color2: 0x073763,
+      backgroundColor: 0x001426,
+      size: 2.5,
+      spacing: 32,
+      showLines: true,
+    });
+
+    heroVanta = VANTA.DOTS({
+      el: "#hero-vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x2C56FA,
+      color2: 0xB8ADA3,
+      backgroundColor: 0xE5E1E0,
+      size: 2,
+      spacing: 36,
+      showLines: false,
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initVanta);
+  } else {
+    initVanta();
+  }
+
+  /* =========================================================
+     SPLASH ANIMATION
+     ARMD → ARMED → ARMD → fade → choices
+     Apple-style premium, blur, letter-spacing, micro-tilt
+     ========================================================= */
+  const splash = document.getElementById("splash");
+  const wordmark = document.getElementById("splash-wordmark");
+  const lettersBase = wordmark.querySelectorAll(".letter:not(.letter-e)");
+  const letterE = document.getElementById("letter-e");
+  const letterEInner = letterE.querySelector(".letter-e-inner");
+  const letterD = document.getElementById("letter-d");
+  const choices = document.getElementById("splash-choices");
+  const lang = document.getElementById("splash-lang");
+  const meta = document.getElementById("splash-meta");
+  const eyebrow = document.getElementById("splash-eyebrow");
+  const backToSplash = document.getElementById("back-to-splash");
+
+  const APPLE_OUT = "expo.out";
+  const APPLE_IN_OUT = "expo.inOut";
+  const APPLE_IN = "expo.in";
+
+  /* Initial state */
+  gsap.set(wordmark, { letterSpacing: "0em", rotateY: 0, rotateX: 0, scale: 1 });
+  gsap.set(lettersBase, { opacity: 0, y: 60, filter: "blur(20px)" });
+  gsap.set(letterE, { width: 0, opacity: 0 });
+  gsap.set(letterEInner, { y: 30, filter: "blur(16px)", opacity: 0, scale: 0.7 });
+  gsap.set(choices, { opacity: 0, y: 40, filter: "blur(16px)" });
+  gsap.set(".choice", { opacity: 0, y: 30 });
+  gsap.set(lang, { opacity: 0 });
+  gsap.set(meta, { opacity: 0 });
+  gsap.set(eyebrow, { opacity: 0, y: -10 });
+
+  const tl = gsap.timeline({ defaults: { ease: APPLE_OUT } });
+
+  // 1. ARMD bloom
+  tl.to(lettersBase, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 1.4,
+      stagger: 0.08,
+      ease: APPLE_OUT,
+    })
+    .to(eyebrow, { opacity: 1, y: 0, duration: 1.0, ease: APPLE_OUT }, "<+=0.4")
+    .to(meta, { opacity: 1, duration: 1.0, ease: APPLE_OUT }, "<")
+    .to(wordmark, { scale: 1.012, duration: 1.0, ease: "sine.inOut" }, "<+=0.2")
+
+    // 2. Tilt + letter-spacing expand
+    .to(wordmark, {
+      rotateY: -2,
+      rotateX: 1.5,
+      letterSpacing: "0.04em",
+      duration: 1.1,
+      ease: APPLE_IN_OUT,
+    }, "+=0.4")
+
+    .to(wordmark, {
+      textShadow: "0 0 60px rgba(44, 86, 250, 0.15)",
+      duration: 1.1,
+      ease: "sine.inOut",
+    }, "<")
+
+    // 3. E emerges
+    .to(letterE, {
+      width: "0.62em",
+      opacity: 1,
+      duration: 1.0,
+      ease: APPLE_IN_OUT,
+    }, "<+=0.15")
+
+    .to(letterEInner, {
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      opacity: 1,
+      duration: 0.95,
+      ease: APPLE_OUT,
+    }, "<+=0.15")
+
+    // 4. Hold ARMED
+    .to(wordmark, {
+      rotateY: 1.5,
+      rotateX: -1,
+      duration: 1.4,
+      ease: "sine.inOut",
+    }, "+=0.2")
+
+    // 5. Reverse
+    .to(letterEInner, {
+      y: -20,
+      scale: 0.7,
+      filter: "blur(14px)",
+      opacity: 0,
+      duration: 0.7,
+      ease: APPLE_IN,
+    }, "+=0.3")
+
+    .to(letterE, {
+      width: 0,
+      opacity: 0,
+      duration: 0.85,
+      ease: APPLE_IN_OUT,
+    }, "<+=0.15")
+
+    .to(wordmark, {
+      rotateY: 0,
+      rotateX: 0,
+      letterSpacing: "0em",
+      textShadow: "0 0 0 rgba(44, 86, 250, 0)",
+      duration: 0.9,
+      ease: APPLE_IN_OUT,
+    }, "<")
+
+    // 6. Fade out wordmark + eyebrow + meta
+    .to([wordmark, eyebrow, meta], {
+      filter: "blur(8px)",
+      opacity: 0,
+      scale: 0.94,
+      duration: 1.0,
+      ease: APPLE_IN_OUT,
+    }, "+=0.5")
+
+    // 7. Choices reveal
+    .set(choices, { pointerEvents: "auto" }, "-=0.4")
+
+    .to(choices, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: APPLE_OUT,
+    }, "-=0.3")
+
+    .to(".choice", {
+      opacity: 1,
+      y: 0,
+      duration: 0.95,
+      stagger: 0.14,
+      ease: APPLE_OUT,
+    }, "<+=0.15")
+
+    .to(lang, {
+      opacity: 1,
+      duration: 0.8,
+      ease: APPLE_OUT,
+    }, "<+=0.3");
+
+  /* =========================================================
+     CHOICE → enter site
+     ========================================================= */
+  document.querySelectorAll(".choice").forEach((choice) => {
+    choice.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = this.getAttribute("href");
+      const zone = this.dataset.zone;
+
+      document.cookie = "armd_pref=" + zone + ":fr; path=/; max-age=31536000; SameSite=Lax";
+
+      gsap.to(splash, {
+        opacity: 0,
+        duration: 0.7,
+        ease: "expo.inOut",
+        onComplete: function () {
+          splash.style.display = "none";
+          // Destroy splash vanta to free memory
+          if (splashVanta && splashVanta.destroy) { splashVanta.destroy(); splashVanta = null; }
+          if (target && target.startsWith("#")) {
+            const el = document.querySelector(target);
+            if (el) el.scrollIntoView({ behavior: "auto" });
+          }
+        },
+      });
+    });
+  });
+
+  /* =========================================================
+     POINTER-TRACKED LIGHTING ON CHOICES + EXPERTISES
+     Sets CSS vars --mx and --my for the radial gradient
+     ========================================================= */
+  function bindPointerLight(selector) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener("mousemove", function (e) {
+        const rect = el.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        el.style.setProperty("--mx", x + "%");
+        el.style.setProperty("--my", y + "%");
+      });
+    });
+  }
+
+  bindPointerLight(".choice");
+  bindPointerLight(".expertise");
+
+  /* =========================================================
+     CARD TILT 3D (cheap CSS implementation, no library)
+     ========================================================= */
+  document.querySelectorAll("[data-tilt]").forEach((el) => {
+    el.style.transformStyle = "preserve-3d";
+    el.style.willChange = "transform";
+
+    el.addEventListener("mousemove", function (e) {
+      const rect = el.getBoundingClientRect();
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const dx = (e.clientX - rect.left - cx) / cx;
+      const dy = (e.clientY - rect.top - cy) / cy;
+      const tiltX = -dy * 4;
+      const tiltY = dx * 4;
+      el.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+    });
+
+    el.addEventListener("mouseleave", function () {
+      el.style.transform = "";
+    });
+  });
+
+  /* =========================================================
+     SCROLL REVEAL via IntersectionObserver
+     ========================================================= */
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  /* =========================================================
+     LANG SWITCHER (splash)
+     ========================================================= */
+  document.querySelectorAll(".splash-lang button").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".splash-lang button").forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  /* =========================================================
+     RE-OPEN SPLASH (footer link)
+     ========================================================= */
+  if (backToSplash) {
+    backToSplash.addEventListener("click", function (e) {
+      e.preventDefault();
+      splash.style.display = "flex";
+      gsap.set(splash, { opacity: 1 });
+      gsap.set(wordmark, { opacity: 0 });
+      gsap.set(choices, { opacity: 1, pointerEvents: "auto" });
+      gsap.set(lang, { opacity: 1 });
+      gsap.set(meta, { opacity: 1 });
+      gsap.set(eyebrow, { opacity: 1 });
+      if (!splashVanta) initVanta();
+    });
+  }
+
+  /* =========================================================
+     ACCESSIBILITY: skip splash anim on reduced motion
+     ========================================================= */
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    tl.progress(1);
+    gsap.set(wordmark, { opacity: 0 });
+    gsap.set(choices, { opacity: 1, pointerEvents: "auto" });
+    gsap.set(lang, { opacity: 1 });
+    gsap.set(meta, { opacity: 1 });
+    gsap.set(eyebrow, { opacity: 1 });
+  }
+})();
+</script>
+
+</body>
+</html>

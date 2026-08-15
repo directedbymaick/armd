@@ -1,0 +1,85 @@
+---
+import { resolveZoneLang, buildUrl, ZONES, LANGS, ZONE_LABEL, LANG_LABEL } from "@lib/zone";
+import { tr } from "@i18n/translations";
+
+const { zone, lang } = resolveZoneLang(Astro.url.pathname);
+
+const navItems = [
+  { key: "nav.about", href: "about" },
+  { key: "nav.expertises", href: "expertises" },
+  { key: "nav.implantations", href: "implantations" },
+  { key: "nav.references", href: "references" },
+  { key: "nav.partners", href: "partners" },
+  { key: "nav.insights", href: "insights" },
+  { key: "nav.contact", href: "contact" },
+];
+---
+
+<header class="border-b border-[color:var(--armd-border)]">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
+    <a href={buildUrl(zone, lang)} class="text-lg font-semibold tracking-tight">
+      ARMD
+    </a>
+
+    <nav class="hidden gap-6 text-sm md:flex">
+      {navItems.map((item) => (
+        <a href={buildUrl(zone, lang, item.href)} class="hover:opacity-70">
+          {tr(item.key, zone, lang)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3 text-sm">
+      <label class="flex items-center gap-2">
+        <span class="text-xs uppercase opacity-60">{tr("switcher.zone", zone, lang)}</span>
+        <select
+          name="zone"
+          data-armd-zone-switcher
+          class="rounded border border-[color:var(--armd-border)] bg-transparent px-2 py-1"
+        >
+          {ZONES.map((z) => (
+            <option value={z} selected={z === zone}>
+              {ZONE_LABEL[z][lang]}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label class="flex items-center gap-2">
+        <span class="text-xs uppercase opacity-60">{tr("switcher.lang", zone, lang)}</span>
+        <select
+          name="lang"
+          data-armd-lang-switcher
+          class="rounded border border-[color:var(--armd-border)] bg-transparent px-2 py-1"
+        >
+          {LANGS.map((l) => (
+            <option value={l} selected={l === lang}>
+              {LANG_LABEL[l]}
+            </option>
+          ))}
+        </select>
+      </label>
+    </div>
+  </div>
+</header>
+
+<script>
+  const zoneSel = document.querySelector<HTMLSelectElement>("[data-armd-zone-switcher]");
+  const langSel = document.querySelector<HTMLSelectElement>("[data-armd-lang-switcher]");
+
+  function navigate() {
+    if (!zoneSel || !langSel) return;
+    const zone = zoneSel.value;
+    const lang = langSel.value;
+    const prefix = zone === "africa" ? "/africa" : "";
+    const suffix = lang === "en" ? "/en" : "";
+    const target = `${prefix}${suffix}` || "/";
+    try {
+      document.cookie = `armd_pref=${zone}:${lang}; path=/; max-age=31536000; SameSite=Lax`;
+    } catch {}
+    window.location.href = target;
+  }
+
+  zoneSel?.addEventListener("change", navigate);
+  langSel?.addEventListener("change", navigate);
+</script>

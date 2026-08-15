@@ -1,0 +1,50 @@
+# =========================================================
+#  ARMD - regles d'exclusion
+#  Objectif : un repo clonable pour bosser depuis une autre
+#  machine, sans les rushes ni les dependances.
+# =========================================================
+
+# --- Dependances et build (regenerables : npm install) ---
+node_modules/
+dist/
+.astro/
+.output/
+.vercel/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+
+# --- Config machine locale ---
+.claude/settings.local.json
+
+# --- Backup des anciens .git imbriques (local uniquement) ---
+_git-history-backup/
+
+# --- Version morte : ancien site Vite, remplace par site-v2 ---
+site-v1-vite/
+
+# --- Rushes video non utilises par le site ---
+# Le site ne reference que hero-v16-hd.mp4 et showreel.mp4.
+# Les 22 autres variantes sont du materiau de montage : elles
+# restent en local, inutiles pour developper.
+site-v2/assets/videos/*.mp4
+!site-v2/assets/videos/hero-v16-hd.mp4
+!site-v2/assets/videos/showreel.mp4
+
+# --- Screen recordings de reference (34 Mo) ---
+research-and-brand/ARMD2 - navbar pill/uploads/
+
+# --- Source video brute non utilisee ---
+research-and-brand/assets/hero video background.mp4
+
+# --- OS ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Logs ---
+*.log
+npm-debug.log*

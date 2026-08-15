@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;background:#111;height:100%;}
+  #v{width:100vw;height:100vh;object-fit:contain;display:block;}
+  #info{position:fixed;top:8px;left:8px;color:#0f0;font:14px monospace;background:#000a;padding:4px 8px;z-index:9;}
+</style>
+</head>
+<body>
+<div id="info">loading…</div>
+<video id="v" muted playsinline preload="auto" src="../uploads/recording.mp4"></video>
+<script>
+  const v = document.getElementById('v');
+  const info = document.getElementById('info');
+  window.__seek = (t) => new Promise((res)=>{
+    const onS = ()=>{ v.removeEventListener('seeked', onS); info.textContent = 't='+v.currentTime.toFixed(2)+' / '+(v.duration||0).toFixed(2); res(true); };
+    v.addEventListener('seeked', onS);
+    v.currentTime = t;
+    setTimeout(()=>res(false), 2500);
+  });
+  v.addEventListener('loadedmetadata', ()=>{ info.textContent = 'meta dur='+v.duration.toFixed(2)+' '+v.videoWidth+'x'+v.videoHeight; window.__dur = v.duration; });
+  v.addEventListener('error', ()=>{ info.textContent = 'ERROR '+(v.error&&v.error.code); });
+</script>
+</body>
+</html>

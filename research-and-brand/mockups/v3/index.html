@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARMD - Intelligence économique &amp; influence stratégique</title>
+<meta name="description" content="Cabinet panafricain d'intelligence économique et d'influence stratégique. Paris · Abidjan · Washington. Observer, anticiper, diriger." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+<!-- Apfel Grotezk officielle (Brand Manual ARMD v1) via Fontsource -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/400.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/500.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/600.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/apfel-grotezk@latest/700.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   ARMD V3 - Mad Makers
+   Charte officielle Brand Guidelines v1 - 2025 (Apfel Grotezk)
+   Architecture conforme brief + étude concurrence (06-concurrence.md)
+
+   11 sections dans l'ordre du brief :
+   01 Hero
+   02 Fondateur (Goudet) - PILIER, contre-pied marché
+   03 Approche (3 leviers Donnée·Récit·Humain)
+   04 Expertises (6)
+   05 Implantations (Paris, Abidjan + antennes projetées)
+   06 Références (3 cas)
+   07 Cellule opérationnelle (équipe)
+   08 Partenaires (médias + cabinets)
+   09 Insights (pilier éditorial + OSEA preview)
+   10 Newsletter
+   11 Contact
+
+   Motion calibré V2 : Vanta dots subtil + pointer lighting + tilt 3D
+   ============================================================ */
+
+:root {
+  /* Palette officielle ARMD */
+  --off-white: #E5E1E0;
+  --blue: #2C56FA;
+  --blue-glow: rgba(44, 86, 250, 0.4);
+  --grey: #D3D1D1;
+  --sand-clear: #B8ADA3;
+  --sand: #797066;
+  --black: #282828;
+  --dark-blue: #073763;
+  --deep-blue: #002D50;
+  --deeper: #001426;
+
+  --font-display: "Apfel Grotezk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 5rem;
+  --space-12: 8rem;
+  --space-16: 12rem;
+
+  --max-w: 1440px;
+  --max-content: 1120px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--off-white); }
+body {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--black);
+  background: var(--off-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  letter-spacing: -0.011em;
+}
+::selection { background: var(--blue); color: var(--off-white); }
+
+/* TYPO HELPERS */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.eyebrow.with-line { display: inline-flex; align-items: center; gap: 0.75rem; }
+.eyebrow.with-line::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   SPLASH (gardé de V2, Apple-style)
+   ============================================================ */
+.splash {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--deeper);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  perspective: 2000px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.splash-vanta { position: absolute; inset: 0; pointer-events: none; opacity: 0.6; }
+.splash::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, transparent 0%, var(--deeper) 80%);
+  pointer-events: none; z-index: 1;
+}
+.splash-eyebrow { position: absolute; top: var(--space-8); color: var(--off-white); opacity: 0; z-index: 2; }
+.splash-wordmark {
+  display: flex; align-items: baseline;
+  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--off-white);
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter, letter-spacing;
+  position: relative; z-index: 2;
+  user-select: none;
+}
+.splash-wordmark .letter { display: inline-block; will-change: transform, opacity, filter; transform-origin: 50% 50% -10px; }
+.splash-wordmark .letter-e { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; opacity: 0; }
+.splash-wordmark .letter-e-inner { display: inline-block; }
+.splash-meta {
+  position: absolute; bottom: var(--space-8);
+  color: var(--off-white); opacity: 0; z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.7rem; letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex; gap: var(--space-3); align-items: center;
+}
+.splash-meta span { opacity: 0.5; }
+.splash-meta .dot { width: 4px; height: 4px; background: var(--blue); border-radius: 50%; }
+.splash-choices {
+  position: absolute;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);
+  opacity: 0; pointer-events: none;
+  width: min(840px, 92vw); z-index: 3;
+}
+.choice {
+  position: relative;
+  border: 1px solid rgba(229, 225, 224, 0.15);
+  padding: var(--space-4);
+  text-decoration: none; color: var(--off-white);
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: rgba(7, 55, 99, 0.3);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, background 0.5s ease;
+  min-height: 240px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.choice::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(44, 86, 250, 0.18) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+}
+.choice:hover { transform: translateY(-3px); border-color: rgba(44, 86, 250, 0.4); background: rgba(7, 55, 99, 0.5); }
+.choice:hover::before { opacity: 1; }
+.choice-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55; }
+.choice-name { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; letter-spacing: -0.04em; margin-top: var(--space-2); }
+.choice-cities { font-size: 0.875rem; opacity: 0.65; font-weight: 400; margin-top: var(--space-1); }
+.choice-arrow { font-size: 1.5rem; align-self: flex-end; opacity: 0.55; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s; }
+.choice:hover .choice-arrow { opacity: 1; transform: translateX(8px); }
+.splash-lang {
+  position: absolute; bottom: var(--space-4); right: var(--space-4);
+  display: flex; gap: var(--space-2);
+  opacity: 0;
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--off-white); z-index: 3;
+}
+.splash-lang button {
+  background: none; border: none; color: inherit; cursor: pointer;
+  font: inherit; letter-spacing: inherit; opacity: 0.45; padding: 0.5rem 0.75rem;
+  transition: opacity 0.2s ease;
+}
+.splash-lang button.active, .splash-lang button:hover { opacity: 1; }
+.splash-lang span { opacity: 0.2; align-self: center; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(229, 225, 224, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(40, 40, 40, 0.05);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+}
+.nav-logo { font-weight: 700; font-size: 1.125rem; letter-spacing: -0.04em; text-decoration: none; color: var(--black); }
+.nav-menu { display: flex; gap: var(--space-4); list-style: none; font-size: 0.85rem; }
+.nav-menu a { color: var(--black); text-decoration: none; opacity: 0.65; transition: opacity 0.2s ease; position: relative; }
+.nav-menu a::after {
+  content: ""; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+  background: var(--blue); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-menu a:hover { opacity: 1; }
+.nav-menu a:hover::after { transform: scaleX(1); }
+.nav-switchers { display: flex; gap: var(--space-1); align-items: center; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; }
+.nav-switcher {
+  border: 1px solid rgba(40, 40, 40, 0.12); background: transparent;
+  padding: 0.45rem 0.8rem; font: inherit; letter-spacing: inherit; color: var(--black); cursor: pointer;
+  appearance: none; -webkit-appearance: none; padding-right: 1.7rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 4l3 3 3-3' stroke='%23282828' fill='none' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.5rem center;
+  text-transform: uppercase; transition: border-color 0.2s ease;
+}
+.nav-switcher:hover { border-color: var(--blue); }
+@media (max-width: 900px) { .nav-menu { display: none; } }
+
+/* ============================================================
+   SECTION HEADERS (commun)
+   ============================================================ */
+.section-header {
+  max-width: var(--max-w); margin: 0 auto var(--space-12);
+  display: grid; grid-template-columns: 1fr auto; gap: var(--space-6); align-items: end;
+}
+.section-eyebrow { margin-bottom: var(--space-3); }
+.section-title { font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 400; letter-spacing: -0.045em; line-height: 1; max-width: 16ch; }
+.section-title .bold { font-weight: 700; }
+.section-title .accent { color: var(--blue); }
+.section-note { font-size: 0.95rem; opacity: 0.6; max-width: 32ch; text-align: right; line-height: 1.55; }
+@media (max-width: 900px) {
+  .section-header { grid-template-columns: 1fr; }
+  .section-note { text-align: left; }
+}
+
+/* ============================================================
+   01 HERO - phrase positionnement + sous-titre + Vanta subtile
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: var(--space-12) var(--space-4);
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex; align-items: center;
+}
+#hero-vanta { position: absolute; inset: 0; pointer-events: none; opacity: 0.4; z-index: 0; }
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 20% 50%, rgba(229, 225, 224, 0.92) 0%, transparent 70%),
+              linear-gradient(180deg, transparent 0%, var(--off-white) 90%);
+  pointer-events: none; z-index: 1;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: minmax(0, 1.2fr) 380px;
+  gap: var(--space-8); align-items: center;
+}
+.hero-eyebrow {
+  margin-bottom: var(--space-4);
+  opacity: 0; transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin-bottom: var(--space-3);
+  max-width: 18ch;
+  opacity: 0; transform: translateY(40px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+.hero-title .bold { font-weight: 700; }
+.hero-title .accent { color: var(--blue); }
+.hero-signature {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: var(--space-3);
+  animation: heroFadeIn 1.2s ease 0.75s forwards;
+  opacity: 0;
+}
+.hero-sub {
+  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+  max-width: 56ch;
+  line-height: 1.55;
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+  color: rgba(40, 40, 40, 0.7);
+  opacity: 0; transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+}
+.hero-cta-wrap {
+  opacity: 0; transform: translateY(20px);
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+  display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap;
+}
+@keyframes heroFadeIn { to { opacity: 1; transform: translateY(0); } }
+.hero-cta {
+  position: relative; display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 1.5rem; background: var(--black); color: var(--off-white);
+  text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+  border-radius: 999px; overflow: hidden; isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-cta::before {
+  content: ""; position: absolute; inset: 0; background: var(--blue);
+  transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1;
+}
+.hero-cta:hover { transform: translateY(-2px); }
+.hero-cta:hover::before { transform: translateY(0); }
+.hero-cta .arrow { display: inline-block; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.hero-cta:hover .arrow { transform: translateX(4px); }
+.hero-cta-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--black); text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  letter-spacing: 0.02em; padding: 1rem 0; opacity: 0.7; transition: opacity 0.3s ease;
+}
+.hero-cta-secondary:hover { opacity: 1; }
+.hero-graphic {
+  position: relative; width: 100%; aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; animation: heroFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+.hero-target { width: 100%; height: 100%; animation: targetRotate 60s linear infinite; }
+@keyframes targetRotate { to { transform: rotate(360deg); } }
+.hero-target-pulse { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.hero-target-pulse::before {
+  content: ""; width: 18%; height: 18%; border-radius: 50%;
+  background: var(--blue); filter: blur(8px);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 0.85; transform: scale(1.15); }
+}
+@media (max-width: 900px) {
+  .hero { padding: var(--space-8) var(--space-3); min-height: 80vh; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-graphic { display: none; }
+}
+
+/* ============================================================
+   02 FONDATEUR - GOUDET PILIER (différenciateur marché)
+   ============================================================ */
+.founder {
+  background: var(--deeper); color: var(--off-white);
+  padding: var(--space-16) var(--space-4);
+  position: relative; overflow: hidden;
+}
+.founder::before {
+  content: ""; position: absolute;
+  left: -20%; top: -20%; width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue) 0%, transparent 60%);
+  filter: blur(120px); opacity: 0.15;
+  pointer-events: none;
+}
+.founder-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 360px 1fr; gap: var(--space-12); align-items: start;
+  position: relative; z-index: 1;
+}
+.founder-portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--deeper) 100%);
+  border: 1px solid rgba(229, 225, 224, 0.1);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.founder-portrait::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(44, 86, 250, 0.2) 0%, transparent 70%);
+}
+.founder-portrait-placeholder {
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--off-white);
+  opacity: 0.3;
+  position: relative;
+  z-index: 1;
+}
+.founder-portrait-label {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  z-index: 1;
+}
+.founder-content { padding-top: var(--space-2); }
+.founder-eyebrow { margin-bottom: var(--space-4); }
+.founder-name {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+.founder-name .dot { color: var(--blue); }
+.founder-role {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: var(--space-6);
+}
+.founder-bio {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  opacity: 0.85;
+  max-width: 56ch;
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+}
+.founder-bio strong { color: var(--off-white); font-weight: 500; }
+.founder-credentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+}
+.credential {
+  border-left: 1px solid rgba(229, 225, 224, 0.15);
+  padding-left: var(--space-2);
+}
+.credential-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.3rem;
+}
+.credential-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.founder-missions {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(229, 225, 224, 0.12);
+}
+.founder-missions-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: var(--space-3);
+}
+.founder-missions-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.founder-missions-list span {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(229, 225, 224, 0.2);
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+.founder-missions-list span:hover { background: rgba(44, 86, 250, 0.15); opacity: 1; }
+.founder-cta {
+  margin-top: var(--space-6);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--off-white); text-decoration: none;
+  font-size: 0.9rem; font-weight: 500;
+  border-bottom: 1px solid rgba(229, 225, 224, 0.3);
+  padding-bottom: 0.3rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.founder-cta:hover { color: var(--blue); border-color: var(--blue); }
+@media (max-width: 900px) {
+  .founder-inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .founder-portrait { max-width: 280px; }
+  .founder-credentials { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   03 APPROCHE - 3 leviers (sobre, sans big numbers extrêmes)
+   ============================================================ */
+.approach {
+  padding: var(--space-16) var(--space-4);
+  background: var(--off-white);
+}
+.approach-header { margin-bottom: var(--space-12); max-width: var(--max-w); margin-left: auto; margin-right: auto; display: grid; grid-template-columns: 1fr auto; gap: var(--space-6); align-items: end; }
+.approach-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: rgba(40, 40, 40, 0.08);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+}
+.lever {
+  background: var(--off-white);
+  padding: var(--space-8) var(--space-4);
+  position: relative;
+  min-height: 360px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.lever-number { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; opacity: 0.4; }
+.lever-title { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.045em; margin-top: var(--space-4); margin-bottom: 0.5rem; line-height: 1; }
+.lever-title .dot { color: var(--blue); }
+.lever-tagline { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; margin-bottom: var(--space-3); }
+.lever-desc { font-size: 0.95rem; line-height: 1.6; opacity: 0.78; max-width: 32ch; }
+@media (max-width: 900px) { .approach-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   04 EXPERTISES - grille 3x2 + pointer-tracked lighting
+   ============================================================ */
+.expertises {
+  padding: var(--space-16) var(--space-4);
+  background: var(--off-white);
+  border-top: 1px solid rgba(40, 40, 40, 0.06);
+  position: relative; overflow: hidden;
+}
+.expertises-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.expertise {
+  position: relative;
+  padding: var(--space-4); background: rgba(229, 225, 224, 0.6);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  cursor: pointer; overflow: hidden;
+  min-height: 280px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease;
+}
+.expertise::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(44, 86, 250, 0.12) 0%, transparent 30%);
+  opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+}
+.expertise:hover { transform: translateY(-4px); border-color: rgba(44, 86, 250, 0.4); }
+.expertise:hover::before { opacity: 1; }
+.expertise-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.expertise-num { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.2em; opacity: 0.4; font-weight: 500; }
+.expertise-arrow { font-size: 1.25rem; opacity: 0.3; transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.expertise:hover .expertise-arrow { opacity: 1; transform: translate(2px, -2px); }
+.expertise-content { margin-top: auto; }
+.expertise-cat { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55; margin-bottom: var(--space-2); display: block; }
+.expertise-title { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: var(--space-2); }
+.expertise-desc { font-size: 0.875rem; opacity: 0.65; line-height: 1.5; }
+@media (max-width: 900px) { .expertises-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   05 IMPLANTATIONS - carte + liste villes
+   ============================================================ */
+.locations {
+  padding: var(--space-16) var(--space-4);
+  background: var(--dark-blue); color: var(--off-white);
+  position: relative; overflow: hidden;
+}
+.locations-header { max-width: var(--max-w); margin: 0 auto var(--space-12); display: grid; grid-template-columns: 1fr auto; gap: var(--space-6); align-items: end; }
+.locations-header .section-note { color: rgba(229, 225, 224, 0.55); }
+.locations-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 360px; gap: var(--space-8); align-items: start;
+}
+.world-map {
+  width: 100%; aspect-ratio: 16/9;
+  border: 1px solid rgba(229, 225, 224, 0.1);
+  background: rgba(229, 225, 224, 0.02);
+  position: relative;
+}
+.world-map svg { width: 100%; height: 100%; }
+.world-map .city-dot { fill: var(--blue); }
+.world-map .city-dot.active { fill: var(--blue); }
+.world-map .city-dot.future { fill: var(--sand-clear); opacity: 0.5; }
+.world-map .city-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--off-white);
+  opacity: 0.7;
+}
+.city-pulse {
+  fill: var(--blue);
+  animation: cityPulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes cityPulse {
+  0%, 100% { opacity: 0; r: 4; }
+  50% { opacity: 0.4; r: 14; }
+}
+.locations-list { display: flex; flex-direction: column; gap: var(--space-4); }
+.location-group-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55; margin-bottom: var(--space-2); }
+.location-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(229, 225, 224, 0.08);
+}
+.location-row.active .city { color: var(--off-white); font-weight: 600; }
+.location-row.active .city::before {
+  content: "●"; color: var(--blue); margin-right: 0.5rem; font-size: 0.7em; vertical-align: middle;
+}
+.location-row .city { font-size: 1rem; opacity: 0.7; }
+.location-row .country { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; opacity: 0.4; text-transform: uppercase; }
+@media (max-width: 900px) {
+  .locations-inner { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   06 RÉFÉRENCES (cases)
+   ============================================================ */
+.cases {
+  background: var(--off-white);
+  padding: var(--space-16) var(--space-4);
+  position: relative; overflow: hidden;
+}
+.cases-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); position: relative; z-index: 1; }
+.case-card {
+  padding: var(--space-4);
+  background: rgba(40, 40, 40, 0.03);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  display: flex; flex-direction: column; gap: var(--space-3);
+  position: relative; overflow: hidden;
+  min-height: 380px;
+  transition: background 0.5s ease, border-color 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.case-card:hover {
+  background: rgba(40, 40, 40, 0.06);
+  border-color: rgba(44, 86, 250, 0.4);
+  transform: translateY(-3px);
+}
+.case-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; }
+.case-name { font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.case-name .dot { color: var(--blue); }
+.case-metric { margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+.case-metric-big { font-family: var(--font-mono); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 400; letter-spacing: -0.04em; color: var(--blue); line-height: 1; }
+.case-metric-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; line-height: 1.5; }
+.case-desc { font-size: 0.9rem; opacity: 0.75; line-height: 1.6; }
+@media (max-width: 900px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   07 CELLULE OPÉRATIONNELLE - équipe
+   ============================================================ */
+.team {
+  padding: var(--space-16) var(--space-4);
+  background: var(--off-white);
+  border-top: 1px solid rgba(40, 40, 40, 0.06);
+}
+.team-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3);
+}
+.team-member {
+  display: flex; flex-direction: column; gap: var(--space-1);
+}
+.team-avatar {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--sand-clear) 0%, var(--sand) 100%);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--off-white);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.team-member:hover .team-avatar { transform: scale(1.02); }
+.team-name { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.team-role { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; }
+.team-location { font-size: 0.8rem; opacity: 0.5; margin-top: 0.2rem; }
+.team-advisory-cta {
+  max-width: var(--max-w); margin: var(--space-8) auto 0;
+  text-align: center;
+}
+.team-advisory-cta a {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--black); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  border-bottom: 1px solid rgba(40, 40, 40, 0.2); padding-bottom: 0.3rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+.team-advisory-cta a:hover { color: var(--blue); border-color: var(--blue); }
+.team-advisory-cta .badge {
+  display: inline-block; padding: 0.2rem 0.6rem;
+  background: var(--black); color: var(--off-white);
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 99px; margin-right: 0.5rem;
+}
+@media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================================================
+   08 PARTENAIRES - marquee
+   ============================================================ */
+.partners {
+  background: var(--deeper); color: var(--off-white);
+  padding: var(--space-8) 0 var(--space-12);
+  overflow: hidden;
+}
+.partners-eyebrow { text-align: center; margin-bottom: var(--space-6); display: flex; justify-content: center; }
+.partners-eyebrow .eyebrow { color: var(--off-white); }
+.marquee { display: flex; gap: var(--space-8); width: max-content; animation: marquee 35s linear infinite; align-items: center; }
+.marquee:hover { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.partner-logo { font-size: 1.25rem; font-weight: 500; letter-spacing: -0.02em; opacity: 0.55; transition: opacity 0.3s ease; white-space: nowrap; font-style: italic; color: var(--off-white); }
+.partner-logo.serif { font-family: Georgia, "Times New Roman", serif; font-style: normal; }
+.partner-logo.uppercase { text-transform: uppercase; letter-spacing: 0.15em; font-size: 1rem; font-style: normal; }
+.partner-logo.mono { font-family: var(--font-mono); font-style: normal; font-size: 1rem; }
+.partner-logo:hover { opacity: 1; }
+
+/* ============================================================
+   09 INSIGHTS - articles preview + OSEA
+   ============================================================ */
+.insights {
+  padding: var(--space-16) var(--space-4);
+  background: var(--off-white);
+}
+.insights-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-3);
+}
+.insight-card {
+  position: relative;
+  padding: var(--space-4);
+  background: rgba(40, 40, 40, 0.02);
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  text-decoration: none; color: var(--black);
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 320px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, background 0.5s ease;
+}
+.insight-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  background: rgba(40, 40, 40, 0.04);
+}
+.insight-card.featured { grid-row: span 2; }
+.insight-tag {
+  display: inline-block; padding: 0.3rem 0.7rem;
+  background: rgba(40, 40, 40, 0.08);
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 99px;
+  align-self: flex-start;
+  margin-bottom: var(--space-3);
+}
+.insight-tag.osea { background: var(--blue); color: var(--off-white); }
+.insight-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
+}
+.insight-card.featured .insight-title { font-size: 2rem; }
+.insight-desc { font-size: 0.9rem; opacity: 0.7; line-height: 1.6; margin-bottom: auto; }
+.insight-meta {
+  display: flex; gap: var(--space-2); align-items: center;
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: var(--space-3);
+}
+.insight-meta .dot { width: 3px; height: 3px; background: currentColor; border-radius: 50%; }
+@media (max-width: 900px) {
+  .insights-grid { grid-template-columns: 1fr; }
+  .insight-card.featured { grid-row: auto; }
+}
+
+/* ============================================================
+   10 NEWSLETTER
+   ============================================================ */
+.newsletter {
+  padding: var(--space-12) var(--space-4);
+  background: var(--off-white);
+  border-top: 1px solid rgba(40, 40, 40, 0.06);
+}
+.newsletter-inner {
+  max-width: var(--max-content); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;
+}
+.newsletter-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; margin-bottom: var(--space-3); }
+.newsletter-sub { font-size: 1rem; opacity: 0.65; line-height: 1.55; max-width: 40ch; }
+.newsletter-form {
+  display: flex; gap: 0;
+  border: 1px solid rgba(40, 40, 40, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--off-white);
+}
+.newsletter-form input {
+  flex: 1; padding: 1rem 1.5rem;
+  background: transparent; border: none; outline: none;
+  font: inherit; font-size: 0.95rem; color: var(--black);
+}
+.newsletter-form input::placeholder { opacity: 0.4; }
+.newsletter-form button {
+  padding: 1rem 1.5rem;
+  background: var(--black); color: var(--off-white);
+  border: none; cursor: pointer;
+  font: inherit; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+  transition: background 0.3s ease;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.newsletter-form button:hover { background: var(--blue); }
+.newsletter-note {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+@media (max-width: 800px) { .newsletter-inner { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   11 CONTACT (closing)
+   ============================================================ */
+.closing {
+  background: var(--off-white);
+  padding: var(--space-12) var(--space-4) var(--space-8);
+}
+.closing-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  background: var(--deeper); color: var(--off-white);
+  padding: var(--space-12) var(--space-6);
+  position: relative; overflow: hidden;
+}
+.closing-inner::before {
+  content: ""; position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 900px; height: 900px; border-radius: 50%;
+  border: 1px solid rgba(229, 225, 224, 0.05);
+  box-shadow: inset 0 0 0 150px transparent, inset 0 0 0 150px rgba(229, 225, 224, 0.04),
+              inset 0 0 0 300px transparent, inset 0 0 0 300px rgba(229, 225, 224, 0.04);
+  pointer-events: none;
+}
+.closing-inner::after {
+  content: ""; position: absolute;
+  left: 50%; top: 50%; width: 160px; height: 160px;
+  border-radius: 50%; background: var(--blue); filter: blur(80px);
+  opacity: 0.5; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.closing-content { position: relative; z-index: 1; max-width: 800px; }
+.closing-eyebrow { margin-bottom: var(--space-6); color: var(--off-white); }
+.closing-title { font-size: clamp(3rem, 7vw, 6rem); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95; margin-bottom: var(--space-4); }
+.closing-title .light { font-weight: 400; }
+.closing-title .dot { color: var(--blue); }
+.closing-sub { font-size: 1.25rem; opacity: 0.75; margin-bottom: var(--space-8); max-width: 50ch; line-height: 1.5; }
+.closing-contact {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
+  border-top: 1px solid rgba(229, 225, 224, 0.15);
+  padding-top: var(--space-6); max-width: 800px;
+}
+.contact-block-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.5; margin-bottom: var(--space-1); }
+.contact-block-value { font-size: 0.95rem; font-weight: 500; color: var(--off-white); text-decoration: none; display: block; line-height: 1.4; transition: color 0.3s ease; }
+.contact-block-value:hover { color: var(--blue); }
+.closing-cta {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  margin-top: var(--space-6);
+  padding: 1rem 1.75rem;
+  background: var(--off-white); color: var(--deeper);
+  text-decoration: none; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em;
+  border-radius: 999px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+.closing-cta:hover { transform: translateY(-2px); background: var(--blue); color: var(--off-white); }
+.closing-cta .arrow { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.closing-cta:hover .arrow { transform: translateX(4px); }
+@media (max-width: 700px) {
+  .closing-contact { grid-template-columns: 1fr; }
+  .closing-inner { padding: var(--space-8) var(--space-4); }
+}
+
+/* FOOTER */
+.footer {
+  background: var(--deeper); color: var(--off-white);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid rgba(229, 225, 224, 0.08);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; opacity: 0.5; flex-wrap: wrap; gap: var(--space-2); }
+.footer a { color: inherit; text-decoration: none; transition: color 0.3s ease, opacity 0.3s ease; }
+.footer a:hover { color: var(--blue); opacity: 1; }
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- SPLASH (gardé V2) -->
+<section class="splash" id="splash">
+  <div class="splash-vanta" id="splash-vanta"></div>
+  <div class="splash-eyebrow eyebrow with-line" id="splash-eyebrow">Cabinet d'intelligence économique &amp; influence stratégique</div>
+  <div class="splash-wordmark" id="splash-wordmark">
+    <span class="letter">A</span><span class="letter">R</span><span class="letter">M</span>
+    <span class="letter letter-e" id="letter-e"><span class="letter-e-inner">E</span></span>
+    <span class="letter" id="letter-d">D</span>
+  </div>
+  <div class="splash-choices" id="splash-choices">
+    <a href="#enter-global" class="choice" data-zone="global">
+      <div>
+        <div class="choice-label">Entrer dans</div>
+        <div class="choice-name">ARMD Global</div>
+        <div class="choice-cities">Paris · Washington · Bruxelles · Genève</div>
+      </div>
+      <div class="choice-arrow">→</div>
+    </a>
+    <a href="#enter-africa" class="choice" data-zone="africa">
+      <div>
+        <div class="choice-label">Entrer dans</div>
+        <div class="choice-name">ARMD Africa</div>
+        <div class="choice-cities">Abidjan · Lagos · Nairobi · Dakar</div>
+      </div>
+      <div class="choice-arrow">→</div>
+    </a>
+  </div>
+  <div class="splash-meta" id="splash-meta">
+    <span>Paris</span><span class="dot"></span><span>Abidjan</span><span class="dot"></span><span>Washington</span>
+  </div>
+  <div class="splash-lang" id="splash-lang">
+    <button class="active" data-lang="fr">FR</button><span>·</span><button data-lang="en">EN</button>
+  </div>
+</section>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ARMD</a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#founder">Fondateur</a></li>
+        <li><a href="#approach">Approche</a></li>
+        <li><a href="#expertises">Expertises</a></li>
+        <li><a href="#locations">Implantations</a></li>
+        <li><a href="#cases">Références</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-switchers">
+      <select class="nav-switcher" aria-label="Zone"><option>Global</option><option>Africa</option></select>
+      <select class="nav-switcher" aria-label="Langue"><option>FR</option><option>EN</option></select>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 HERO -->
+<section class="hero" id="enter-global">
+  <div id="hero-vanta"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow eyebrow with-line">ARMD Global · Q2 2026</div>
+      <h1 class="hero-title">
+        Cabinet panafricain d'<span class="bold accent">intelligence économique</span> et d'<span class="bold accent">influence stratégique</span>.
+      </h1>
+      <div class="hero-signature">Observer · Anticiper · Diriger</div>
+      <p class="hero-sub">
+        Pour les économies africaines, les marchés émergents et les institutions multilatérales. Nous opérons là où les autres hésitent.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#contact" class="hero-cta">Parlons de votre prochain mouvement <span class="arrow">→</span></a>
+        <a href="#founder" class="hero-cta-secondary">Rencontrer le fondateur <span class="arrow">↓</span></a>
+      </div>
+    </div>
+    <div class="hero-graphic">
+      <svg class="hero-target" viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="195" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.35" />
+        <circle cx="200" cy="200" r="160" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.4" />
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.45" />
+        <circle cx="200" cy="200" r="80" fill="none" stroke="#002D50" stroke-width="0.8" opacity="0.5" />
+        <circle cx="200" cy="200" r="40" fill="none" stroke="#2C56FA" stroke-width="1.2" />
+        <line x1="0" y1="200" x2="400" y2="200" stroke="#002D50" stroke-width="0.5" opacity="0.35" />
+        <line x1="200" y1="0" x2="200" y2="400" stroke="#002D50" stroke-width="0.5" opacity="0.35" />
+        <circle cx="200" cy="200" r="6" fill="#2C56FA" />
+      </svg>
+      <div class="hero-target-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 FONDATEUR - GOUDET PILIER -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div class="founder-portrait reveal">
+      <div class="founder-portrait-placeholder">GA</div>
+      <div class="founder-portrait-label">Photo HD à venir</div>
+    </div>
+    <div class="founder-content reveal reveal-delay-1">
+      <div class="founder-eyebrow eyebrow with-line">Fondateur · Cellule opérationnelle 01</div>
+      <h2 class="founder-name">Goudet Abalé<span class="dot">.</span></h2>
+      <div class="founder-role">Fondateur · CEO ARMD Group</div>
+      <p class="founder-bio">
+        Ancien Directeur chez <strong>35°Nord (Forward Global)</strong>, leader français de l'intelligence économique et de l'influence stratégique. Goudet a accompagné les opérations de communication d'influence et d'intelligence économique sur les plus grands dossiers africains et internationaux de la dernière décennie. Il fonde ARMD en 2025 avec une conviction : <strong>bâtir le premier géant panafricain</strong> du conseil en intelligence et influence, capable de rivaliser avec les firmes internationales les plus réputées.
+      </p>
+
+      <div class="founder-credentials">
+        <div class="credential">
+          <div class="credential-label">Formation</div>
+          <div class="credential-value">Sciences Po Lille<br />Johns Hopkins SAIS Bologne</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Trajectoire</div>
+          <div class="credential-value">Kinshasa · Brazzaville<br />Bologne · Séoul · Paris</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Ancienne maison</div>
+          <div class="credential-value">35°Nord<br />(Forward Global)</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Affiliations</div>
+          <div class="credential-value">FFPB<br />Réseau panafricain</div>
+        </div>
+      </div>
+
+      <div class="founder-missions">
+        <div class="founder-missions-label">Mandats accompagnés</div>
+        <div class="founder-missions-list">
+          <span>NSIA</span>
+          <span>EDF</span>
+          <span>Endeavour Mining</span>
+          <span>Huawei</span>
+          <span>Présidence du Congo</span>
+          <span>UNICEF</span>
+          <span>Expertise France</span>
+        </div>
+      </div>
+
+      <a href="#" class="founder-cta">Lire le parcours complet <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 APPROCHE -->
+<section class="approach" id="approach">
+  <div class="approach-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Notre approche</div>
+      <h2 class="section-title">Trois leviers <span class="bold accent">de puissance</span></h2>
+    </div>
+    <p class="section-note">Articulés en tout instant. Aucune mission ARMD n'en mobilise un seul.</p>
+  </div>
+
+  <div class="approach-grid">
+    <article class="lever reveal">
+      <div class="lever-number">01 / 03</div>
+      <div>
+        <h3 class="lever-title">Donnée<span class="dot">.</span></h3>
+        <div class="lever-tagline">Notre matière première</div>
+        <p class="lever-desc">Acquisition, structuration, modélisation. OSINT, HUMINT, bases propriétaires. La preuve avant le récit.</p>
+      </div>
+    </article>
+    <article class="lever reveal reveal-delay-1">
+      <div class="lever-number">02 / 03</div>
+      <div>
+        <h3 class="lever-title">Récit<span class="dot">.</span></h3>
+        <div class="lever-tagline">Notre champ d'action</div>
+        <p class="lever-desc">Cadrage stratégique, narratifs, médias. Faire émerger le sens, orienter la perception.</p>
+      </div>
+    </article>
+    <article class="lever reveal reveal-delay-2">
+      <div class="lever-number">03 / 03</div>
+      <div>
+        <h3 class="lever-title">Humain<span class="dot">.</span></h3>
+        <div class="lever-tagline">Notre vecteur de transmission</div>
+        <p class="lever-desc">Réseaux, intermédiation, accès. Les bonnes portes au bon moment, la diplomatie comme méthode.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 04 EXPERTISES -->
+<section class="expertises" id="expertises">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Nos expertises</div>
+      <h2 class="section-title">Six expertises <span class="bold accent">mobilisables</span></h2>
+    </div>
+    <p class="section-note">Du renseignement opérationnel à la maîtrise du récit. Seules ou combinées selon le mandat.</p>
+  </div>
+  <div class="expertises-grid">
+    <article class="expertise reveal">
+      <div class="expertise-top"><span class="expertise-num">01 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Analyse économique</span>
+        <h3 class="expertise-title">Renseignement d'affaires</h3>
+        <p class="expertise-desc">Veille, investigations, études, due diligence.</p>
+      </div>
+    </article>
+    <article class="expertise reveal reveal-delay-1">
+      <div class="expertise-top"><span class="expertise-num">02 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Diplomatie privée</span>
+        <h3 class="expertise-title">Lobbying et accès dirigeants</h3>
+        <p class="expertise-desc">Accès, intermédiation, réseaux dirigeants.</p>
+      </div>
+    </article>
+    <article class="expertise reveal reveal-delay-2">
+      <div class="expertise-top"><span class="expertise-num">03 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Influence</span>
+        <h3 class="expertise-title">Communication d'influence</h3>
+        <p class="expertise-desc">Stratégie 360°, relations presse, contenus, événements.</p>
+      </div>
+    </article>
+    <article class="expertise reveal">
+      <div class="expertise-top"><span class="expertise-num">04 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Protection d'image</span>
+        <h3 class="expertise-title">E-réputation et gestion de crise</h3>
+        <p class="expertise-desc">Audit, gestion de crise, présence digitale.</p>
+      </div>
+    </article>
+    <article class="expertise reveal reveal-delay-1">
+      <div class="expertise-top"><span class="expertise-num">05 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Réseaux sociaux</span>
+        <h3 class="expertise-title">Social intelligence</h3>
+        <p class="expertise-desc">Signaux faibles, opinion mining, ciblage précis.</p>
+      </div>
+    </article>
+    <article class="expertise reveal reveal-delay-2">
+      <div class="expertise-top"><span class="expertise-num">06 / 06</span><span class="expertise-arrow">↗</span></div>
+      <div class="expertise-content">
+        <span class="expertise-cat">Propriétaire</span>
+        <h3 class="expertise-title">Bases de données propriétaires</h3>
+        <p class="expertise-desc">Collecte, visualisation, modèles prédictifs.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 05 IMPLANTATIONS -->
+<section class="locations" id="locations">
+  <div class="locations-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line" style="color: var(--off-white);">Nos implantations</div>
+      <h2 class="section-title">Présents <span class="bold accent">là où ça compte</span></h2>
+    </div>
+    <p class="section-note">Paris et Abidjan en V1. Antennes régionales en ouverture sur 3 continents.</p>
+  </div>
+
+  <div class="locations-inner">
+    <div class="world-map reveal">
+      <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- Simplified world outline as background paths (very minimal) -->
+        <g opacity="0.15" stroke="#E5E1E0" stroke-width="0.5" fill="none">
+          <path d="M 100 150 L 250 130 L 350 160 L 400 190 L 380 250 L 250 270 L 150 250 Z" />
+          <path d="M 380 220 L 460 200 L 520 230 L 540 290 L 500 360 L 440 400 L 400 380 L 380 320 Z" />
+          <path d="M 540 130 L 650 110 L 720 150 L 700 200 L 620 230 L 560 210 Z" />
+          <path d="M 600 240 L 700 230 L 720 290 L 680 340 L 620 330 Z" />
+          <path d="M 150 280 L 260 290 L 230 380 L 170 400 L 130 350 Z" />
+        </g>
+
+        <!-- Active cities Paris + Abidjan -->
+        <!-- Paris -->
+        <circle class="city-pulse" cx="395" cy="155" r="4" />
+        <circle class="city-dot active" cx="395" cy="155" r="4" />
+        <text class="city-label" x="395" y="142" text-anchor="middle">Paris</text>
+
+        <!-- Abidjan -->
+        <circle class="city-pulse" cx="380" cy="260" r="4" />
+        <circle class="city-dot active" cx="380" cy="260" r="4" />
+        <text class="city-label" x="380" y="277" text-anchor="middle">Abidjan</text>
+
+        <!-- Future cities (en ouverture) -->
+        <circle class="city-dot future" cx="450" cy="160" r="3" />
+        <text class="city-label" x="450" y="150" text-anchor="middle">Bruxelles</text>
+
+        <circle class="city-dot future" cx="290" cy="165" r="3" />
+        <text class="city-label" x="290" y="155" text-anchor="middle">Washington</text>
+
+        <circle class="city-dot future" cx="430" cy="200" r="3" />
+        <text class="city-label" x="430" y="190" text-anchor="middle">Genève</text>
+
+        <circle class="city-dot future" cx="470" cy="210" r="3" />
+        <text class="city-label" x="470" y="200" text-anchor="middle">Bologne</text>
+
+        <circle class="city-dot future" cx="410" cy="220" r="3" />
+        <text class="city-label" x="410" y="232" text-anchor="middle">Casablanca</text>
+
+        <circle class="city-dot future" cx="470" cy="240" r="3" />
+        <text class="city-label" x="470" y="252" text-anchor="middle">Le Caire</text>
+
+        <circle class="city-dot future" cx="410" cy="275" r="3" />
+        <text class="city-label" x="410" y="290" text-anchor="middle">Lagos</text>
+
+        <circle class="city-dot future" cx="480" cy="300" r="3" />
+        <text class="city-label" x="480" y="315" text-anchor="middle">Kigali</text>
+
+        <circle class="city-dot future" cx="490" cy="320" r="3" />
+        <text class="city-label" x="490" y="335" text-anchor="middle">Nairobi</text>
+
+        <circle class="city-dot future" cx="470" cy="370" r="3" />
+        <text class="city-label" x="470" y="385" text-anchor="middle">Johannesburg</text>
+
+        <circle class="city-dot future" cx="690" cy="170" r="3" />
+        <text class="city-label" x="690" y="160" text-anchor="middle">Tokyo</text>
+
+        <circle class="city-dot future" cx="540" cy="245" r="3" />
+        <text class="city-label" x="540" y="235" text-anchor="middle">Dubai</text>
+      </svg>
+    </div>
+
+    <div class="locations-list reveal reveal-delay-1">
+      <div>
+        <div class="location-group-label">Bureaux actifs</div>
+        <div class="location-row active">
+          <span class="city">Paris</span>
+          <span class="country">FR</span>
+        </div>
+        <div class="location-row active">
+          <span class="city">Abidjan</span>
+          <span class="country">CI · HQ</span>
+        </div>
+      </div>
+      <div>
+        <div class="location-group-label">Antennes en ouverture</div>
+        <div class="location-row">
+          <span class="city">Washington</span>
+          <span class="country">US</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Bruxelles</span>
+          <span class="country">BE</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Genève</span>
+          <span class="country">CH</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Lagos</span>
+          <span class="country">NG</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Nairobi</span>
+          <span class="country">KE</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Kigali</span>
+          <span class="country">RW</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Casablanca</span>
+          <span class="country">MA</span>
+        </div>
+        <div class="location-row">
+          <span class="city">Dubai</span>
+          <span class="country">AE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 RÉFÉRENCES -->
+<section class="cases" id="cases">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Nos références</div>
+      <h2 class="section-title">Trois missions, <span class="bold accent">trois résultats</span></h2>
+    </div>
+    <p class="section-note">Mesurés. Documentés. Strictement confidentiel.</p>
+  </div>
+  <div class="cases-grid">
+    <article class="case-card reveal">
+      <div class="case-eyebrow">Cas n°01 · Fintech panafricaine · Oct. 2025</div>
+      <h3 class="case-name">REasy<span class="dot">.</span></h3>
+      <p class="case-desc">Médiatiser la clôture d'une pre-seed de 1,8 M$ pour une fintech camerounaise. 8+ publications confirmées dont exclusivité TV CNBC Africa, TechCabal, Daba Finance.</p>
+      <div class="case-metric">
+        <div class="case-metric-big">115M+</div>
+        <div class="case-metric-label">Visiteurs/mois (audience cumulée médias premium)</div>
+      </div>
+    </article>
+    <article class="case-card reveal reveal-delay-1">
+      <div class="case-eyebrow">Cas n°02 · Personal branding ONU · Oct. 2025</div>
+      <h3 class="case-name">Manuel Ntumba<span class="dot">.</span></h3>
+      <p class="case-desc">Construire un personal branding institutionnel pour un expert ONU Compliance. 4+ publications dès le premier mois (Compliance Week, Sika Finance, CIO Mag, Africa Intelligence).</p>
+      <div class="case-metric">
+        <div class="case-metric-big">1M+</div>
+        <div class="case-metric-label">Visiteurs/mois (publications obtenues)</div>
+      </div>
+    </article>
+    <article class="case-card reveal reveal-delay-2">
+      <div class="case-eyebrow">Cas n°03 · Power, Mines, Hydrocarbures · Déc. 2025</div>
+      <h3 class="case-name">Huawei<span class="dot">.</span></h3>
+      <p class="case-desc">Décrypter les marchés africains de l'électricité, des hydrocarbures et des mines. 4 rapports Strategic Risk Management couvrant Power Grid, Public Finances, Oil &amp; Gas, Mines.</p>
+      <div class="case-metric">
+        <div class="case-metric-big">200p.</div>
+        <div class="case-metric-label">D'analyse exclusive en moins de 60 jours</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 07 CELLULE OPÉRATIONNELLE -->
+<section class="team" id="team">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Cellule opérationnelle</div>
+      <h2 class="section-title">L'équipe <span class="bold accent">qui exécute</span></h2>
+    </div>
+    <p class="section-note">Profils croisés Sciences Po, Banque mondiale, Havas, Forward Global. Activables sur les 5 fuseaux clés.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-member reveal">
+      <div class="team-avatar">EG</div>
+      <div class="team-name">Eisa Gouredou</div>
+      <div class="team-role">Consultante RP</div>
+      <div class="team-location">Washington</div>
+    </div>
+    <div class="team-member reveal reveal-delay-1">
+      <div class="team-avatar">LP</div>
+      <div class="team-name">Lewis Pagoriwan</div>
+      <div class="team-role">Consultant senior</div>
+      <div class="team-location">Paris</div>
+    </div>
+    <div class="team-member reveal reveal-delay-2">
+      <div class="team-avatar">MS</div>
+      <div class="team-name">Micheline Sienga</div>
+      <div class="team-role">Consultante RP</div>
+      <div class="team-location">Abidjan</div>
+    </div>
+    <div class="team-member reveal reveal-delay-3">
+      <div class="team-avatar">AC</div>
+      <div class="team-name">Abraham Coulibaly</div>
+      <div class="team-role">Consultant digital</div>
+      <div class="team-location">Abidjan</div>
+    </div>
+    <div class="team-member reveal reveal-delay-4">
+      <div class="team-avatar">ND</div>
+      <div class="team-name">Noel Dixon</div>
+      <div class="team-role">Graphiste</div>
+      <div class="team-location">Abidjan</div>
+    </div>
+  </div>
+  <div class="team-advisory-cta reveal">
+    <a href="#">
+      <span class="badge">+10</span>
+      Découvrir l'Advisory Board et les experts seniors
+      <span>→</span>
+    </a>
+  </div>
+</section>
+
+<!-- 08 PARTENAIRES marquee -->
+<section class="partners" id="partners">
+  <div class="partners-eyebrow">
+    <div class="eyebrow with-line">Notre écosystème · médias activables &amp; cabinets partenaires</div>
+  </div>
+  <div class="marquee">
+    <span class="partner-logo serif">Jeune Afrique</span>
+    <span class="partner-logo uppercase">Financial Afrik</span>
+    <span class="partner-logo">Forbes Afrique</span>
+    <span class="partner-logo mono">CNBC Africa</span>
+    <span class="partner-logo">Bloomberg</span>
+    <span class="partner-logo serif">BBC Africa</span>
+    <span class="partner-logo uppercase">La Tribune Afrique</span>
+    <span class="partner-logo">Agence Ecofin</span>
+    <span class="partner-logo mono">TechCabal</span>
+    <span class="partner-logo">Reuters</span>
+    <span class="partner-logo serif">Sport News Africa</span>
+    <span class="partner-logo uppercase">Mad Makers</span>
+    <span class="partner-logo">African Business</span>
+    <span class="partner-logo mono">Semafor Africa</span>
+    <span class="partner-logo">Forward Global</span>
+    <span class="partner-logo serif">ESP Abidjan</span>
+    <!-- duplicate set for seamless loop -->
+    <span class="partner-logo serif">Jeune Afrique</span>
+    <span class="partner-logo uppercase">Financial Afrik</span>
+    <span class="partner-logo">Forbes Afrique</span>
+    <span class="partner-logo mono">CNBC Africa</span>
+    <span class="partner-logo">Bloomberg</span>
+    <span class="partner-logo serif">BBC Africa</span>
+    <span class="partner-logo uppercase">La Tribune Afrique</span>
+    <span class="partner-logo">Agence Ecofin</span>
+    <span class="partner-logo mono">TechCabal</span>
+    <span class="partner-logo">Reuters</span>
+    <span class="partner-logo serif">Sport News Africa</span>
+    <span class="partner-logo uppercase">Mad Makers</span>
+    <span class="partner-logo">African Business</span>
+    <span class="partner-logo mono">Semafor Africa</span>
+    <span class="partner-logo">Forward Global</span>
+    <span class="partner-logo serif">ESP Abidjan</span>
+  </div>
+</section>
+
+<!-- 09 INSIGHTS -->
+<section class="insights" id="insights">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow eyebrow with-line">Insights</div>
+      <h2 class="section-title">Pilier <span class="bold accent">éditorial</span></h2>
+    </div>
+    <p class="section-note">Notes d'analyse, prises de parole, observatoires sectoriels. La preuve d'autorité dans le temps.</p>
+  </div>
+
+  <div class="insights-grid">
+    <a href="#" class="insight-card featured reveal">
+      <span class="insight-tag osea">OSEA · En préparation</span>
+      <h3 class="insight-title">Observatoire Stratégique Économique Afrique : le think tank ARMD en préparation</h3>
+      <p class="insight-desc">Plateforme éditoriale et base de données propriétaire sur les acteurs économiques, politiques et sociétaux du continent. Première publication automne 2026.</p>
+      <div class="insight-meta">
+        <span>Note de cadrage</span>
+        <span class="dot"></span>
+        <span>À paraître</span>
+      </div>
+    </a>
+
+    <a href="#" class="insight-card reveal reveal-delay-1">
+      <span class="insight-tag">Analyse</span>
+      <h3 class="insight-title">Souveraineté informationnelle : le défi des champions africains</h3>
+      <p class="insight-desc">Pourquoi la maîtrise des récits devient une condition de légitimité.</p>
+      <div class="insight-meta">
+        <span>Article fondateur</span>
+        <span class="dot"></span>
+        <span>Mai 2026</span>
+      </div>
+    </a>
+
+    <a href="#" class="insight-card reveal reveal-delay-2">
+      <span class="insight-tag">Note</span>
+      <h3 class="insight-title">Médiatiser une levée pre-seed panafricaine en 72h</h3>
+      <p class="insight-desc">Retour d'expérience opérationnel sur le mandat REasy.</p>
+      <div class="insight-meta">
+        <span>Note méthodo</span>
+        <span class="dot"></span>
+        <span>Avril 2026</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- 10 NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-inner reveal">
+    <div>
+      <h2 class="newsletter-title">Recevez les notes ARMD<br />directement.</h2>
+      <p class="newsletter-sub">Une analyse stratégique par mois. Pas de spam, pas de marketing. Désinscription d'un clic.</p>
+    </div>
+    <div>
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="votre@email.pro" aria-label="Email" required />
+        <button type="submit">S'abonner <span>→</span></button>
+      </form>
+      <div class="newsletter-note">Confidentialité ARMD · GDPR-conforme</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 CONTACT (closing) -->
+<section class="closing" id="contact">
+  <div class="closing-inner reveal">
+    <div class="closing-content">
+      <div class="closing-eyebrow eyebrow with-line">Parlons stratégie</div>
+      <h2 class="closing-title">
+        <span class="light">Observer.</span><br />
+        <span class="light">Anticiper.</span><br />
+        Diriger<span class="dot">.</span>
+      </h2>
+      <p class="closing-sub">Décidez du prochain mouvement stratégique d'ARMD pour votre marché, votre image, vos intérêts.</p>
+      <div class="closing-contact">
+        <div>
+          <div class="contact-block-label">Bureau principal</div>
+          <div class="contact-block-value">Angré 8ème tranche<br />Abidjan, Côte d'Ivoire</div>
+        </div>
+        <div>
+          <div class="contact-block-label">Téléphone</div>
+          <a href="tel:+22505028919 68" class="contact-block-value">+225 (0)5 02 89 19 68</a>
+        </div>
+        <div>
+          <div class="contact-block-label">Email</div>
+          <a href="mailto:ga@armdgroup.com" class="contact-block-value">ga@armdgroup.com</a>
+        </div>
+      </div>
+      <a href="mailto:ga@armdgroup.com" class="closing-cta">Prendre contact <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 ARMD Group</span>
+    <span>Zone Global · FR</span>
+    <a href="#splash" id="back-to-splash">Choisir une autre région →</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tengbao/vanta/dist/vanta.dots.min.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  let splashVanta = null;
+  let heroVanta = null;
+
+  function initVanta() {
+    if (typeof VANTA === "undefined" || !VANTA.DOTS) return;
+    splashVanta = VANTA.DOTS({
+      el: "#splash-vanta",
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200, minWidth: 200, scale: 1.0, scaleMobile: 1.0,
+      color: 0x2C56FA, color2: 0x073763, backgroundColor: 0x001426,
+      size: 2.5, spacing: 32, showLines: true,
+    });
+    heroVanta = VANTA.DOTS({
+      el: "#hero-vanta",
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200, minWidth: 200, scale: 1.0, scaleMobile: 1.0,
+      color: 0x2C56FA, color2: 0xB8ADA3, backgroundColor: 0xE5E1E0,
+      size: 2, spacing: 40, showLines: false,
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initVanta);
+  else initVanta();
+
+  /* SPLASH ANIMATION */
+  const splash = document.getElementById("splash");
+  const wordmark = document.getElementById("splash-wordmark");
+  const lettersBase = wordmark.querySelectorAll(".letter:not(.letter-e)");
+  const letterE = document.getElementById("letter-e");
+  const letterEInner = letterE.querySelector(".letter-e-inner");
+  const letterD = document.getElementById("letter-d");
+  const choices = document.getElementById("splash-choices");
+  const lang = document.getElementById("splash-lang");
+  const meta = document.getElementById("splash-meta");
+  const eyebrow = document.getElementById("splash-eyebrow");
+  const backToSplash = document.getElementById("back-to-splash");
+
+  gsap.set(wordmark, { letterSpacing: "0em", rotateY: 0, rotateX: 0, scale: 1 });
+  gsap.set(lettersBase, { opacity: 0, y: 60, filter: "blur(20px)" });
+  gsap.set(letterE, { width: 0, opacity: 0 });
+  gsap.set(letterEInner, { y: 30, filter: "blur(16px)", opacity: 0, scale: 0.7 });
+  gsap.set(choices, { opacity: 0, y: 40, filter: "blur(16px)" });
+  gsap.set(".choice", { opacity: 0, y: 30 });
+  gsap.set(lang, { opacity: 0 });
+  gsap.set(meta, { opacity: 0 });
+  gsap.set(eyebrow, { opacity: 0, y: -10 });
+
+  const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+  tl.to(lettersBase, { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.4, stagger: 0.08 })
+    .to(eyebrow, { opacity: 1, y: 0, duration: 1.0 }, "<+=0.4")
+    .to(meta, { opacity: 1, duration: 1.0 }, "<")
+    .to(wordmark, { scale: 1.012, duration: 1.0, ease: "sine.inOut" }, "<+=0.2")
+    .to(wordmark, { rotateY: -2, rotateX: 1.5, letterSpacing: "0.04em", duration: 1.1, ease: "expo.inOut" }, "+=0.4")
+    .to(wordmark, { textShadow: "0 0 60px rgba(44, 86, 250, 0.15)", duration: 1.1, ease: "sine.inOut" }, "<")
+    .to(letterE, { width: "0.62em", opacity: 1, duration: 1.0, ease: "expo.inOut" }, "<+=0.15")
+    .to(letterEInner, { y: 0, scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.95 }, "<+=0.15")
+    .to(wordmark, { rotateY: 1.5, rotateX: -1, duration: 1.4, ease: "sine.inOut" }, "+=0.2")
+    .to(letterEInner, { y: -20, scale: 0.7, filter: "blur(14px)", opacity: 0, duration: 0.7, ease: "expo.in" }, "+=0.3")
+    .to(letterE, { width: 0, opacity: 0, duration: 0.85, ease: "expo.inOut" }, "<+=0.15")
+    .to(wordmark, { rotateY: 0, rotateX: 0, letterSpacing: "0em", textShadow: "0 0 0 rgba(44, 86, 250, 0)", duration: 0.9, ease: "expo.inOut" }, "<")
+    .to([wordmark, eyebrow, meta], { filter: "blur(8px)", opacity: 0, scale: 0.94, duration: 1.0, ease: "expo.inOut" }, "+=0.5")
+    .set(choices, { pointerEvents: "auto" }, "-=0.4")
+    .to(choices, { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.2 }, "-=0.3")
+    .to(".choice", { opacity: 1, y: 0, duration: 0.95, stagger: 0.14 }, "<+=0.15")
+    .to(lang, { opacity: 1, duration: 0.8 }, "<+=0.3");
+
+  /* CHOICE → enter */
+  document.querySelectorAll(".choice").forEach((choice) => {
+    choice.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = this.getAttribute("href");
+      const zone = this.dataset.zone;
+      document.cookie = "armd_pref=" + zone + ":fr; path=/; max-age=31536000; SameSite=Lax";
+      gsap.to(splash, {
+        opacity: 0, duration: 0.7, ease: "expo.inOut",
+        onComplete: function () {
+          splash.style.display = "none";
+          if (splashVanta && splashVanta.destroy) { splashVanta.destroy(); splashVanta = null; }
+          if (target && target.startsWith("#")) {
+            const el = document.querySelector(target);
+            if (el) el.scrollIntoView({ behavior: "auto" });
+          }
+        },
+      });
+    });
+  });
+
+  /* Pointer-tracked lighting */
+  function bindPointerLight(selector) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener("mousemove", function (e) {
+        const rect = el.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        el.style.setProperty("--mx", x + "%");
+        el.style.setProperty("--my", y + "%");
+      });
+    });
+  }
+  bindPointerLight(".choice");
+  bindPointerLight(".expertise");
+
+  /* Scroll reveal */
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  /* Lang switcher splash */
+  document.querySelectorAll(".splash-lang button").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".splash-lang button").forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  /* Re-open splash */
+  if (backToSplash) {
+    backToSplash.addEventListener("click", function (e) {
+      e.preventDefault();
+      splash.style.display = "flex";
+      gsap.set(splash, { opacity: 1 });
+      gsap.set(wordmark, { opacity: 0 });
+      gsap.set(choices, { opacity: 1, pointerEvents: "auto" });
+      gsap.set(lang, { opacity: 1 });
+      gsap.set(meta, { opacity: 1 });
+      gsap.set(eyebrow, { opacity: 1 });
+      if (!splashVanta) initVanta();
+    });
+  }
+
+  /* Reduced motion */
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    tl.progress(1);
+    gsap.set(wordmark, { opacity: 0 });
+    gsap.set(choices, { opacity: 1, pointerEvents: "auto" });
+    gsap.set(lang, { opacity: 1 });
+    gsap.set(meta, { opacity: 1 });
+    gsap.set(eyebrow, { opacity: 1 });
+  }
+})();
+</script>
+
+</body>
+</html>
