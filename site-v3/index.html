@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARMD</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#" class="header__logo">
+      <img src="assets/images/armd-logo.svg" alt="ARMD" class="header__logo-img" />
+    </a>
+    <nav class="header__nav">
+      <a href="#" class="header__link header__link--active">Accueil</a>
+      <a href="#" class="header__link">À propos</a>
+      <a href="#" class="header__link">Services</a>
+      <a href="#" class="header__link">Références</a>
+      <a href="#" class="header__link">Blog</a>
+    </nav>
+    <div class="header__actions">
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="#" class="header__cta">Prendre rendez-vous</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero__bg">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.jpg">
+      <source src="assets/images/hero-video.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__inner">
+    <div class="hero__left">
+      <h1 class="hero__title">Faites reconnaître votre<br>entreprise <span class="hero__highlight">à sa juste valeur<svg class="hero__stroke" viewBox="0 0 200 16" preserveAspectRatio="none"><path d="M0.0 5.0 L3.3 3.0 L6.5 2.7 L9.8 2.7 L13.0 3.0 L16.3 3.0 L19.6 3.4 L22.8 3.4 L26.1 3.4 L29.3 3.8 L32.6 4.2 L35.9 4.6 L39.1 5.0 L42.4 5.3 L45.6 5.3 L48.9 5.7 L52.2 5.7 L55.4 5.3 L58.7 5.7 L61.9 5.7 L65.2 6.1 L68.5 6.1 L71.7 6.1 L75.0 6.1 L78.2 6.1 L81.5 6.1 L84.8 6.1 L88.0 6.5 L91.3 6.1 L94.5 6.5 L97.8 6.1 L101.1 6.1 L104.3 6.1 L107.6 6.1 L110.8 5.7 L114.1 5.7 L117.4 5.3 L120.6 5.3 L123.9 5.3 L127.1 5.0 L130.4 5.0 L133.7 4.6 L136.9 4.6 L140.2 4.6 L143.4 5.0 L146.7 5.0 L150.0 4.6 L153.2 4.6 L156.5 4.2 L159.7 3.8 L163.0 3.8 L166.3 3.4 L169.5 3.0 L172.8 3.0 L176.1 2.7 L179.3 2.3 L182.6 1.5 L185.8 1.1 L189.1 0.8 L192.4 0.4 L195.6 2.3 L198.9 2.3 L198.9 8.0 L195.6 8.8 L192.4 9.5 L189.1 9.9 L185.8 10.3 L182.6 10.7 L179.3 11.0 L176.1 11.0 L172.8 11.0 L169.5 11.0 L166.3 11.4 L163.0 11.4 L159.7 11.8 L156.5 11.8 L153.2 11.8 L150.0 12.2 L146.7 12.2 L143.4 12.6 L140.2 13.0 L136.9 13.0 L133.7 13.0 L130.4 13.0 L127.1 13.0 L123.9 13.7 L120.6 14.1 L117.4 14.5 L114.1 14.9 L110.8 14.9 L107.6 15.2 L104.3 15.2 L101.1 15.6 L97.8 16.0 L94.5 15.6 L91.3 15.6 L88.0 15.6 L84.8 15.6 L81.5 15.2 L78.2 14.9 L75.0 14.1 L71.7 14.1 L68.5 14.1 L65.2 13.7 L61.9 13.7 L58.7 13.7 L55.4 13.7 L52.2 13.3 L48.9 13.7 L45.6 13.7 L42.4 13.7 L39.1 13.7 L35.9 13.7 L32.6 13.7 L29.3 13.3 L26.1 13.3 L22.8 13.7 L19.6 13.7 L16.3 13.0 L13.0 12.6 L9.8 12.2 L6.5 11.8 L3.3 11.0 L0.0 5.3 Z" fill="currentColor"/></svg></span>.</h1>
+      <p class="hero__subtitle">Nous aidons les entreprises africaines à gagner la confiance de ceux qui financent leurs projets, leur ouvrent de nouveaux marchés et influencent leur environnement.</p>
+      <div class="hero__buttons">
+        <a href="#" class="btn btn--accent">Nos références</a>
+        <a href="#" class="btn btn--outline">Diagnostic Dirigeant™</a>
+      </div>
+    </div>
+    <div class="hero__right">
+      <div class="hero__video-card">
+        <img src="assets/images/video-thumb.webp" alt="" class="hero__video-thumb" />
+        <button class="hero__play" type="button" aria-label="Lire la vidéo">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <a href="#armd-tv" class="hero__trust">
+        <div class="hero__avatars">
+          <span class="hero__avatar"></span>
+          <span class="hero__avatar"></span>
+          <span class="hero__avatar"></span>
+        </div>
+        <span class="hero__trust-label">ARMD TV</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about">
+  <div class="about__inner">
+    <!-- Top row: label + partners -->
+    <div class="about__top">
+      <div class="about__label">
+        <span class="dot dot--accent"></span>
+        <span>À propos</span>
+      </div>
+      <div class="about__partners">
+        <div class="about__partners-track">
+          <img src="assets/images/logos/multiprint.png" alt="Multiprint" class="partner-logo partner-logo--xl" />
+          <img src="assets/images/logos/forward-global.png" alt="Forward Global" class="partner-logo" />
+          <img src="assets/images/logos/nasco-group.png" alt="Nasco Group" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/genesis-holding.png" alt="Genesis Holding Company" class="partner-logo" />
+          <img src="assets/images/logos/huawei.png" alt="Huawei" class="partner-logo" />
+          <img src="assets/images/logos/rocklane-capital.png" alt="Rocklane Capital Partners" class="partner-logo" />
+          <img src="assets/images/logos/bo-tsing.png" alt="Bo Tsing Technology" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/xinhua.png" alt="Xinhua" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/forbes-afrique.png" alt="Forbes Afrique" class="partner-logo" />
+          <img src="assets/images/logos/sport-news-africa.png" alt="Sport News Africa" class="partner-logo" />
+          <img src="assets/images/logos/endeavour-mining.png" alt="Endeavour Mining" class="partner-logo" />
+          <img src="assets/images/logos/fondation-mastercard.png" alt="Fondation Mastercard" class="partner-logo partner-logo--xl" />
+        </div>
+        <div class="about__partners-track" aria-hidden="true">
+          <img src="assets/images/logos/multiprint.png" alt="Multiprint" class="partner-logo partner-logo--xl" />
+          <img src="assets/images/logos/forward-global.png" alt="Forward Global" class="partner-logo" />
+          <img src="assets/images/logos/nasco-group.png" alt="Nasco Group" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/genesis-holding.png" alt="Genesis Holding Company" class="partner-logo" />
+          <img src="assets/images/logos/huawei.png" alt="Huawei" class="partner-logo" />
+          <img src="assets/images/logos/rocklane-capital.png" alt="Rocklane Capital Partners" class="partner-logo" />
+          <img src="assets/images/logos/bo-tsing.png" alt="Bo Tsing Technology" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/xinhua.png" alt="Xinhua" class="partner-logo partner-logo--lg" />
+          <img src="assets/images/logos/forbes-afrique.png" alt="Forbes Afrique" class="partner-logo" />
+          <img src="assets/images/logos/sport-news-africa.png" alt="Sport News Africa" class="partner-logo" />
+          <img src="assets/images/logos/endeavour-mining.png" alt="Endeavour Mining" class="partner-logo" />
+          <img src="assets/images/logos/fondation-mastercard.png" alt="Fondation Mastercard" class="partner-logo partner-logo--xl" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main text -->
+    <div class="about__text">
+      <span class="about__asterisk" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/></svg>
+      </span>
+      <p>ARMD est un cabinet de conseil en intelligence économique et communication stratégique <span class="text-muted">dédié aux groupes industriels et aux institutions financières africaines.</span></p>
+    </div>
+
+    <!-- Stats -->
+    <div class="about__stats">
+      <div class="stat-card">
+        <span class="stat-card__value">6</span>
+        <span class="stat-card__label"><strong>Expertises-métiers</strong><br>du lobbying au traitement de données</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__value">8</span>
+        <span class="stat-card__label"><strong>Marchés couverts</strong><br>en Afrique subsaharienne</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__value">8+</span>
+        <span class="stat-card__label"><strong>Années</strong><br>d'expérience</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__value">3</span>
+        <span class="stat-card__label"><strong>Territoires d'implantation</strong><br>Abidjan · Paris · Douala</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__value">1 000+</span>
+        <span class="stat-card__label"><strong>Retombées médias</strong><br>cumulées pour nos clients</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__value">+ $200 M</span>
+        <span class="stat-card__label"><strong>De financements</strong><br>obtenus par nos clients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KNOW / PHILOSOPHY ========== -->
+<section class="valeurs">
+  <div class="valeurs__inner">
+    <div class="valeurs__left">
+      <span class="valeurs__eyebrow"><span class="dot dot--accent"></span>Pourquoi ARMD</span>
+      <blockquote class="valeurs__quote">
+        <p>&laquo; Jeunesses africaines, armez-vous de sciences jusqu'aux dents ! &raquo;</p>
+        <cite>— Cheikh Anta Diop, Niamey, 1984</cite>
+      </blockquote>
+      <p class="valeurs__body">Le nom ARMD porte une conviction : face à la nouvelle donne géoéconomique, l'Afrique a besoin d'un réarmement de sa pensée critique et stratégique. L'information est une arme — ARMD la met au service des opérateurs économiques africains.</p>
+
+      <div class="valeurs__mission">
+        <div class="valeurs__mission-block">
+          <h4 class="valeurs__mission-title">Raison d'être</h4>
+          <p class="valeurs__mission-text">Appuyer les opérateurs économiques qui produisent, transforment et financent l'Afrique.</p>
+        </div>
+        <div class="valeurs__mission-block">
+          <h4 class="valeurs__mission-title">Mission</h4>
+          <p class="valeurs__mission-text">Des informations fiables pour décider, un récit clair pour convaincre, les relations nécessaires pour avancer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="valeurs__right">
+      <div class="radar" data-radar>
+        <svg class="radar__svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cercles concentriques -->
+          <circle cx="300" cy="300" r="200" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.25"/>
+          <circle cx="300" cy="300" r="150" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="300" cy="300" r="100" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.15"/>
+          <circle cx="300" cy="300" r="50" fill="none" stroke="var(--color-border)" stroke-width="0.5" opacity="0.1"/>
+          <!-- Axes -->
+          <line x1="300" y1="300" x2="300" y2="100" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <line x1="300" y1="300" x2="490" y2="238" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <line x1="300" y1="300" x2="418" y2="476" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <line x1="300" y1="300" x2="182" y2="476" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <line x1="300" y1="300" x2="110" y2="238" stroke="var(--color-border)" stroke-width="0.5" opacity="0.2"/>
+          <!-- Polygone -->
+          <polygon class="radar__shape" points="300,110 480,242 412,468 188,468 120,242" fill="var(--color-accent)" fill-opacity="0.06" stroke="var(--color-accent)" stroke-width="1.5"/>
+          <!-- Points interactifs -->
+          <g class="radar__point" data-index="0">
+            <circle cx="300" cy="110" r="20" fill="transparent" class="radar__hit"/>
+            <circle cx="300" cy="110" r="6" fill="var(--color-accent)" class="radar__dot"/>
+            <line x1="300" y1="100" x2="300" y2="16" stroke="var(--color-accent)" stroke-width="0.5" opacity="0" class="radar__line"/>
+          </g>
+          <g class="radar__point" data-index="1">
+            <circle cx="480" cy="242" r="20" fill="transparent" class="radar__hit"/>
+            <circle cx="480" cy="242" r="6" fill="var(--color-accent)" class="radar__dot"/>
+            <line x1="490" y1="238" x2="560" y2="210" stroke="var(--color-accent)" stroke-width="0.5" opacity="0" class="radar__line"/>
+          </g>
+          <g class="radar__point" data-index="2">
+            <circle cx="412" cy="468" r="20" fill="transparent" class="radar__hit"/>
+            <circle cx="412" cy="468" r="6" fill="var(--color-accent)" class="radar__dot"/>
+            <line x1="418" y1="476" x2="460" y2="530" stroke="var(--color-accent)" stroke-width="0.5" opacity="0" class="radar__line"/>
+          </g>
+          <g class="radar__point" data-index="3">
+            <circle cx="188" cy="468" r="20" fill="transparent" class="radar__hit"/>
+            <circle cx="188" cy="468" r="6" fill="var(--color-accent)" class="radar__dot"/>
+            <line x1="182" y1="476" x2="140" y2="530" stroke="var(--color-accent)" stroke-width="0.5" opacity="0" class="radar__line"/>
+          </g>
+          <g class="radar__point" data-index="4">
+            <circle cx="120" cy="242" r="20" fill="transparent" class="radar__hit"/>
+            <circle cx="120" cy="242" r="6" fill="var(--color-accent)" class="radar__dot"/>
+            <line x1="110" y1="238" x2="40" y2="210" stroke="var(--color-accent)" stroke-width="0.5" opacity="0" class="radar__line"/>
+          </g>
+        </svg>
+        <!-- Labels positionnés autour du radar -->
+        <div class="radar__label radar__label--top" data-index="0">
+          <span class="radar__label-num">01</span>
+          <h4 class="radar__label-name"><strong>R</strong>igueur</h4>
+          <p class="radar__label-desc">Fonder chaque analyse sur des faits.</p>
+        </div>
+        <div class="radar__label radar__label--right" data-index="1">
+          <span class="radar__label-num">02</span>
+          <h4 class="radar__label-name"><strong>A</strong>nalyse</h4>
+          <p class="radar__label-desc">Révéler le sens et les perspectives.</p>
+        </div>
+        <div class="radar__label radar__label--bottom-right" data-index="2">
+          <span class="radar__label-num">03</span>
+          <h4 class="radar__label-name"><strong>D</strong>iscrétion</h4>
+          <p class="radar__label-desc">Protéger sans jamais exposer.</p>
+        </div>
+        <div class="radar__label radar__label--bottom-left" data-index="3">
+          <span class="radar__label-num">04</span>
+          <h4 class="radar__label-name"><strong>A</strong>cuité</h4>
+          <p class="radar__label-desc">Discerner, au-delà de l'évidence.</p>
+        </div>
+        <div class="radar__label radar__label--left" data-index="4">
+          <span class="radar__label-num">05</span>
+          <h4 class="radar__label-name"><strong>R</strong>éactivité</h4>
+          <p class="radar__label-desc">Agir vite, sans perdre en précision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== METHODE ========== -->
+<section class="methode">
+  <div class="methode__sticky">
+    <div class="methode__header">
+      <span class="methode__eyebrow"><span class="dot dot--accent"></span>Notre méthode</span>
+      <h2 class="methode__title">Comprendre. Vérifier. Agir.</h2>
+      <p class="methode__subtitle">Chaque mission part d'une question simple : quel est le principal problème qui empêche l'entreprise d'avancer, et comment la communication peut-elle contribuer à le résoudre ?</p>
+    </div>
+    <div class="methode__track-titles">
+      <div class="methode__step-top">
+        <div class="methode__step-top-text">
+          <h3 class="methode__step-title">Le Diagnostic Dirigeant™</h3>
+          <span class="methode__step-number">Conversation d'une heure</span>
+        </div>
+        <img class="methode__step-icon" src="assets/images/etape-1.png" alt="">
+      </div>
+      <div class="methode__step-top">
+        <div class="methode__step-top-text">
+          <h3 class="methode__step-title">La Revue de Perception™</h3>
+          <span class="methode__step-number">48h après le diagnostic dirigeant</span>
+        </div>
+        <img class="methode__step-icon" src="assets/images/etape-2.png" alt="">
+      </div>
+      <div class="methode__step-top">
+        <div class="methode__step-top-text">
+          <h3 class="methode__step-title">Le Mandat</h3>
+          <span class="methode__step-number">48h après la revue de perception</span>
+        </div>
+        <img class="methode__step-icon" src="assets/images/etape-3.png" alt="">
+      </div>
+    </div>
+    <div class="methode__frise">
+      <div class="methode__frise-progress"></div>
+    </div>
+    <div class="methode__track">
+      <div class="methode__step">
+        <h4 class="methode__step-heading">Identifier le problème qui freine l'entreprise.</h4>
+        <ul class="methode__step-list">
+          <li>Comprendre le projet et les objectifs de la direction</li>
+          <li>Identifier le principal point de blocage de l'entreprise</li>
+          <li>Déterminer comment la communication peut aider à le lever</li>
+        </ul>
+        <div class="methode__step-livrable">
+          <span class="methode__step-livrable-icon">&#9678;</span>
+          Livrable : un rapport personnalisé des priorités
+        </div>
+      </div>
+      <div class="methode__step">
+        <h4 class="methode__step-heading">Voir l'entreprise comme la perçoivent ceux qu'elle doit convaincre.</h4>
+        <ul class="methode__step-list">
+          <li>Examiner les informations accessibles en ligne sur l'entreprise</li>
+          <li>Comparer sa présence et son positionnement à ceux de ses concurrents</li>
+          <li>Établir la situation de départ qui servira à mesurer les progrès</li>
+        </ul>
+        <div class="methode__step-livrable methode__step-livrable--preview">
+          <span class="methode__step-livrable-icon">&#9678;</span>
+          Livrable : une étude comparative de votre image
+          <div class="methode__livrable-popup">
+            <img src="assets/images/livrable-revue.png" alt="Revue de Perception – Aperçu du livrable">
+          </div>
+        </div>
+      </div>
+      <div class="methode__step">
+        <h4 class="methode__step-heading">Transformer la priorité en un plan d'action mesurable.</h4>
+        <ul class="methode__step-list">
+          <li>Définir les livrables, les responsabilités et le calendrier</li>
+          <li>Prendre en charge la préparation, la production et l'exécution</li>
+          <li>Mesurer les résultats par rapport à la revue de perception</li>
+        </ul>
+        <div class="methode__step-livrable methode__step-livrable--preview">
+          <span class="methode__step-livrable-icon">&#9678;</span>
+          Livrable : une stratégie, le calendrier et les indicateurs de suivi
+          <div class="methode__livrable-popup">
+            <img src="assets/images/livrable-mandat.png" alt="Stratégie E-réputation Corporate – Aperçu du livrable">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services">
+  <div class="services__header">
+    <div class="services__header-left">
+      <span class="services__eyebrow"><span class="dot dot--accent"></span>Les enjeux stratégiques</span>
+      <h2 class="services__title">Qu'est-ce qui freine votre entreprise aujourd'hui ?</h2>
+    </div>
+    <a href="#" class="services__cta">En savoir plus <span class="services__cta-dot"></span></a>
+  </div>
+  <div class="services__grid">
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <span class="services__card-eyebrow">Capital</span>
+      <h3 class="services__card-title">Le manque de financements adaptés</h3>
+      <p class="services__card-desc">Nous préparons les documents, les messages et les dirigeants nécessaires pour convaincre des investisseurs ou des partenaires financiers.</p>
+      <div class="services__card-tags">Levée de fonds · Introduction en Bourse · Refinancement</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="services__card-eyebrow">Marché</span>
+      <h3 class="services__card-title">Une unicité que le marché ne perçoit pas</h3>
+      <p class="services__card-desc">Nous clarifions ce qui distingue votre entreprise et l'appuyons par des données que vos clients et partenaires peuvent vérifier.</p>
+      <div class="services__card-tags">Positionnement · Étude sectorielle</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><line x1="9" y1="10" x2="9" y2="10"/><line x1="15" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="9" y2="14"/><line x1="15" y1="14" x2="15" y2="14"/></svg>
+      <span class="services__card-eyebrow">Relations institutionnelles</span>
+      <h3 class="services__card-title">Un accès limité aux décideurs publics</h3>
+      <p class="services__card-desc">Nous identifions les administrations et les décideurs concernés par vos projets, puis préparons les rendez-vous et leur suivi.</p>
+      <div class="services__card-tags">Autorisations · Implantation · Expansion</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span class="services__card-eyebrow">Réputation</span>
+      <h3 class="services__card-title">Des informations inexactes ou incomplètes sur vous</h3>
+      <p class="services__card-desc">Nous vérifions les informations disponibles sur votre entreprise, corrigeons les erreurs et organisons votre présence dans les médias et en ligne.</p>
+      <div class="services__card-tags">Médias · Présence en ligne</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="services__card-eyebrow">Talents</span>
+      <h3 class="services__card-title">Des profils difficiles à attirer et à retenir</h3>
+      <p class="services__card-desc">Nous présentons clairement vos métiers, votre culture et les perspectives offertes afin de faciliter le recrutement et la fidélisation.</p>
+      <div class="services__card-tags">Recrutement · Marque employeur</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+    <div class="services__card">
+      <svg class="services__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="services__card-eyebrow">Transmission</span>
+      <h3 class="services__card-title">Un savoir-faire qui risque de se perdre</h3>
+      <p class="services__card-desc">Nous transformons le parcours du dirigeant ou l'histoire de l'entreprise en un projet durable : livre, fondation ou programme d'intérêt général.</p>
+      <div class="services__card-tags">Livre · Fondation · Transmission</div>
+      <a href="#" class="services__card-link">En savoir plus <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REFERENCES ========== -->
+<section class="references">
+  <div class="references__inner">
+    <div class="references__header">
+      <span class="references__eyebrow"><span class="dot dot--accent"></span>Nos références</span>
+      <h2 class="references__title">Exemples de missions et résultats</h2>
+    </div>
+    <div class="references__grid">
+      <a href="#" class="ref-card">
+        <div class="ref-card__image">
+          <div class="ref-card__fallback"><img src="assets/images/logos/armd-globe.webp" alt="" /></div>
+        </div>
+        <div class="ref-card__body">
+          <div class="ref-card__eyebrow">Capital</div>
+          <h3 class="ref-card__name">Fintech panafricaine</h3>
+          <p class="ref-card__desc">Communication autour d'une levée de pré-amorçage de 1,8 M$ : construction du récit, sélection de plus de 40 médias et diffusion en français et en anglais sous un embargo de 72 heures.</p>
+          <div class="ref-card__metric">
+            <div class="ref-card__metric-value">10+</div>
+            <div class="ref-card__metric-label">Publications obtenues</div>
+          </div>
+          <span class="ref-card__cta">Voir le projet <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a href="#" class="ref-card">
+        <div class="ref-card__image">
+          <div class="ref-card__fallback"><img src="assets/images/logos/armd-globe.webp" alt="" /></div>
+        </div>
+        <div class="ref-card__body">
+          <div class="ref-card__eyebrow">Capital</div>
+          <h3 class="ref-card__name">Groupe industriel spécialisé dans l'emballage</h3>
+          <p class="ref-card__desc">Préparation de la communication liée à une levée de 40 M$ : récit de l'entreprise, messages, nouvelle identité visuelle, relations médias et film institutionnel.</p>
+          <div class="ref-card__metric">
+            <div class="ref-card__metric-value">40 M$</div>
+            <div class="ref-card__metric-label">Levée accompagnée</div>
+          </div>
+          <span class="ref-card__cta">Voir le projet <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a href="#" class="ref-card">
+        <div class="ref-card__image">
+          <div class="ref-card__fallback"><img src="assets/images/logos/armd-globe.webp" alt="" /></div>
+        </div>
+        <div class="ref-card__body">
+          <div class="ref-card__eyebrow">Capital</div>
+          <h3 class="ref-card__name">Groupe agro-industriel diversifié</h3>
+          <p class="ref-card__desc">Accompagnement de 2 opérations de financement pour un montant total de 150 M$ : positionnement, récit, plan de communication et relations médias internationaux.</p>
+          <div class="ref-card__metric">
+            <div class="ref-card__metric-value">150 M$</div>
+            <div class="ref-card__metric-label">Financement total</div>
+          </div>
+          <span class="ref-card__cta">Voir le projet <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a href="#" class="ref-card">
+        <div class="ref-card__image">
+          <div class="ref-card__fallback"><img src="assets/images/logos/armd-globe.webp" alt="" /></div>
+        </div>
+        <div class="ref-card__body">
+          <div class="ref-card__eyebrow">Réputation</div>
+          <h3 class="ref-card__name">Expert africain en cybersécurité</h3>
+          <p class="ref-card__desc">Accompagnement de 2019 à 2024 pour structurer la prise de parole : positionnement, dossiers de presse, tribunes et relations médias.</p>
+          <div class="ref-card__metric">
+            <div class="ref-card__metric-value">15+</div>
+            <div class="ref-card__metric-label">Pays de présence</div>
+          </div>
+          <span class="ref-card__cta">Voir le projet <span>&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
